@@ -1,6 +1,7 @@
 import React from "react";
 import "./BookDetails.css";
 import { useLocation } from "react-router-dom";
+import Button from "react-bootstrap/Button";
 
 export default function BookDetails() {
   const { state } = useLocation();
@@ -59,6 +60,9 @@ export default function BookDetails() {
               <p>Maturity Rating</p>
             </div>
           </div>
+          <Button variant="success" className="read-me">
+            Read me
+          </Button>{" "}
         </div>
       </div>
       <div className="description">

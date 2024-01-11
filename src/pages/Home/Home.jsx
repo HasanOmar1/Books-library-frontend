@@ -35,7 +35,9 @@ export default function Home() {
           <div className="fav-books">
             <h4 className="fav-title">Fan favorite Series</h4>
             {/* <Carousel /> */}
-            <BooksCards />
+            <div className="cards">
+              <BooksCards />
+            </div>
           </div>
         </>
       )}

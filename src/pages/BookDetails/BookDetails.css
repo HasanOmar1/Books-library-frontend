@@ -15,11 +15,24 @@
 .BookDetails .info-container img{
     height: 300px;
     width: 250px;
+    --mask: 
+    radial-gradient(2px at 25% 0   ,#0000 98%,#000) 50% 2px/8px 51% repeat-x,
+    radial-gradient(2px at 75% 50% ,#000 99%,#0000 101%) top/8px 4px repeat-x,
+    radial-gradient(2px at 75% 100%,#0000 98%,#000) calc(50% + 4px) calc(100% - 2px)/8px 51% repeat-x,
+    radial-gradient(2px at 25% 50% ,#000 99%,#0000 101%) calc(50% + 4px) 100%/8px 4px repeat-x;
+  -webkit-mask: var(--mask);
+          mask: var(--mask);
+          border: 5px solid #67183f;
 }
 
 .BookDetails .more-info-container{
     padding-left: 30px;
     letter-spacing: 1.6px;
+}
+
+.BookDetails .more-info-container h4{
+    padding-bottom: 10px;
+    color: #02b9c2;
 }
 
 .BookDetails .important-info{
@@ -50,6 +63,13 @@
     height: 60px;
     width: 1px;
 
+}
+
+.BookDetails .small-p{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 .BookDetails .small-p h5{
@@ -86,4 +106,8 @@
 
 .BookDetails .description p{
     padding-top: 10px;
+}
+
+.BookDetails .read-me{
+    margin-left: 20px;
 }
