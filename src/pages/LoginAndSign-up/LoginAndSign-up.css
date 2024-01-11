@@ -1,0 +1,104 @@
+.login-sign-up{
+    color: white;
+    background-color: #333;
+    height: 92.2vh;
+}
+
+.login-sign-up .title{
+    padding-top: 100px;
+    padding-left: 30%;
+    padding-bottom: 20px;
+    letter-spacing: 2px;
+}
+
+.login-sign-up #join-word{
+    color: greenyellow;
+}
+
+.login-sign-up .big-container{
+    width: 50vw;
+    height: 50vh;
+    margin-left: 20%;
+    display: flex;
+
+}
+
+.login-sign-up .left-container{
+    width: 20vw;
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
+}
+
+.login-sign-up .left-container .books-img{
+    width: 100%;
+    height: 100%;
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
+    background: url("https://c1.wallpaperflare.com/preview/127/366/443/library-book-bookshelf-read.jpg");
+    background-size: cover;
+    
+}
+
+
+.login-sign-up .right-container{
+    width: 30vw;
+    background-color: rgba(31, 33, 31, 0.643);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 5%;
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+
+}
+
+.login-sign-up .right-container h3{
+    padding-bottom: 20px;
+}
+
+.login-sign-up form{
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.login-sign-up form input{
+
+    font-size: 1.5rem;
+    padding: 5px 20px;
+    border-radius: 12px;
+    border: none;
+
+
+}
+
+.login-sign-up form input:focus{
+    outline: 4px solid #00ADB5 ;
+}
+
+.login-sign-up form .register{
+
+    border: none;
+    border-radius: 15px;
+    padding: 5px 10px;
+    font-size: 1.5rem;
+    background-color: #393E46;
+    color: goldenrod;
+    letter-spacing: 2px;
+}
+
+.login-sign-up form .register:hover{
+
+    background-color: rgb(21, 66, 70);
+    color: white;
+
+}
+
+.login-sign-up .login{
+    padding-top: 10px;
+    letter-spacing: 2px;
+}
+
+.login-sign-up .login-title{
+    padding-left: 50px;
+}
