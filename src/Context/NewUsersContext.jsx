@@ -55,7 +55,15 @@ export default function NewUsersProvider({ children }) {
   }
   return (
     <NewUsersContext.Provider
-      value={{ users, userLogin, createUser, currentUser, setCurrentUser }}
+      value={{
+        users,
+        userLogin,
+        createUser,
+        currentUser,
+        setCurrentUser,
+        errorMsg,
+        setErrorMsg,
+      }}
     >
       {children}
     </NewUsersContext.Provider>

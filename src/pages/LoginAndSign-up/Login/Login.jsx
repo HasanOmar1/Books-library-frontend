@@ -1,12 +1,20 @@
-import React, { useRef, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import "../LoginAndSign-up.css";
 import { Link } from "react-router-dom";
 import { useNewUsersContext } from "../../../Context/NewUsersContext";
+import ErrorModal from "../../../components/Modals/ErrorMsg";
 
 export default function Login() {
-  const { users, userLogin } = useNewUsersContext();
+  const { users, userLogin, errorMsg } = useNewUsersContext();
   const [emailValue, setEmailValue] = useState();
   const [passwordValue, setPasswordValue] = useState();
+  const errorRef = useRef();
+
+  useEffect(() => {
+    if (errorMsg) {
+      errorRef?.current?.showModal();
+    }
+  }, [errorMsg]);
 
   function handleOnSubmit(e) {
     e.preventDefault();
@@ -52,6 +60,7 @@ export default function Login() {
               Sign-up
             </Link>
           </p>
+          <ErrorModal ref={errorRef} />
         </div>
       </div>
     </main>
