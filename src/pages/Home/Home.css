@@ -1,7 +1,24 @@
 .Home{
-    min-height: 93.9vh;
+    min-height: 92.2vh;
     background-color: #333;
     color: white;
     padding-top: 50px;
 
+}
+
+
+.Home .fav-books{
+
+    margin-left: 20%;
+    background-color: #4d4949a0;
+    width: 70vw;
+    height: 35vh;
+    padding-left: 20px;
+    
+}
+
+.Home .fav-books .fav-title{
+    padding: 20px 0px;
+    color: rgba(172, 255, 47, 0.818);
+    
 }

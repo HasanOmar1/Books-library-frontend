@@ -1,0 +1,14 @@
+.BooksCards{
+    
+}
+
+.BooksCards .fan-favorite-container{
+    display: flex;
+    gap: 30px;
+}
+
+
+.BooksCards .fan-favorite-container img{
+    width: 150px;
+    height: 150px;
+}
