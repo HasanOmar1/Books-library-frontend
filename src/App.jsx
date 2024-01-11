@@ -6,6 +6,7 @@ import Login from "./pages/LoginAndSign-up/Login/Login";
 import SignUp from "./pages/LoginAndSign-up/Sign-up/SignUp";
 import NewUsersProvider from "./Context/NewUsersContext";
 import BooksProvider from "./Context/BooksContext";
+import BookDetails from "./pages/BookDetails/BookDetails";
 
 function App() {
   return (
@@ -16,7 +17,8 @@ function App() {
           <Routes>
             <Route path={"/"} exact element={<Home />} />
             <Route path={"/sign-up"} element={<SignUp />} />
-            <Route path={"/login"} exact element={<Login />} />
+            <Route path={"/login"} element={<Login />} />
+            <Route path={"/:name"} element={<BookDetails />} />
           </Routes>
         </NewUsersProvider>
       </BooksProvider>
