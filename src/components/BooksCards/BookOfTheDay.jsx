@@ -7,12 +7,6 @@ import Button from "react-bootstrap/Button";
 export default function BookOfTheDay({ sliceStart, sliceEnd }) {
   const { books, fetchBooks } = useBooksData();
 
-  useEffect(() => {
-    if (books) {
-      console.log(books);
-    }
-  }, [books]);
-
   return (
     <div className="BooksCards">
       <div className="big-book">

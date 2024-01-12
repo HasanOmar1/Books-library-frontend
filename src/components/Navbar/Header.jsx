@@ -51,6 +51,12 @@ function Header() {
 
             {loggedUser && (
               <>
+                <Nav.Link as="li" href="#library">
+                  <Link to={"/library"} className="nav-link library">
+                    Library 📚
+                  </Link>
+                </Nav.Link>
+
                 <Nav.Link as="li" href="#home" onClick={handleLogOut}>
                   <Link to={"/"} className="nav-link">
                     Log-out

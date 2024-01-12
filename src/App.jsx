@@ -7,6 +7,7 @@ import SignUp from "./pages/LoginAndSign-up/Sign-up/SignUp";
 import NewUsersProvider from "./Context/NewUsersContext";
 import BooksProvider from "./Context/BooksContext";
 import BookDetails from "./pages/BookDetails/BookDetails";
+import MyLibrary from "./pages/MyLibrary/MyLibrary";
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
             <Route path={"/sign-up"} element={<SignUp />} />
             <Route path={"/login"} element={<Login />} />
             <Route path={"/:name"} element={<BookDetails />} />
+            <Route path={"/library"} element={<MyLibrary />} />
           </Routes>
         </NewUsersProvider>
       </BooksProvider>

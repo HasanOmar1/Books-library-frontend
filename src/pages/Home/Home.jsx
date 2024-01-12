@@ -19,12 +19,16 @@ export default function Home() {
     }
   }, []);
 
+  useEffect(() => {
+    console.log(books);
+  }, [books]);
+
   const loggedUser = localStorage.getItem("user");
   const nameUpperCase = currentUser?.name?.split("")[0].toUpperCase();
 
   return (
     <main className="Home Page">
-      {books && (
+      {books ? (
         <>
           {loggedUser && (
             <>
@@ -58,6 +62,8 @@ export default function Home() {
             </div>
           </div>
         </>
+      ) : (
+        <h3>Loading Data...</h3>
       )}
     </main>
   );

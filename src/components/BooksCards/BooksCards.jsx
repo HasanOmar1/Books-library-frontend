@@ -6,11 +6,11 @@ import { Link } from "react-router-dom";
 export default function BooksCards({ sliceStart, sliceEnd }) {
   const { books, fetchBooks } = useBooksData();
 
-  useEffect(() => {
-    if (books) {
-      console.log(books);
-    }
-  }, [books]);
+  // useEffect(() => {
+  //   if (books) {
+  //     console.log(books);
+  //   }
+  // }, [books]);
 
   return (
     <div className="BooksCards">
