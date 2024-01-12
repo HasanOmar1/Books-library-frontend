@@ -1,17 +1,26 @@
 import React from "react";
 import "./BookDetails.css";
-import { useLocation } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import Button from "react-bootstrap/Button";
+import StarsRating from "../../components/Rating/Rating";
+import ArrowBackIosIcon from "@mui/icons-material/ArrowBackIos";
 
 export default function BookDetails() {
   const { state } = useLocation();
   const newState = state.volumeInfo;
+  const navigate = useNavigate();
 
   console.log(newState);
 
   return (
     <main className="BookDetails">
       {/* {state ? ( */}
+      <div className="back-btn" onClick={() => navigate("/")}>
+        <Button variant="outline-warning">
+          <ArrowBackIosIcon className="back-icon" />
+          Back
+        </Button>
+      </div>
       <div className="info-container">
         <div className="img-container">
           <img src={newState?.imageLinks?.thumbnail} alt={newState?.title} />
@@ -60,9 +69,17 @@ export default function BookDetails() {
               <p>Maturity Rating</p>
             </div>
           </div>
-          <Button variant="success" className="read-me">
-            Read me
-          </Button>{" "}
+          <div className="rating">
+            <StarsRating
+              rate={newState?.averageRating ? newState?.averageRating : 3}
+            />
+          </div>
+          <div className="buttons">
+            <Button variant="success" className="read-me">
+              Read me
+            </Button>
+            <Button variant="primary">Add to Library</Button>
+          </div>
         </div>
       </div>
       <div className="description">

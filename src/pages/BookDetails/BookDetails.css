@@ -6,9 +6,12 @@
 }
 
 .BookDetails .info-container{
-    padding-top: 50px;
+    margin-top: 20px;
     display: flex;
     justify-content: center;
+    align-items: center;
+    background-color: #1e2525;
+    padding: 30px 0;
     
 }
 
@@ -110,6 +113,28 @@
     padding-top: 10px;
 }
 
-.BookDetails .read-me{
-    margin-left: 20px;
+.BookDetails .buttons{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+
+.BookDetails .rating{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 20px;
+}
+
+
+.BookDetails .back-icon{
+    font-size: 1.2rem;
+}
+
+.BookDetails .back-btn{
+
+    margin-left: 20%;
+    padding-top: 1%;
+
 }
