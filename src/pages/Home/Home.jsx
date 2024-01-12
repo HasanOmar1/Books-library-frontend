@@ -32,12 +32,10 @@ export default function Home() {
     <main className="Home Page">
       {books && (
         <>
+          <h4 className="fav-title">Fan favorite Series</h4>
           <div className="fav-books">
-            <h4 className="fav-title">Fan favorite Series</h4>
-            {/* <Carousel /> */}
-            <div className="cards">
-              <BooksCards />
-            </div>
+            <Carousel />
+            <div className="cards">{/* <BooksCards /> */}</div>
           </div>
         </>
       )}

@@ -12,18 +12,20 @@
     margin-left: 20%;
     background-color: #4d4949a0;
     width: 70vw;
-    height: 35vh;
+    height: 38vh;
     padding-left: 20px;
+    border-radius: 15px;
     
 }
 
-.Home .fav-books .fav-title{
+.Home  .fav-title{
     padding: 20px 0px;
     padding-bottom: 0;
     color: rgba(172, 255, 47, 0.644);
     letter-spacing: 2px;
     border-bottom: 2px solid #0b6165;
     display: inline-block;
+    margin-left: 20%;
     
 }
 

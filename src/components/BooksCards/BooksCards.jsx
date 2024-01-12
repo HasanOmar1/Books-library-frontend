@@ -3,7 +3,7 @@ import { useBooksData } from "../../Context/BooksContext";
 import "./BooksCards.css";
 import { Link } from "react-router-dom";
 
-export default function BooksCards() {
+export default function BooksCards({ sliceStart, sliceEnd }) {
   const { books, fetchBooks } = useBooksData();
 
   useEffect(() => {
@@ -15,7 +15,7 @@ export default function BooksCards() {
   return (
     <div className="BooksCards">
       <div className="fan-favorite-container">
-        {books.slice(0, 7).map((info) => {
+        {books.slice(sliceStart, sliceEnd).map((info) => {
           return (
             <Link
               key={info?._id}

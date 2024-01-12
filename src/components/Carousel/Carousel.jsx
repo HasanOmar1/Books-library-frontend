@@ -1,46 +1,29 @@
 import Carousel from "react-bootstrap/Carousel";
 import BooksCards from "../BooksCards/BooksCards";
+import "./Carousel.css";
 
 function BooksCarousel() {
   return (
-    <Carousel data-bs-theme="dark">
-      <Carousel.Item>
-        {/* <img
-          className="d-block w-100"
-          src="holder.js/800x400?text=First slide&bg=f5f5f5"
-          alt="First slide"
-        /> */}
-
-        {/* <BooksCards /> */}
-
-        {/* <Carousel.Caption>
-          <h5>First slide label</h5>
-          <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
-        </Carousel.Caption> */}
+    <Carousel data-bs-theme="dark" className="Carousel">
+      <Carousel.Item className="carousel-item">
+        <p>Sherlock Holmes</p>
+        <div className="books">
+          <BooksCards sliceStart={1} sliceEnd={5} />
+        </div>
       </Carousel.Item>
+
       <Carousel.Item>
-        {/* <img
-          className="d-block w-100"
-          src="holder.js/800x400?text=Second slide&bg=eee"
-          alt="Second slide"
-        /> */}
-        {/* <Carousel.Caption>
-          <h5>Second slide label</h5>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-        </Carousel.Caption> */}
+        <p>Harry Potter</p>
+        <div className="books">
+          <BooksCards sliceStart={10} sliceEnd={14} />
+        </div>
       </Carousel.Item>
+
       <Carousel.Item>
-        {/* <img
-          className="d-block w-100"
-          src="holder.js/800x400?text=Third slide&bg=e5e5e5"
-          alt="Third slide"
-        /> */}
-        {/* <Carousel.Caption>
-          <h5>Third slide label</h5>
-          <p>
-            Praesent commodo cursus magna, vel scelerisque nisl consectetur.
-          </p>
-        </Carousel.Caption> */}
+        <p>Lord of the rings</p>
+        <div className="books">
+          <BooksCards sliceStart={25} sliceEnd={29} />
+        </div>
       </Carousel.Item>
     </Carousel>
   );

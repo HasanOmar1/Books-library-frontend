@@ -55,7 +55,7 @@ export default function BookDetails() {
 
             <div className="small-p">
               <h5>
-                <span>{newState?.pageCount}</span>
+                <span>{newState?.pageCount ? newState?.pageCount : 211}</span>
               </h5>
               <p>Pages</p>
             </div>
