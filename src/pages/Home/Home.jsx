@@ -24,7 +24,6 @@ export default function Home() {
   }, [books]);
 
   const loggedUser = localStorage.getItem("user");
-  const nameUpperCase = currentUser?.name?.split("")[0].toUpperCase();
 
   return (
     <main className="Home Page">
@@ -34,9 +33,8 @@ export default function Home() {
             <>
               <div className="logged-user">
                 <h5>
-                  Hello{" "}
-                  <span>{nameUpperCase + currentUser?.name?.slice(1)}</span>,
-                  Explore the library and start reading 📚
+                  Hello <span>{currentUser?.name}</span>, Explore the library
+                  and start reading 📚
                 </h5>
               </div>
             </>

@@ -8,20 +8,23 @@ import NewUsersProvider from "./Context/NewUsersContext";
 import BooksProvider from "./Context/BooksContext";
 import BookDetails from "./pages/BookDetails/BookDetails";
 import MyLibrary from "./pages/MyLibrary/MyLibrary";
+import LibraryProvider from "./Context/LibraryContext";
 
 function App() {
   return (
     <>
       <BooksProvider>
         <NewUsersProvider>
-          <Header />
-          <Routes>
-            <Route path={"/"} exact element={<Home />} />
-            <Route path={"/sign-up"} element={<SignUp />} />
-            <Route path={"/login"} element={<Login />} />
-            <Route path={"/:name"} element={<BookDetails />} />
-            <Route path={"/library"} element={<MyLibrary />} />
-          </Routes>
+          <LibraryProvider>
+            <Header />
+            <Routes>
+              <Route path={"/"} exact element={<Home />} />
+              <Route path={"/sign-up"} element={<SignUp />} />
+              <Route path={"/login"} element={<Login />} />
+              <Route path={"/:name"} element={<BookDetails />} />
+              <Route path={"/library"} element={<MyLibrary />} />
+            </Routes>
+          </LibraryProvider>
         </NewUsersProvider>
       </BooksProvider>
     </>
