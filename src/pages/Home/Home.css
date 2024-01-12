@@ -20,9 +20,9 @@
 .Home .fav-books .fav-title{
     padding: 20px 0px;
     padding-bottom: 0;
-    color: rgba(172, 255, 47, 0.818);
+    color: rgba(172, 255, 47, 0.644);
     letter-spacing: 2px;
-    border-bottom: 2px solid #00ADB5;
+    border-bottom: 2px solid #0b6165;
     display: inline-block;
     
 }
