@@ -49,9 +49,11 @@ export default function Home() {
               </div>
             </div>
             <div className="right-side">
-              <h5>More Batman Books</h5>
               <div className="same-more-books">
-                <BooksCards sliceStart={32} sliceEnd={34} />
+                <h5>More Batman Books</h5>
+                <div className="books">
+                  <BooksCards sliceStart={32} sliceEnd={34} />
+                </div>
               </div>
             </div>
           </div>

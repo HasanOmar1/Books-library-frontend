@@ -71,11 +71,11 @@
 }
 
 .Home .big-book-and-more-books .right-side {
-    padding-top: 8px;
+    margin-top: 4vh;
 }
 
-.Home .big-book-and-more-books .right-side h5{
-    padding-top: 10px;
+.Home .big-book-and-more-books .right-side  h5{
+    /* padding-top: 10px; */
     color: rgb(4, 195, 170);
     font-size: 1.1rem;
 }
@@ -87,7 +87,13 @@
     margin-top: 20px;
     border-radius: 10px;
     background-color: #494f3e2d;
-    padding-top: 20%;
+    padding-top: 3%;
     padding-left: 10px;
+
+}
+
+.Home .big-book-and-more-books .right-side .same-more-books .books{
+    
+    padding-top: 3vh;
 
 }
