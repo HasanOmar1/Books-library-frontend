@@ -45,23 +45,49 @@
 }
 
 
-.Home .big-book{
+.Home .big-book-and-more-books{
     padding-top: 30px;
+    display: flex;
+    gap: 20px;
+    
 }
 
-.Home .big-book h4{
-    /* padding-bottom: 20px; */
+.Home .big-book-and-more-books h4{
     color: rgba(172, 255, 47, 0.644);
     letter-spacing: 2px;
     border-bottom: 2px solid #0b6165;
     display: inline-block;
-
+    
 }
 
-.Home .book-of-the-day{
+.Home .left-side .book-of-the-day{
     margin-top: 20px;
     background-color: #494f3e2d;
     width: 50vw;
     height: 40vh;
     padding: 20px;
+    border-radius: 10px;
+
+}
+
+.Home .big-book-and-more-books .right-side {
+    padding-top: 8px;
+}
+
+.Home .big-book-and-more-books .right-side h5{
+    padding-top: 10px;
+    color: rgb(4, 195, 170);
+    font-size: 1.1rem;
+}
+
+.Home .big-book-and-more-books .right-side .same-more-books{
+
+    width: 19vw;
+    height: 40vh;
+    margin-top: 20px;
+    border-radius: 10px;
+    background-color: #494f3e2d;
+    padding-top: 20%;
+    padding-left: 10px;
+
 }

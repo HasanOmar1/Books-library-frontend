@@ -41,10 +41,18 @@ export default function Home() {
           <div className="fav-books">
             <Carousel />
           </div>
-          <div className="big-book">
-            <h4>Book of the day</h4>
-            <div className="book-of-the-day">
-              <BookOfTheDay sliceStart={30} sliceEnd={31} />
+          <div className="big-book-and-more-books">
+            <div className="left-side">
+              <h4>Book of the day</h4>
+              <div className="book-of-the-day">
+                <BookOfTheDay sliceStart={30} sliceEnd={31} />
+              </div>
+            </div>
+            <div className="right-side">
+              <h5>More Batman Books</h5>
+              <div className="same-more-books">
+                <BooksCards sliceStart={32} sliceEnd={34} />
+              </div>
             </div>
           </div>
         </>
