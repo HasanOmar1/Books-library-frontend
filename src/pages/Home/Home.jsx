@@ -4,20 +4,11 @@ import { useNewUsersContext } from "../../Context/NewUsersContext";
 import { useBooksData } from "../../Context/BooksContext";
 import BooksCards from "../../components/BooksCards/BooksCards";
 import Carousel from "../../components/Carousel/Carousel";
+import BookOfTheDay from "../../components/BooksCards/BookOfTheDay";
 
 export default function Home() {
-  const { users, setCurrentUser } = useNewUsersContext();
+  const { users, setCurrentUser, currentUser } = useNewUsersContext();
   const { books, fetchBooks } = useBooksData();
-  const [bookCover, setBookCover] = useState();
-
-  // useEffect(() => {
-  //   if (books) {
-  //     console.log(books);
-
-  //     setBookCover(books[8]?.volumeInfo?.imageLinks?.thumbnail);
-  //     // console.log(books[0]?.volumeInfo?.imageLinks?.thumbnail);
-  //   }
-  // }, [books]);
 
   useEffect(() => {
     const loggedInUser = localStorage.getItem("user");
@@ -28,14 +19,33 @@ export default function Home() {
     }
   }, []);
 
+  const loggedUser = localStorage.getItem("user");
+  const nameUpperCase = currentUser?.name?.split("")[0].toUpperCase();
+
   return (
     <main className="Home Page">
       {books && (
         <>
-          <h4 className="fav-title">Fan favorite Series</h4>
+          {loggedUser && (
+            <>
+              <div className="logged-user">
+                <h5>
+                  Hello{" "}
+                  <span>{nameUpperCase + currentUser?.name?.slice(1)}</span>,
+                  Explore the library and start reading 📚
+                </h5>
+              </div>
+            </>
+          )}
+          <h4 className="fav-title">Fan Favorite Series</h4>
           <div className="fav-books">
             <Carousel />
-            <div className="cards">{/* <BooksCards /> */}</div>
+          </div>
+          <div className="big-book">
+            <h4>Book of the day</h4>
+            <div className="book-of-the-day">
+              <BookOfTheDay sliceStart={30} sliceEnd={31} />
+            </div>
           </div>
         </>
       )}

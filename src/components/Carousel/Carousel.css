@@ -1,35 +1,30 @@
 .Carousel {
-    padding-bottom: 50px;
-    width: 70vw;
     height: 38vh;
     margin-left: -20px;
-    /* padding-left: 30px; */
-    /* padding-top: 20px; */
+
 }
 
-.Carousel .carousel-item{
-    /* border: 1px solid blue; */
-    /* padding-left: 10px; */
-}
+
 
 .Carousel .books{
     display: flex;
     justify-content: center;
     align-items: center;
     margin-left: 240px;
-    background-color: rgb(23, 23, 23);
+    background-color: rgb(60, 57, 57);
     border-radius: 20px;
     width: 45vw;
     height: 26vh;
     margin-top: 15px;
 }
 
-.Carousel  p{
+.Carousel  h5{
     margin-left: 60px;
     font-size: 1.3rem;
     display: flex;
     justify-content: center;
     align-items: center;
-    padding-top: 7px;
+    padding-top: 15px;
     color: rgb(2, 239, 239);
+    letter-spacing: 2px;
 }
