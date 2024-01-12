@@ -4,8 +4,10 @@ import { useLocation, useNavigate } from "react-router-dom";
 import Button from "react-bootstrap/Button";
 import StarsRating from "../../components/Rating/Rating";
 import ArrowBackIosIcon from "@mui/icons-material/ArrowBackIos";
+import { useLibraryContext } from "../../Context/LibraryContext";
 
 export default function BookDetails() {
+  const { addBookToLibrary } = useLibraryContext();
   const { state } = useLocation();
   const newState = state.volumeInfo;
   const navigate = useNavigate();
@@ -78,7 +80,12 @@ export default function BookDetails() {
             <Button variant="success" className="read-me">
               Read me
             </Button>
-            <Button variant="primary">Add to Library</Button>
+            <Button
+              variant="primary"
+              onClick={() => addBookToLibrary(state?._id)}
+            >
+              Add to Library
+            </Button>
           </div>
         </div>
       </div>
