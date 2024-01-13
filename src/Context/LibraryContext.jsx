@@ -20,6 +20,7 @@ export default function LibraryProvider({ children }) {
         console.log(response.data);
         const userJSON = JSON.stringify(response.data);
         localStorage.setItem("user", userJSON);
+        setBooksErrorMsg("Book has been added to your library");
       } else {
         console.log("Login first");
 
