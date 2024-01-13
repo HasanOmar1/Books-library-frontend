@@ -17,11 +17,13 @@ export default function BookDetails() {
   return (
     <main className="BookDetails">
       {/* {state ? ( */}
-      <div className="back-btn" onClick={() => navigate("/")}>
-        <Button variant="outline-warning">
-          <ArrowBackIosIcon className="back-icon" />
-          Back
-        </Button>
+      <div className="back-btn-container">
+        <div className="back-btn" onClick={() => navigate(-1)}>
+          <Button variant="outline-warning">
+            <ArrowBackIosIcon className="back-icon" />
+            Back
+          </Button>
+        </div>
       </div>
       <div className="info-container">
         <div className="img-container">

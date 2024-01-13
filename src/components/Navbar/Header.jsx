@@ -17,8 +17,8 @@ function Header() {
   }
 
   return (
-    <>
-      <Navbar bg="dark" data-bs-theme="dark" className="Header">
+    <nav className="Header">
+      <Navbar bg="dark" data-bs-theme="dark">
         <Container>
           <Navbar.Brand>
             <Link to={"/"} className="nav-link">
@@ -67,7 +67,7 @@ function Header() {
           </Nav>
         </Container>
       </Navbar>
-    </>
+    </nav>
   );
 }
 
