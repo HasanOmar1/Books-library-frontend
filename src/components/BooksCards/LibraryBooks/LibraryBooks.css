@@ -1,0 +1,53 @@
+.LibraryBooks{
+
+
+}
+
+
+.LibraryBooks .library-container{
+    display: flex;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+.LibraryBooks .library-book-container{
+    display: flex;
+    gap: 20px;
+    background-color: rgba(60, 55, 55, 0.704);
+    width: 27vw;
+    height: 300px;
+    padding: 20px;
+    
+}
+
+.LibraryBooks .library-book-container img{
+    width: fit-content;
+    height: 200px;
+    
+}
+
+.LibraryBooks .books-more-info{
+    letter-spacing: 1.3px;
+    line-height: 1.7;
+}
+
+.LibraryBooks .category{
+    padding-top: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.LibraryBooks .span-title{
+
+    color: greenyellow;
+
+}
+
+
+.LibraryBooks .img-and-button{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
