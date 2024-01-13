@@ -9,18 +9,14 @@ export default function LibraryBooks({ library }) {
       <div className="library-container">
         {library?.map((info) => {
           return (
-            <div className="info-container">
+            <div className="info-container" key={info?._id}>
               <div className="library-book-container">
                 <div className="img-and-button">
                   <img
                     src={info?.volumeInfo?.imageLinks?.thumbnail}
                     alt={info?.volumeInfo?.title}
                   />
-                  <Link
-                    key={info?._id}
-                    to={`${info?.volumeInfo?.title}`}
-                    state={info}
-                  >
+                  <Link to={`/${info?.volumeInfo?.title}`} state={info}>
                     <Button variant="primary">More Info</Button>
                   </Link>
                 </div>

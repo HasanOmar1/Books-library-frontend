@@ -5,7 +5,8 @@ import config from "../authConfig";
 const LibraryContext = createContext();
 
 export default function LibraryProvider({ children }) {
-  const [errorMsg, setErrorMsg] = useState([]);
+  const [errorMsg, setErrorMsg] = useState();
+  const [libraryBooks, setLibraryBooks] = useState([]);
 
   async function addBookToLibrary(bookId) {
     try {
@@ -36,6 +37,10 @@ export default function LibraryProvider({ children }) {
       value={{
         addBookToLibrary,
         removeBookFromLibrary,
+        libraryBooks,
+        setLibraryBooks,
+        errorMsg,
+        setErrorMsg,
       }}
     >
       {children}

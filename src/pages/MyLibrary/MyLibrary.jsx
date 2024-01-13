@@ -8,15 +8,16 @@ export default function MyLibrary() {
   const { libraryBooks, setLibraryBooks } = useLibraryContext();
   const { currentUser } = useNewUsersContext();
 
-  useEffect(() => {
-    console.log(currentUser?.books);
-  }, [currentUser?.books]);
+  const loggedUser = localStorage.getItem("user");
+  const loggedUserObj = JSON.parse(loggedUser);
+  console.log(loggedUserObj.books);
+  // useEffect(() => {}, [loggedUserObj?.books]);
 
   return (
     <main className="MyLibrary">
       <h4 className="title">My Library</h4>
       <div className="library-container">
-        <LibraryBooks library={currentUser?.books} />
+        <LibraryBooks library={loggedUserObj?.books} />
       </div>
     </main>
   );
