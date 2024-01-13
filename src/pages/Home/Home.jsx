@@ -13,13 +13,14 @@ export default function Home() {
   useEffect(() => {
     const loggedInUser = localStorage.getItem("user");
     const token = localStorage.getItem("token");
+    console.log(currentUser);
     if (loggedInUser) {
       const foundUser = JSON.parse(loggedInUser);
       setCurrentUser(foundUser);
     }
-    // console.log(currentUser);
   }, []);
 
+  // console.log(currentUser);
   // useEffect(() => {
   //   console.log(books);
   // }, [books]);
