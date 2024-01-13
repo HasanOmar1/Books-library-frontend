@@ -13,8 +13,9 @@ export default function LibraryProvider({ children }) {
       const response = await axios.put(`/books/addBook/${bookId}`, {}, config);
       console.log(response.data);
     } catch (error) {
+      // console.log(error.response.data.message);
       console.log(error.response.data);
-      setErrorMsg(error.response.data);
+      setErrorMsg(error.response.data.message);
     }
   }
 
@@ -28,7 +29,7 @@ export default function LibraryProvider({ children }) {
       console.log(response.data);
     } catch (error) {
       console.log(error.response.data);
-      setErrorMsg(error.response.data);
+      // setErrorMsg(error.response.data.message);
     }
   }
 

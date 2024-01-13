@@ -6,12 +6,13 @@ import LibraryBooks from "../../components/BooksCards/LibraryBooks/LibraryBooks"
 
 export default function MyLibrary() {
   const { libraryBooks, setLibraryBooks } = useLibraryContext();
-  const { currentUser } = useNewUsersContext();
+  const { currentUser, usersAPI } = useNewUsersContext();
 
   const loggedUser = localStorage.getItem("user");
   const loggedUserObj = JSON.parse(loggedUser);
   console.log(loggedUserObj.books);
-  // useEffect(() => {}, [loggedUserObj?.books]);
+
+  useEffect(() => {}, [loggedUserObj?.books]);
 
   return (
     <main className="MyLibrary">
