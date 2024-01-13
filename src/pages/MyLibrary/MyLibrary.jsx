@@ -12,7 +12,15 @@ export default function MyLibrary() {
   const loggedUserObj = JSON.parse(loggedUser);
   console.log(loggedUserObj.books);
 
-  useEffect(() => {}, [loggedUserObj?.books]);
+  // useEffect(() => {
+
+  // }, [loggedUserObj?.books]);
+
+  useEffect(() => {
+    if (loggedUserObj) {
+      usersAPI();
+    }
+  }, []);
 
   return (
     <main className="MyLibrary">
