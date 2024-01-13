@@ -1,10 +1,12 @@
 import React, { createContext, useContext, useState } from "react";
 import axios from "../axiosConfig";
 import config from "../authConfig";
+import { useNewUsersContext } from "./NewUsersContext";
 
 const LibraryContext = createContext();
 
 export default function LibraryProvider({ children }) {
+  const { currentUser, setCurrentUser } = useNewUsersContext();
   const [booksErrorMsg, setBooksErrorMsg] = useState();
   const [libraryBooks, setLibraryBooks] = useState([]);
 
@@ -20,6 +22,8 @@ export default function LibraryProvider({ children }) {
         console.log(response.data);
         const userJSON = JSON.stringify(response.data);
         localStorage.setItem("user", userJSON);
+        setCurrentUser(response.data);
+
         setBooksErrorMsg("Book has been added to your library");
       } else {
         console.log("Login first");
@@ -43,6 +47,9 @@ export default function LibraryProvider({ children }) {
           config
         );
         console.log(response.data);
+        const userJSON = JSON.stringify(response.data);
+        localStorage.setItem("user", userJSON);
+        setCurrentUser(response.data);
       } else {
         console.log("Login first");
         setBooksErrorMsg("Please login first");

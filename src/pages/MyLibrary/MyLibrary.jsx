@@ -7,20 +7,18 @@ import LibraryBooks from "../../components/BooksCards/LibraryBooks/LibraryBooks"
 export default function MyLibrary() {
   const { libraryBooks, setLibraryBooks } = useLibraryContext();
   const { currentUser, usersAPI } = useNewUsersContext();
+  // const [updateCurrentUser, setUpdateCurrentUser] = useState();
 
+  // useEffect(() => {
   const loggedUser = localStorage.getItem("user");
   const loggedUserObj = JSON.parse(loggedUser);
   console.log(loggedUserObj.books);
+  //   setUpdateCurrentUser(loggedUserObj);
+  // }, []);
 
   // useEffect(() => {
-
-  // }, [loggedUserObj?.books]);
-
-  useEffect(() => {
-    if (loggedUserObj) {
-      usersAPI();
-    }
-  }, []);
+  //   console.log(currentUser);
+  // }, []);
 
   return (
     <main className="MyLibrary">

@@ -6,13 +6,14 @@ import { useNewUsersContext } from "../../Context/NewUsersContext";
 import "./Header.css";
 
 function Header() {
-  const { currentUser } = useNewUsersContext();
+  const { setCurrentUser, currentUser } = useNewUsersContext();
   const navigate = useNavigate();
 
   const loggedUser = localStorage.getItem("user");
 
   function handleLogOut() {
     localStorage.clear();
+    setCurrentUser({});
     navigate("/");
   }
 

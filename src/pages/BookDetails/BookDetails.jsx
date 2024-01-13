@@ -6,9 +6,11 @@ import StarsRating from "../../components/Rating/Rating";
 import ArrowBackIosIcon from "@mui/icons-material/ArrowBackIos";
 import { useLibraryContext } from "../../Context/LibraryContext";
 import BooksErrorModal from "../../components/Modals/BooksErrorMsg";
+import { useNewUsersContext } from "../../Context/NewUsersContext";
 
 export default function BookDetails() {
   const { addBookToLibrary } = useLibraryContext();
+  const { currentUser } = useNewUsersContext();
   const { state } = useLocation();
   const newState = state.volumeInfo;
   const navigate = useNavigate();
@@ -19,7 +21,7 @@ export default function BookDetails() {
   errorRef?.current?.showModal();
   // }, [errorRef]);
 
-  console.log(newState);
+  // console.log(newState);
 
   return (
     <main className="BookDetails">

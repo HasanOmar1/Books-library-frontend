@@ -53,6 +53,16 @@ export default function NewUsersProvider({ children }) {
       setErrorMsg(error.response.data.message);
     }
   }
+
+  // async function currentlyLoggedUser() {
+  //   try {
+  //     const response = await axios.get("/users/currentUser");
+  //     console.log(response.data);
+  //   } catch (error) {
+  //     console.log(error.response.data.message);
+  //   }
+  // }
+
   return (
     <NewUsersContext.Provider
       value={{
@@ -64,6 +74,7 @@ export default function NewUsersProvider({ children }) {
         errorMsg,
         setErrorMsg,
         usersAPI,
+        // currentlyLoggedUser,
       }}
     >
       {children}

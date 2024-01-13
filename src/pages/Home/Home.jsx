@@ -17,11 +17,12 @@ export default function Home() {
       const foundUser = JSON.parse(loggedInUser);
       setCurrentUser(foundUser);
     }
+    // console.log(currentUser);
   }, []);
 
-  useEffect(() => {
-    console.log(books);
-  }, [books]);
+  // useEffect(() => {
+  //   console.log(books);
+  // }, [books]);
 
   const loggedUser = localStorage.getItem("user");
 
