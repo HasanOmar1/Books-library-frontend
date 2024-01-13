@@ -5,7 +5,7 @@ import config from "../authConfig";
 const LibraryContext = createContext();
 
 export default function LibraryProvider({ children }) {
-  const [errorMsg, setErrorMsg] = useState();
+  const [booksErrorMsg, setBooksErrorMsg] = useState();
   const [libraryBooks, setLibraryBooks] = useState([]);
 
   async function addBookToLibrary(bookId) {
@@ -23,12 +23,12 @@ export default function LibraryProvider({ children }) {
       } else {
         console.log("Login first");
 
-        setErrorMsg("Please login first");
+        setBooksErrorMsg("Please login first");
       }
     } catch (error) {
       // console.log(error.response.data.message);
-      console.log(error.response.data);
-      setErrorMsg(error.response.data.message);
+      console.log(error.response.data.message);
+      setBooksErrorMsg(error.response.data.message);
     }
   }
 
@@ -44,10 +44,10 @@ export default function LibraryProvider({ children }) {
         console.log(response.data);
       } else {
         console.log("Login first");
-        setErrorMsg("Please login first");
+        setBooksErrorMsg("Please login first");
       }
     } catch (error) {
-      console.log(error.response.data);
+      console.log(error.response.data.message);
       // setErrorMsg(error.response.data.message);
     }
   }
@@ -59,8 +59,8 @@ export default function LibraryProvider({ children }) {
         removeBookFromLibrary,
         libraryBooks,
         setLibraryBooks,
-        errorMsg,
-        setErrorMsg,
+        setBooksErrorMsg,
+        booksErrorMsg,
       }}
     >
       {children}

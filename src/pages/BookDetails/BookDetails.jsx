@@ -1,16 +1,23 @@
-import React from "react";
+import React, { useEffect, useRef } from "react";
 import "./BookDetails.css";
 import { useLocation, useNavigate } from "react-router-dom";
 import Button from "react-bootstrap/Button";
 import StarsRating from "../../components/Rating/Rating";
 import ArrowBackIosIcon from "@mui/icons-material/ArrowBackIos";
 import { useLibraryContext } from "../../Context/LibraryContext";
+import BooksErrorModal from "../../components/Modals/BooksErrorMsg";
 
 export default function BookDetails() {
   const { addBookToLibrary } = useLibraryContext();
   const { state } = useLocation();
   const newState = state.volumeInfo;
   const navigate = useNavigate();
+
+  const errorRef = useRef();
+
+  // useEffect(() => {
+  errorRef?.current?.showModal();
+  // }, [errorRef]);
 
   console.log(newState);
 
@@ -95,6 +102,7 @@ export default function BookDetails() {
         <h3>About</h3>
         <p>{newState?.description}</p>
       </div>
+      <BooksErrorModal ref={errorRef} />
       {/* ) : (
         <>Loading Data...</>
       )} */}

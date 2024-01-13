@@ -22,7 +22,7 @@ dialog h4{
     color: greenyellow;
 }
 
-dialog .close-dialog{
+dialog .close-dialog , dialog .book-error-close-dialog{
     padding: 10px;
     margin-top: 10px;
     cursor: pointer;
@@ -36,7 +36,11 @@ dialog .close-dialog{
     margin-left: 27%;
 }
 
-.close-dialog:hover{
+dialog .book-error-close-dialog{
+    margin-left: 0;
+}
+
+.close-dialog:hover , .book-error-close-dialog:hover{
     background-color: #5e6c819b;
     color: wheat;
     
