@@ -1,0 +1,21 @@
+.album-web {
+    text-align: center;
+    background-color: #fcf9f6;
+    margin-top: 100px;
+    color: black;
+  }
+  
+  .page {
+    box-shadow: 0 1.5em 3em -1em rgb(70, 69, 69);
+  }
+  
+  .cover {
+    background-color: #e3d0b5;
+    box-shadow: 0 1.5em 3em -1em rgb(70, 69, 69);
+  }
+  
+  
+  .test{
+  
+    margin-left: 20%;
+  }

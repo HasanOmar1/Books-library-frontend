@@ -10,6 +10,7 @@ export default function BooksProvider({ children }) {
     fetchBooks();
   }, []);
 
+  //fetches all books
   async function fetchBooks() {
     try {
       const response = await axios.get("/books");
@@ -20,8 +21,31 @@ export default function BooksProvider({ children }) {
     }
   }
 
+  // gets all books that name includes whats in the parameter
+  async function filterBooksByName(bookName) {
+    try {
+      const response = await axios.get(`/books/search/name?name=${bookName}`);
+      console.log(response.data);
+    } catch (error) {
+      console.log(error);
+    }
+  }
+
+  async function filterBooksByCategory(bookCategory) {
+    try {
+      const response = await axios.get(
+        `/books/search/category?category=${bookCategory}`
+      );
+      console.log(response.data);
+    } catch (error) {
+      console.log(error);
+    }
+  }
+
   return (
-    <BooksContext.Provider value={{ books, fetchBooks }}>
+    <BooksContext.Provider
+      value={{ books, fetchBooks, filterBooksByName, filterBooksByCategory }}
+    >
       {children}
     </BooksContext.Provider>
   );

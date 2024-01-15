@@ -6,6 +6,7 @@ import BooksCards from "../../components/BooksCards/BooksCards";
 import Carousel from "../../components/Carousel/Carousel";
 import BookOfTheDay from "../../components/BooksCards/BookOfTheDay";
 import WeeklyFeaturedBooks from "../../components/BooksCards/WeeklyFeaturedBooks/WeeklyFeaturedBooks";
+import ReadBook from "../../components/PageFlip-Package/ReadBook";
 
 export default function Home() {
   const { users, setCurrentUser, currentUser } = useNewUsersContext();
@@ -14,7 +15,7 @@ export default function Home() {
   useEffect(() => {
     const loggedInUser = localStorage.getItem("user");
     const token = localStorage.getItem("token");
-    console.log(currentUser);
+    // console.log(currentUser);
     if (loggedInUser) {
       const foundUser = JSON.parse(loggedInUser);
       setCurrentUser(foundUser);
@@ -22,7 +23,7 @@ export default function Home() {
   }, []);
 
   useEffect(() => {
-    console.log(books);
+    // console.log(books);
   }, [books]);
 
   const loggedUser = localStorage.getItem("user");

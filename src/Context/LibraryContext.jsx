@@ -26,12 +26,9 @@ export default function LibraryProvider({ children }) {
 
         setBooksErrorMsg("Book has been added to your library");
       } else {
-        console.log("Login first");
-
-        setBooksErrorMsg("Please login first");
+        setBooksErrorMsg("Please Login To Do This Action");
       }
     } catch (error) {
-      // console.log(error.response.data.message);
       console.log(error.response.data.message);
       setBooksErrorMsg(error.response.data.message);
     }
