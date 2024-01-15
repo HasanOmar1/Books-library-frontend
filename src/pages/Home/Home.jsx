@@ -5,6 +5,7 @@ import { useBooksData } from "../../Context/BooksContext";
 import BooksCards from "../../components/BooksCards/BooksCards";
 import Carousel from "../../components/Carousel/Carousel";
 import BookOfTheDay from "../../components/BooksCards/BookOfTheDay";
+import WeeklyFeaturedBooks from "../../components/BooksCards/WeeklyFeaturedBooks/WeeklyFeaturedBooks";
 
 export default function Home() {
   const { users, setCurrentUser, currentUser } = useNewUsersContext();
@@ -20,10 +21,9 @@ export default function Home() {
     }
   }, []);
 
-  // console.log(currentUser);
-  // useEffect(() => {
-  //   console.log(books);
-  // }, [books]);
+  useEffect(() => {
+    console.log(books);
+  }, [books]);
 
   const loggedUser = localStorage.getItem("user");
 
@@ -41,13 +41,13 @@ export default function Home() {
               </div>
             </>
           )}
-          <h4 className="fav-title">Fan Favorite Series</h4>
+          <h4 className="titles">Fan Favorite Series</h4>
           <div className="fav-books">
             <Carousel />
           </div>
           <div className="big-book-and-more-books">
             <div className="left-side">
-              <h4>Book of the day</h4>
+              <h4 className="titles">Book of the day</h4>
               <div className="book-of-the-day">
                 <BookOfTheDay sliceStart={30} sliceEnd={31} />
               </div>
@@ -58,6 +58,25 @@ export default function Home() {
                 <div className="books">
                   <BooksCards sliceStart={32} sliceEnd={34} />
                 </div>
+              </div>
+            </div>
+          </div>
+
+          <div className="weekly-featured-title">
+            <h4 className="titles">Weekly Featured Series</h4>
+          </div>
+          <div className="weekly-featured-container ">
+            <div className="weekly-featured ">
+              <p>Marvel Series</p>
+              <div className="books">
+                <WeeklyFeaturedBooks sliceStart={34} sliceEnd={40} />
+              </div>
+            </div>
+
+            <div className="weekly-featured">
+              <p>A Song of Ice and Fire Series </p>
+              <div className="books">
+                <WeeklyFeaturedBooks sliceStart={40} sliceEnd={48} />
               </div>
             </div>
           </div>

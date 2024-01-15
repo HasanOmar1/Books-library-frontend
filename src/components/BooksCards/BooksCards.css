@@ -51,8 +51,8 @@
 }
 .BooksCards .book-of-the-day-container .book-of-the-day-right .author-category{
 
-display: flex;
-gap: 40px;
+    display: flex;
+    gap: 40px;
 
 }
 

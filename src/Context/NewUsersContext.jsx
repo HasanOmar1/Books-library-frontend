@@ -34,7 +34,7 @@ export default function NewUsersProvider({ children }) {
       setCurrentUser(response.data);
       const userJSON = JSON.stringify(response.data);
       localStorage.setItem("user", userJSON);
-      console.log(response.data.token);
+      // console.log(response.data.token);
       localStorage.setItem("token", response.data.token);
 
       navigate("/");
