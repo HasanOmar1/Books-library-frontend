@@ -17,9 +17,10 @@ const PageCover = React.forwardRef(({ children }, ref) => {
 });
 
 const Page = React.forwardRef(({ pageNumber, children }, ref) => {
+  const { state } = useLocation();
   return (
     <div className="page" ref={ref}>
-      <h1 className="page-header">Page Header {pageNumber}</h1>
+      <h5 className="page-header">{state?.title}</h5>
       <hr />
       <div>{children}</div>
       <div className="page-number">{pageNumber}</div>
