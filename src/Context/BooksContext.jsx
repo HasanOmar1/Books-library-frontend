@@ -5,6 +5,9 @@ const BooksContext = createContext();
 
 export default function BooksProvider({ children }) {
   const [books, setBooks] = useState();
+  const [fictionBooks, setFictionBooks] = useState([]);
+  const [comicsBooks, setComicsBooks] = useState([]);
+  const [artBooks, setArtBooks] = useState([]);
 
   useEffect(() => {
     fetchBooks();
@@ -42,9 +45,50 @@ export default function BooksProvider({ children }) {
     }
   }
 
+  async function getFictionBooks() {
+    try {
+      const response = await axios.get(`/books/category/fiction`);
+      console.log(response.data);
+      setFictionBooks(response.data);
+    } catch (error) {
+      console.log(error);
+    }
+  }
+
+  async function getComicsBooks() {
+    try {
+      const response = await axios.get(`/books/category/comics`);
+      console.log(response.data);
+      setComicsBooks(response.data);
+    } catch (error) {
+      console.log(error);
+    }
+  }
+
+  async function getArtBooks() {
+    try {
+      const response = await axios.get(`/books/category/art`);
+      console.log(response.data);
+      setArtBooks(response.data);
+    } catch (error) {
+      console.log(error);
+    }
+  }
+
   return (
     <BooksContext.Provider
-      value={{ books, fetchBooks, filterBooksByName, filterBooksByCategory }}
+      value={{
+        books,
+        fetchBooks,
+        filterBooksByName,
+        filterBooksByCategory,
+        getFictionBooks,
+        fictionBooks,
+        getComicsBooks,
+        comicsBooks,
+        getArtBooks,
+        artBooks,
+      }}
     >
       {children}
     </BooksContext.Provider>

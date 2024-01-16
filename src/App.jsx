@@ -9,6 +9,9 @@ import BooksProvider from "./Context/BooksContext";
 import BookDetails from "./pages/BookDetails/BookDetails";
 import MyLibrary from "./pages/MyLibrary/MyLibrary";
 import LibraryProvider from "./Context/LibraryContext";
+import Fiction from "./pages/Categories/Fiction";
+import Comics from "./pages/Categories/Comics";
+import Art from "./pages/Categories/Art";
 
 function App() {
   return (
@@ -23,6 +26,11 @@ function App() {
               <Route path={"/login"} element={<Login />} />
               <Route path={"/:name"} element={<BookDetails />} />
               <Route path={"/library"} element={<MyLibrary />} />
+
+              {/* Categories */}
+              <Route path={"/fiction"} element={<Fiction />} />
+              <Route path={"/comics"} element={<Comics />} />
+              <Route path={"/art"} element={<Art />} />
             </Routes>
           </LibraryProvider>
         </NewUsersProvider>

@@ -1,5 +1,10 @@
 .Header{
 
+    position: sticky;
+    width: 100%;
+    z-index: 99999;
+    top: 0;
+    background-color: #23262a;
 
 }
 

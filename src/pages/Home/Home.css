@@ -140,3 +140,33 @@
 }
 
 
+.Home .divider{
+    margin-top: 20px;
+    border: 3px solid rgb(89, 255, 0);
+    width: 84%;
+}
+
+.Home .learn-books{
+
+    padding-top: 20px;
+}
+
+.Home .learn-books h5{
+    padding-bottom: 10px;
+    color:rgb(5, 188, 188) ;
+}
+
+.Home .learn-books .categories{
+    display: flex;
+    gap: 20px;
+}
+
+.Home .learn-books p{
+
+    display: inline-block;
+    padding: 10px 15px;
+    background: #635454;
+    cursor: pointer;
+    letter-spacing: 2px;
+    border-radius: 10px;
+}

@@ -7,6 +7,7 @@ import Carousel from "../../components/Carousel/Carousel";
 import BookOfTheDay from "../../components/BooksCards/BookOfTheDay";
 import WeeklyFeaturedBooks from "../../components/BooksCards/WeeklyFeaturedBooks/WeeklyFeaturedBooks";
 import ReadBook from "../../components/PageFlip-Package/ReadBook";
+import { Link } from "react-router-dom";
 
 export default function Home() {
   const { users, setCurrentUser, currentUser } = useNewUsersContext();
@@ -23,7 +24,7 @@ export default function Home() {
   }, []);
 
   useEffect(() => {
-    // console.log(books);
+    console.log(books);
   }, [books]);
 
   const loggedUser = localStorage.getItem("user");
@@ -80,6 +81,24 @@ export default function Home() {
                 <WeeklyFeaturedBooks sliceStart={40} sliceEnd={48} />
               </div>
             </div>
+          </div>
+
+          <div className="learn-books">
+            {/* <WeeklyFeaturedBooks sliceStart={48} sliceEnd={58} /> */}
+            <h5>Books by Categories</h5>
+            <hr className="divider" />
+            <div className="categories">
+              <Link to={"/fiction"} className="link">
+                <p>Fiction</p>
+              </Link>
+              <Link to={"/comics"} className="link">
+                <p>Comics</p>
+              </Link>
+              <Link to={"/art"} className="link">
+                <p>Art</p>
+              </Link>
+            </div>
+            <hr className="divider" />
           </div>
         </>
       ) : (
