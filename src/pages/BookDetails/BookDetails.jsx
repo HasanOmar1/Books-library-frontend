@@ -92,11 +92,11 @@ export default function BookDetails() {
             />
           </div>
           <div className="buttons">
-            <Button variant="success" className="read-me">
-              <Link to={"/reading-book"} state={newState}>
+            <Link to={"/reading-book"} state={newState}>
+              <Button variant="success" className="read-me">
                 Read me
-              </Link>
-            </Button>
+              </Button>
+            </Link>
             <Button variant="primary" onClick={addToLibraryFunction}>
               Add to Library
             </Button>
