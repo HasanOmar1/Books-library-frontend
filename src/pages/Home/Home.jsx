@@ -8,6 +8,7 @@ import BookOfTheDay from "../../components/BooksCards/BookOfTheDay";
 import WeeklyFeaturedBooks from "../../components/BooksCards/WeeklyFeaturedBooks/WeeklyFeaturedBooks";
 import { Link } from "react-router-dom";
 import { FaArrowUp } from "react-icons/fa";
+import LinksToPages from "../../components/LinksToPages/LinksToPages";
 
 export default function Home() {
   const { users, setCurrentUser, currentUser } = useNewUsersContext();
@@ -86,47 +87,7 @@ export default function Home() {
           </div>
 
           <div className="learn-books" id="categories">
-            <h5>Books by Categories</h5>
-            <hr className="divider" />
-            <div className="categories">
-              <Link to={"/fiction"} className="link">
-                <p className="great-btn">Fiction</p>
-              </Link>
-              <Link to={"/comics"} className="link">
-                <p className="great-btn">Comics</p>
-              </Link>
-              <Link to={"/art"} className="link">
-                <p className="great-btn">Art</p>
-              </Link>
-              <Link to={"/educational"} className="link">
-                <p className="great-btn">Educational</p>
-              </Link>
-              <Link to={"/crime"} className="link">
-                <p className="great-btn">Crime</p>
-              </Link>
-              <Link to={"/criticism"} className="link">
-                <p className="great-btn">Criticism</p>
-              </Link>
-              <Link to={"/cars"} className="link">
-                <p className="great-btn">Cars</p>
-              </Link>
-              <Link to={"/history"} className="link">
-                <p className="great-btn">History</p>
-              </Link>
-              <Link to={"/adventure"} className="link">
-                <p className="great-btn">Adventure</p>
-              </Link>
-              <Link to={"/romance"} className="link">
-                <p className="great-btn">Romance</p>
-              </Link>
-              <Link to={"/cooking"} className="link">
-                <p className="great-btn">Cooking</p>
-              </Link>
-              <Link to={"/horror"} className="link">
-                <p className="great-btn">Horror</p>
-              </Link>
-            </div>
-            <hr className="divider" />
+            <LinksToPages />
           </div>
           <a href="#home" id="go-top">
             <FaArrowUp />
