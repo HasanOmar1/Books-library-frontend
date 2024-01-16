@@ -17,6 +17,7 @@ import Crime from "./pages/Categories/Crime";
 import Criticism from "./pages/Categories/Criticism";
 import Cars from "./pages/Categories/Cars";
 import ReadBook from "./pages/ReadBook/ReadBook";
+import History from "./pages/Categories/History";
 
 function App() {
   return (
@@ -41,6 +42,7 @@ function App() {
               <Route path={"/crime"} element={<Crime />} />
               <Route path={"/criticism"} element={<Criticism />} />
               <Route path={"/cars"} element={<Cars />} />
+              <Route path={"/history"} element={<History />} />
               {/*  */}
             </Routes>
           </LibraryProvider>

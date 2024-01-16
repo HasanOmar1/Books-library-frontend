@@ -28,7 +28,7 @@ export default function BooksByCategories({ categoryName, array }) {
                 <h6>
                   Written by
                   <span className="written-by">
-                    {books?.volumeInfo?.authors}
+                    {books?.volumeInfo?.authors.slice(0, 2).join(", ")}
                   </span>
                 </h6>
                 <div className="pages-rating">

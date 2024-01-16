@@ -3,6 +3,8 @@ import HTMLFlipBook from "react-pageflip";
 import "./OpenBook.css";
 import { useLocation } from "react-router-dom";
 import Button from "react-bootstrap/Button";
+import KeyboardDoubleArrowLeftIcon from "@mui/icons-material/KeyboardDoubleArrowLeft";
+import KeyboardDoubleArrowRightIcon from "@mui/icons-material/KeyboardDoubleArrowRight";
 
 const PageCover = React.forwardRef(({ children }, ref) => {
   return (
@@ -47,14 +49,14 @@ function OpenBook() {
           </PageCover>
           <PageCover></PageCover>
           <Page pageNumber="1">
-            <h5>
+            <h4>
               Are you ready to read <span className="info">{state?.title}</span>
               ?
-            </h5>
-            <h5>
+            </h4>
+            <h4>
               Before you start , im going to tell you a little bit about this
               book
-            </h5>
+            </h4>
           </Page>
           <Page pageNumber="2">
             <h3>This book is</h3>
@@ -74,19 +76,19 @@ function OpenBook() {
           </Page>
           <Page pageNumber="6">
             <h4>Lets start reading</h4>
-            <h5>{state?.description.slice(0, 100)}</h5>
+            <p>{state?.description.slice(0, 101)}</p>
           </Page>
           <Page pageNumber="7">
-            <h5>{state?.description.slice(101, 200)}</h5>
+            <p>{state?.description.slice(101, 201)}</p>
           </Page>
           <Page pageNumber="8">
-            <h5>{state?.description.slice(201, 300)}</h5>
+            <p>{state?.description.slice(201, 301)}</p>
           </Page>
           <Page pageNumber="9">
-            <h5>{state?.description.slice(301, 400)}</h5>
+            <p>{state?.description.slice(301, 401)}</p>
           </Page>
           <Page pageNumber="10">
-            <h5>{state?.description.slice(401)}</h5>
+            <p>{state?.description.slice(401)}</p>
           </Page>
           <PageCover></PageCover>
           <PageCover>
@@ -98,25 +100,27 @@ function OpenBook() {
             variant="primary"
             onClick={() => book.current.pageFlip().flipPrev()}
           >
+            <KeyboardDoubleArrowLeftIcon />
             Previous Page
           </Button>
           <Button
             variant="secondary"
             onClick={() => book.current.pageFlip().flip(0)}
           >
-            Go to Start
+            Start
           </Button>
           <Button
             variant="secondary"
             onClick={() => book.current.pageFlip().flip(13)}
           >
-            Go to End
+            End
           </Button>
           <Button
             variant="primary"
             onClick={() => book.current.pageFlip().flipNext()}
           >
             Next Page
+            <KeyboardDoubleArrowRightIcon />
           </Button>
         </div>
       </div>

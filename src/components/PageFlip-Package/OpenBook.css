@@ -4,7 +4,7 @@
   padding: 50px 450px;
 
 }
-.album-web {
+.read-book .album-web {
     text-align: center;
     background-color: #fcf9f6;
     color: black;
@@ -15,42 +15,50 @@
 
   }
   
-  .page {
+  .read-book .page {
     box-shadow: 0 1.5em 3em -1em rgb(70, 69, 69);
   }
   
-  .cover {
+  .read-book .cover {
     background-color: #e3d0b5;
     box-shadow: 0 1.5em 3em -1em rgb(70, 69, 69);
   }
   
 
-.page-header{
+.read-book .page-header{
 
   padding-top: 10px;
 }
 
-.page-number{
+.read-book .page-number{
   position: absolute;
   bottom: 40px;
   left: 50%;
 }
 
-.info{
+.read-book .info{
   color: rgb(21, 11, 201);
 }
 
-.cover-title{
+.read-book .cover-title{
 
   padding-top: 30%;
   line-height: 2;
 }
 
 
-.btns-container{
+.read-book .btns-container{
   display: flex;
   justify-content: center;
   align-items: center;
   padding: 30px;
   gap: 30px;
 }
+
+.read-book h4,
+.read-book h5,
+.read-book p{
+  padding: 0 30px;
+}
+
+

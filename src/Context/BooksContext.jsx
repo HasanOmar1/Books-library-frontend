@@ -12,6 +12,7 @@ export default function BooksProvider({ children }) {
   const [crimeBooks, setCrimeBooks] = useState([]);
   const [criticismBooks, setCriticismBooks] = useState([]);
   const [carsBooks, setCarsBooks] = useState([]);
+  const [historyBooks, setHistoryBooks] = useState([]);
 
   useEffect(() => {
     fetchBooks();
@@ -108,6 +109,17 @@ export default function BooksProvider({ children }) {
       console.log(error);
     }
   }
+
+  async function getHistoryBooks() {
+    try {
+      const response = await axios.get(`/books/search/history`);
+      console.log(response.data);
+      setHistoryBooks(response.data);
+    } catch (error) {
+      console.log(error);
+    }
+  }
+
   return (
     <BooksContext.Provider
       value={{
@@ -127,6 +139,8 @@ export default function BooksProvider({ children }) {
         criticismBooks,
         getCarsBooks,
         carsBooks,
+        getHistoryBooks,
+        historyBooks,
       }}
     >
       {children}

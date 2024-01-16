@@ -107,6 +107,9 @@ export default function Home() {
               <Link to={"/cars"} className="link">
                 <p className="great-btn">Cars</p>
               </Link>
+              <Link to={"/history"} className="link">
+                <p className="great-btn">History</p>
+              </Link>
             </div>
             <hr className="divider" />
           </div>
