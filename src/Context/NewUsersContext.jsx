@@ -1,5 +1,5 @@
 import React, { createContext, useContext, useEffect, useState } from "react";
-import axios from "../axiosConfig";
+import axios, { setAuthToken } from "../axiosConfig";
 import { useNavigate } from "react-router-dom";
 const NewUsersContext = createContext();
 
@@ -29,13 +29,13 @@ export default function NewUsersProvider({ children }) {
   async function userLogin(user) {
     try {
       const response = await axios.post("/users/login", user);
-
       console.log(response.data);
       setCurrentUser(response.data);
       const userJSON = JSON.stringify(response.data);
       localStorage.setItem("user", userJSON);
-      // console.log(response.data.token);
       localStorage.setItem("token", response.data.token);
+
+      setAuthToken(response.data.token);
 
       navigate("/");
     } catch (error) {

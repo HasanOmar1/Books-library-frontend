@@ -30,6 +30,7 @@ export default function LibraryProvider({ children }) {
       }
     } catch (error) {
       console.log(error.response.data.message);
+      console.log(error.response.data);
       setBooksErrorMsg(error.response.data.message);
     }
   }
