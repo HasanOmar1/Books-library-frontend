@@ -84,7 +84,6 @@ export default function Home() {
           </div>
 
           <div className="learn-books">
-            {/* <WeeklyFeaturedBooks sliceStart={48} sliceEnd={58} /> */}
             <h5>Books by Categories</h5>
             <hr className="divider" />
             <div className="categories">
@@ -105,6 +104,9 @@ export default function Home() {
               </Link>
               <Link to={"/criticism"} className="link">
                 <p className="great-btn">Criticism</p>
+              </Link>
+              <Link to={"/cars"} className="link">
+                <p className="great-btn">Cars</p>
               </Link>
             </div>
             <hr className="divider" />

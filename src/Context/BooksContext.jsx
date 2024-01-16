@@ -11,6 +11,7 @@ export default function BooksProvider({ children }) {
   const [howToBooks, setHowToBooks] = useState([]);
   const [crimeBooks, setCrimeBooks] = useState([]);
   const [criticismBooks, setCriticismBooks] = useState([]);
+  const [carsBooks, setCarsBooks] = useState([]);
 
   useEffect(() => {
     fetchBooks();
@@ -97,6 +98,16 @@ export default function BooksProvider({ children }) {
       console.log(error);
     }
   }
+
+  async function getCarsBooks() {
+    try {
+      const response = await axios.get(`/books/search/cars`);
+      console.log(response.data);
+      setCarsBooks(response.data);
+    } catch (error) {
+      console.log(error);
+    }
+  }
   return (
     <BooksContext.Provider
       value={{
@@ -114,6 +125,8 @@ export default function BooksProvider({ children }) {
         crimeBooks,
         getCriticismBooks,
         criticismBooks,
+        getCarsBooks,
+        carsBooks,
       }}
     >
       {children}

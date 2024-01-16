@@ -26,7 +26,7 @@ export default function LibraryProvider({ children }) {
 
         setBooksErrorMsg("Book has been added to your library");
       } else {
-        setBooksErrorMsg("Please Login To Do This Action");
+        setBooksErrorMsg("Login to add it to your library");
       }
     } catch (error) {
       console.log(error.response.data.message);
@@ -54,7 +54,7 @@ export default function LibraryProvider({ children }) {
       }
     } catch (error) {
       console.log(error.response.data.message);
-      // setErrorMsg(error.response.data.message);
+      setErrorMsg(error.response.data.message);
     }
   }
 

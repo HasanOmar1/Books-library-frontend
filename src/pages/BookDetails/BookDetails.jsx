@@ -43,7 +43,9 @@ export default function BookDetails() {
           <div className="mid-info">
             <h5>
               Written by
-              <span className="important-info">{newState?.authors}</span>
+              <span className="important-info">
+                {newState?.authors.join(" , ")}
+              </span>
             </h5>
             <h5>
               Published By
