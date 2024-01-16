@@ -1,0 +1,45 @@
+
+.read-book{
+
+  padding: 100px 200px;
+
+}
+.album-web {
+    text-align: center;
+    background-color: #fcf9f6;
+    color: black;
+    letter-spacing: 2px;
+    line-height: 1.7;
+
+  }
+  
+  .page {
+    box-shadow: 0 1.5em 3em -1em rgb(70, 69, 69);
+  }
+  
+  .cover {
+    background-color: #e3d0b5;
+    box-shadow: 0 1.5em 3em -1em rgb(70, 69, 69);
+  }
+  
+
+.page-header{
+
+  padding-top: 10px;
+}
+
+.page-number{
+  position: absolute;
+  bottom: 40px;
+  left: 50%;
+}
+
+.info{
+  color: rgb(21, 11, 201);
+}
+
+.cover-title{
+
+  padding-top: 30%;
+  line-height: 2;
+}

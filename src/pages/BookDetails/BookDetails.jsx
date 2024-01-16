@@ -1,6 +1,6 @@
 import React, { useEffect, useRef } from "react";
 import "./BookDetails.css";
-import { useLocation, useNavigate } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import Button from "react-bootstrap/Button";
 import StarsRating from "../../components/Rating/Rating";
 import ArrowBackIosIcon from "@mui/icons-material/ArrowBackIos";
@@ -93,7 +93,9 @@ export default function BookDetails() {
           </div>
           <div className="buttons">
             <Button variant="success" className="read-me">
-              Read me
+              <Link to={"/reading-book"} state={newState}>
+                Read me
+              </Link>
             </Button>
             <Button variant="primary" onClick={addToLibraryFunction}>
               Add to Library

@@ -16,6 +16,7 @@ import HowToBooks from "./pages/Categories/HowTo";
 import Crime from "./pages/Categories/Crime";
 import Criticism from "./pages/Categories/Criticism";
 import Cars from "./pages/Categories/Cars";
+import ReadBook from "./pages/ReadBook/ReadBook";
 
 function App() {
   return (
@@ -30,6 +31,7 @@ function App() {
               <Route path={"/login"} element={<Login />} />
               <Route path={"/:name"} element={<BookDetails />} />
               <Route path={"/library"} element={<MyLibrary />} />
+              <Route path={"/reading-book"} element={<ReadBook />} />
 
               {/* Categories */}
               <Route path={"/fiction"} element={<Fiction />} />
@@ -39,6 +41,7 @@ function App() {
               <Route path={"/crime"} element={<Crime />} />
               <Route path={"/criticism"} element={<Criticism />} />
               <Route path={"/cars"} element={<Cars />} />
+              {/*  */}
             </Routes>
           </LibraryProvider>
         </NewUsersProvider>

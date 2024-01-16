@@ -6,7 +6,6 @@ import BooksCards from "../../components/BooksCards/BooksCards";
 import Carousel from "../../components/Carousel/Carousel";
 import BookOfTheDay from "../../components/BooksCards/BookOfTheDay";
 import WeeklyFeaturedBooks from "../../components/BooksCards/WeeklyFeaturedBooks/WeeklyFeaturedBooks";
-import ReadBook from "../../components/PageFlip-Package/ReadBook";
 import { Link } from "react-router-dom";
 
 export default function Home() {
