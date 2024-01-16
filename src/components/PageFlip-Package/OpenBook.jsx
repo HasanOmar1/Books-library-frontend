@@ -31,7 +31,6 @@ function OpenBook() {
   const book = useRef();
   const { state } = useLocation();
 
-  console.log(state);
   return (
     <section className="read-book">
       <div>

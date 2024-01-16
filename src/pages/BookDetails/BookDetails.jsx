@@ -27,7 +27,6 @@ export default function BookDetails() {
 
   return (
     <main className="BookDetails">
-      {/* {state ? ( */}
       <div className="back-btn-container">
         <div className="back-btn" onClick={() => navigate(-1)}>
           <Button variant="outline-warning">
@@ -108,9 +107,6 @@ export default function BookDetails() {
         <p>{newState?.description}</p>
       </div>
       <BooksErrorModal ref={errorRef} />
-      {/* ) : (
-        <>Loading Data...</>
-      )} */}
     </main>
   );
 }
