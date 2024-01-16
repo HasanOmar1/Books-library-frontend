@@ -9,7 +9,7 @@ import BooksErrorModal from "../../components/Modals/BooksErrorMsg";
 import { useNewUsersContext } from "../../Context/NewUsersContext";
 
 export default function BookDetails() {
-  const { addBookToLibrary } = useLibraryContext();
+  const { addBookToLibrary, booksErrorMsg } = useLibraryContext();
   const { currentUser } = useNewUsersContext();
   const { state } = useLocation();
   const newState = state.volumeInfo;
@@ -17,11 +17,13 @@ export default function BookDetails() {
 
   const errorRef = useRef();
 
-  // useEffect(() => {
-  errorRef?.current?.showModal();
-  // }, [errorRef]);
+  if (booksErrorMsg) {
+    errorRef?.current?.showModal();
+  }
 
-  // console.log(newState);
+  function addToLibraryFunction() {
+    addBookToLibrary(state?._id);
+  }
 
   return (
     <main className="BookDetails">
@@ -93,10 +95,7 @@ export default function BookDetails() {
             <Button variant="success" className="read-me">
               Read me
             </Button>
-            <Button
-              variant="primary"
-              onClick={() => addBookToLibrary(state?._id)}
-            >
+            <Button variant="primary" onClick={addToLibraryFunction}>
               Add to Library
             </Button>
           </div>
