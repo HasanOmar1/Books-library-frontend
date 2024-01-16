@@ -1,12 +1,26 @@
 import React from "react";
 import "./CategoryBooks.css";
 import StarsRating from "../../Rating/Rating";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import { FaArrowUp } from "react-icons/fa";
+import Button from "react-bootstrap/Button";
+import ArrowBackIosIcon from "@mui/icons-material/ArrowBackIos";
 
 export default function BooksByCategories({ categoryName, array }) {
+  const navigate = useNavigate(-1);
   return (
     <div className="CategoryBooksCards">
-      <h4 className="category-name">Collection of {categoryName} Books</h4>
+      <div className="back-btn-container">
+        <div className="back-btn" onClick={() => navigate("/")}>
+          <Button variant="outline-warning">
+            <ArrowBackIosIcon className="back-icon" />
+            Back
+          </Button>
+        </div>
+      </div>
+      <h4 className="category-name" id="home">
+        Collection of {categoryName} Books
+      </h4>
       <div className="big-container">
         {array?.map((books) => {
           return (
@@ -57,6 +71,9 @@ export default function BooksByCategories({ categoryName, array }) {
           );
         })}
       </div>
+      <a href="#home" id="go-top">
+        <FaArrowUp />
+      </a>
     </div>
   );
 }

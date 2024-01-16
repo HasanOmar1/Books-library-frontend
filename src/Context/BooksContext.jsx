@@ -13,6 +13,10 @@ export default function BooksProvider({ children }) {
   const [criticismBooks, setCriticismBooks] = useState([]);
   const [carsBooks, setCarsBooks] = useState([]);
   const [historyBooks, setHistoryBooks] = useState([]);
+  const [adventureBooks, setAdventureBooks] = useState([]);
+  const [romanceBooks, setRomanceBooks] = useState([]);
+  const [cookingBooks, setCookingBooks] = useState([]);
+  const [horrorBooks, setHorrorBooks] = useState([]);
 
   useEffect(() => {
     fetchBooks();
@@ -120,6 +124,45 @@ export default function BooksProvider({ children }) {
     }
   }
 
+  async function getAdventureBooks() {
+    try {
+      const response = await axios.get(`/books/search/adventure`);
+      console.log(response.data);
+      setAdventureBooks(response.data);
+    } catch (error) {
+      console.log(error);
+    }
+  }
+
+  async function getRomanceBooks() {
+    try {
+      const response = await axios.get(`/books/search/romance`);
+      console.log(response.data);
+      setRomanceBooks(response.data);
+    } catch (error) {
+      console.log(error);
+    }
+  }
+
+  async function getCookingBooks() {
+    try {
+      const response = await axios.get(`/books/category/cooking`);
+      console.log(response.data);
+      setCookingBooks(response.data);
+    } catch (error) {
+      console.log(error);
+    }
+  }
+
+  async function getHorrorBooks() {
+    try {
+      const response = await axios.get(`/books/search/horror`);
+      console.log(response.data);
+      setHorrorBooks(response.data);
+    } catch (error) {
+      console.log(error);
+    }
+  }
   return (
     <BooksContext.Provider
       value={{
@@ -141,6 +184,14 @@ export default function BooksProvider({ children }) {
         carsBooks,
         getHistoryBooks,
         historyBooks,
+        getAdventureBooks,
+        adventureBooks,
+        getRomanceBooks,
+        romanceBooks,
+        getCookingBooks,
+        cookingBooks,
+        getHorrorBooks,
+        horrorBooks,
       }}
     >
       {children}

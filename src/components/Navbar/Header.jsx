@@ -23,7 +23,7 @@ function Header() {
         <Container>
           <Navbar.Brand>
             <Link to={"/"} className="nav-link">
-              Books
+              Library
             </Link>
           </Navbar.Brand>
 

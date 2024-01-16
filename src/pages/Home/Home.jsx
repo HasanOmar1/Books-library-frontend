@@ -7,6 +7,7 @@ import Carousel from "../../components/Carousel/Carousel";
 import BookOfTheDay from "../../components/BooksCards/BookOfTheDay";
 import WeeklyFeaturedBooks from "../../components/BooksCards/WeeklyFeaturedBooks/WeeklyFeaturedBooks";
 import { Link } from "react-router-dom";
+import { FaArrowUp } from "react-icons/fa";
 
 export default function Home() {
   const { users, setCurrentUser, currentUser } = useNewUsersContext();
@@ -42,7 +43,9 @@ export default function Home() {
               </div>
             </>
           )}
-          <h4 className="titles">Fan Favorite Series</h4>
+          <h4 className="titles" id="home">
+            Fan Favorite Series
+          </h4>
           <div className="fav-books">
             <Carousel />
           </div>
@@ -82,7 +85,7 @@ export default function Home() {
             </div>
           </div>
 
-          <div className="learn-books">
+          <div className="learn-books" id="categories">
             <h5>Books by Categories</h5>
             <hr className="divider" />
             <div className="categories">
@@ -110,9 +113,24 @@ export default function Home() {
               <Link to={"/history"} className="link">
                 <p className="great-btn">History</p>
               </Link>
+              <Link to={"/adventure"} className="link">
+                <p className="great-btn">Adventure</p>
+              </Link>
+              <Link to={"/romance"} className="link">
+                <p className="great-btn">Romance</p>
+              </Link>
+              <Link to={"/cooking"} className="link">
+                <p className="great-btn">Cooking</p>
+              </Link>
+              <Link to={"/horror"} className="link">
+                <p className="great-btn">Horror</p>
+              </Link>
             </div>
             <hr className="divider" />
           </div>
+          <a href="#home" id="go-top">
+            <FaArrowUp />
+          </a>
         </>
       ) : (
         <h3>Loading Data...</h3>
