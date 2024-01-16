@@ -1,7 +1,7 @@
 
 .read-book{
 
-  padding: 100px 450px;
+  padding: 50px 450px;
 
 }
 .album-web {
@@ -10,6 +10,8 @@
     color: black;
     letter-spacing: 2px;
     line-height: 1.7;
+    overflow: hidden;
+    background-color: rgb(212, 209, 209);
 
   }
   
@@ -42,4 +44,13 @@
 
   padding-top: 30%;
   line-height: 2;
+}
+
+
+.btns-container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 30px;
+  gap: 30px;
 }

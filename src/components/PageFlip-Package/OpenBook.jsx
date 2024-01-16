@@ -1,7 +1,8 @@
-import React, { useState } from "react";
+import React, { useRef, useState } from "react";
 import HTMLFlipBook from "react-pageflip";
 import "./OpenBook.css";
 import { useLocation } from "react-router-dom";
+import Button from "react-bootstrap/Button";
 
 const PageCover = React.forwardRef(({ children }, ref) => {
   return (
@@ -24,15 +25,10 @@ const Page = React.forwardRef(({ pageNumber, children }, ref) => {
   );
 });
 
-function OpenBook(props) {
-  const [inputText, setInputElement] = useState("");
-  const [text, setText] = useState("NEW PAGE");
-  const printText = () => {
-    setText(inputText);
-    setInputElement("");
-  };
-
+function OpenBook() {
+  const book = useRef();
   const { state } = useLocation();
+
   console.log(state);
   return (
     <section className="read-book">
@@ -44,6 +40,7 @@ function OpenBook(props) {
           flippingTime={800}
           maxShadowOpacity={1}
           className="album-web"
+          ref={book}
         >
           <PageCover>
             <div className="cover-title">{state?.title}</div>
@@ -80,22 +77,48 @@ function OpenBook(props) {
             <h5>{state?.description.slice(0, 100)}</h5>
           </Page>
           <Page pageNumber="7">
-            <h5>{state?.description.slice(100, 200)}</h5>
+            <h5>{state?.description.slice(101, 200)}</h5>
           </Page>
           <Page pageNumber="8">
-            <h5>{state?.description.slice(200, 300)}</h5>
+            <h5>{state?.description.slice(201, 300)}</h5>
           </Page>
           <Page pageNumber="9">
-            <h5>{state?.description.slice(300, 400)}</h5>
+            <h5>{state?.description.slice(301, 400)}</h5>
           </Page>
           <Page pageNumber="10">
-            <h5>{state?.description.slice(500, 600)}</h5>
+            <h5>{state?.description.slice(401)}</h5>
           </Page>
           <PageCover></PageCover>
           <PageCover>
             <div className="cover-title">The End</div>
           </PageCover>
         </HTMLFlipBook>
+        <div className="btns-container">
+          <Button
+            variant="primary"
+            onClick={() => book.current.pageFlip().flipPrev()}
+          >
+            Previous Page
+          </Button>
+          <Button
+            variant="secondary"
+            onClick={() => book.current.pageFlip().flip(0)}
+          >
+            Go to Start
+          </Button>
+          <Button
+            variant="secondary"
+            onClick={() => book.current.pageFlip().flip(13)}
+          >
+            Go to End
+          </Button>
+          <Button
+            variant="primary"
+            onClick={() => book.current.pageFlip().flipNext()}
+          >
+            Next Page
+          </Button>
+        </div>
       </div>
     </section>
   );
