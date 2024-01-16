@@ -142,7 +142,7 @@
 
 .Home .divider{
     margin-top: 20px;
-    border: 3px solid rgb(89, 255, 0);
+    border: 1px solid rgb(251, 255, 0);
     width: 84%;
 }
 
@@ -161,12 +161,31 @@
     gap: 20px;
 }
 
-.Home .learn-books p{
 
+.great-btn{
+    background: linear-gradient(to right,#196BCA ,#6433E0);
+    background-color: #196BCA;
+    color: #fff;
+    font-family: Trebuchet MS;
+    font-size: 1rem;
+    font-weight: 800;
+    font-style: normal;
+    text-decoration: none;
+    padding: 8px 20px;
+    border: 0px solid #000;
+    border-radius: 8px;
     display: inline-block;
-    padding: 10px 15px;
-    background: #635454;
-    cursor: pointer;
-    letter-spacing: 2px;
-    border-radius: 10px;
-}
+    box-shadow: inset 4px 7px 14px 2px rgba(41.490710439627236,198.8140869140625,10.998129455803424,0.5);
+   }
+   .great-btn:hover{
+    background: linear-gradient(to right,#1866c0 ,#5f30d5);
+    background-color: #1866c0;
+   }
+   .great-btn:active{
+    transform: scale(0.95);
+   }
+
+
+
+
+

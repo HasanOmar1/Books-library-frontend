@@ -8,6 +8,9 @@ export default function BooksProvider({ children }) {
   const [fictionBooks, setFictionBooks] = useState([]);
   const [comicsBooks, setComicsBooks] = useState([]);
   const [artBooks, setArtBooks] = useState([]);
+  const [howToBooks, setHowToBooks] = useState([]);
+  const [crimeBooks, setCrimeBooks] = useState([]);
+  const [criticismBooks, setCriticismBooks] = useState([]);
 
   useEffect(() => {
     fetchBooks();
@@ -25,21 +28,11 @@ export default function BooksProvider({ children }) {
   }
 
   // gets all books that name includes whats in the parameter
-  async function filterBooksByName(bookName) {
+  async function getHowToBooks() {
     try {
-      const response = await axios.get(`/books/search/name?name=${bookName}`);
+      const response = await axios.get(`/books/search/how to`);
       console.log(response.data);
-    } catch (error) {
-      console.log(error);
-    }
-  }
-
-  async function filterBooksByCategory(bookCategory) {
-    try {
-      const response = await axios.get(
-        `/books/search/category?category=${bookCategory}`
-      );
-      console.log(response.data);
+      setHowToBooks(response.data);
     } catch (error) {
       console.log(error);
     }
@@ -75,19 +68,52 @@ export default function BooksProvider({ children }) {
     }
   }
 
+  async function getCriticismBooks() {
+    try {
+      const response = await axios.get(`/books/category/criticism`);
+      console.log(response.data);
+      setCriticismBooks(response.data);
+    } catch (error) {
+      console.log(error);
+    }
+  }
+
+  async function getHowToBooks() {
+    try {
+      const response = await axios.get(`/books/search/how to`);
+      console.log(response.data);
+      setHowToBooks(response.data);
+    } catch (error) {
+      console.log(error);
+    }
+  }
+
+  async function getCrimeBooks() {
+    try {
+      const response = await axios.get(`/books/search/criminal`);
+      console.log(response.data);
+      setCrimeBooks(response.data);
+    } catch (error) {
+      console.log(error);
+    }
+  }
   return (
     <BooksContext.Provider
       value={{
         books,
         fetchBooks,
-        filterBooksByName,
-        filterBooksByCategory,
         getFictionBooks,
         fictionBooks,
         getComicsBooks,
         comicsBooks,
         getArtBooks,
         artBooks,
+        getHowToBooks,
+        howToBooks,
+        getCrimeBooks,
+        crimeBooks,
+        getCriticismBooks,
+        criticismBooks,
       }}
     >
       {children}

@@ -12,6 +12,9 @@ import LibraryProvider from "./Context/LibraryContext";
 import Fiction from "./pages/Categories/Fiction";
 import Comics from "./pages/Categories/Comics";
 import Art from "./pages/Categories/Art";
+import HowToBooks from "./pages/Categories/HowTo";
+import Crime from "./pages/Categories/Crime";
+import Criticism from "./pages/Categories/Criticism";
 
 function App() {
   return (
@@ -31,6 +34,9 @@ function App() {
               <Route path={"/fiction"} element={<Fiction />} />
               <Route path={"/comics"} element={<Comics />} />
               <Route path={"/art"} element={<Art />} />
+              <Route path={"/educational"} element={<HowToBooks />} />
+              <Route path={"/crime"} element={<Crime />} />
+              <Route path={"/criticism"} element={<Criticism />} />
             </Routes>
           </LibraryProvider>
         </NewUsersProvider>

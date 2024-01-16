@@ -89,13 +89,22 @@ export default function Home() {
             <hr className="divider" />
             <div className="categories">
               <Link to={"/fiction"} className="link">
-                <p>Fiction</p>
+                <p className="great-btn">Fiction</p>
               </Link>
               <Link to={"/comics"} className="link">
-                <p>Comics</p>
+                <p className="great-btn">Comics</p>
               </Link>
               <Link to={"/art"} className="link">
-                <p>Art</p>
+                <p className="great-btn">Art</p>
+              </Link>
+              <Link to={"/educational"} className="link">
+                <p className="great-btn">Educational</p>
+              </Link>
+              <Link to={"/crime"} className="link">
+                <p className="great-btn">Crime</p>
+              </Link>
+              <Link to={"/criticism"} className="link">
+                <p className="great-btn">Criticism</p>
               </Link>
             </div>
             <hr className="divider" />

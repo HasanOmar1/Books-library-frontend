@@ -3,16 +3,16 @@ import "./Categories.css";
 import { useBooksData } from "../../Context/BooksContext";
 import BooksByCategories from "../../components/BooksCards/CategoryBooksCards/BooksByCategory";
 
-export default function Art() {
-  const { artBooks, getArtBooks } = useBooksData();
+export default function Criticism() {
+  const { criticismBooks, getCriticismBooks } = useBooksData();
 
   useEffect(() => {
-    getArtBooks();
+    getCriticismBooks();
   }, []);
 
   return (
     <section className="Category">
-      <BooksByCategories categoryName={`Art`} array={artBooks} />
+      <BooksByCategories categoryName={`Criticism`} array={criticismBooks} />
     </section>
   );
 }
