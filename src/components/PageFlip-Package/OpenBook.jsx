@@ -21,10 +21,10 @@ const Page = React.forwardRef(({ pageNumber, children }, ref) => {
   const { state } = useLocation();
   return (
     <div className="page" ref={ref}>
-      {/* <h5 className="page-header">{state?.title}</h5> */}
-      {/* <hr /> */}
+      <h5 className="page-header">{state?.title}</h5>
+      <hr />
       <div>{children}</div>
-      {/* <div className="page-number">{pageNumber}</div> */}
+      <div className="page-number">{pageNumber}</div>
     </div>
   );
 });
@@ -51,7 +51,6 @@ function OpenBook() {
               src="https://ia803101.us.archive.org/BookReader/BookReaderPreview.php?id=sherlockholmesfo0000unse&subPrefix=sherlockholmesfo0000unse&itemPath=/5/items/sherlockholmesfo0000unse&server=ia803101.us.archive.org&page=leaf1&fail=preview&&scale=4&rotate=0"
               alt=""
             /> */}
-
             <img src={state?.imageLinks?.thumbnail} alt={state?.title} />
           </PageCover>
           <PageCover></PageCover>
