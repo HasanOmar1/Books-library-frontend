@@ -1,6 +1,6 @@
 .Search{
-    min-width: 100vw;
-    min-height: 92.05vh;
+    min-width: 90vw;
+    min-height: 92.1vh;
     background-color: #333;
     color: white;
 }
@@ -28,7 +28,8 @@
     
 }
 
-.Search .info-container{
-    padding-left: 16%;
-    padding-top: 50px;
+.Search .info-container .results{
+
+    margin-left: 45%;
+    padding-top: 20px;
 }

@@ -4,7 +4,9 @@ import React, { createContext, useContext, useEffect, useState } from "react";
 const BooksContext = createContext();
 
 export default function BooksProvider({ children }) {
+  const [errorMsg, setErrorMsg] = useState("");
   const [books, setBooks] = useState();
+  const [booksByName, setBooksByName] = useState();
   const [fictionBooks, setFictionBooks] = useState([]);
   const [comicsBooks, setComicsBooks] = useState([]);
   const [artBooks, setArtBooks] = useState([]);
@@ -30,6 +32,18 @@ export default function BooksProvider({ children }) {
       setBooks(response?.data);
     } catch (error) {
       console.log(error);
+    }
+  }
+
+  async function getBooksByName(bookName) {
+    try {
+      const response = await axios.get(`/books/search/${bookName}`);
+      console.log(response.data);
+      setBooksByName(response.data);
+    } catch (error) {
+      console.log(error.response.data.message);
+      setErrorMsg(error.response.data.message);
+      setBooksByName([]);
     }
   }
 
@@ -192,6 +206,8 @@ export default function BooksProvider({ children }) {
         cookingBooks,
         getHorrorBooks,
         horrorBooks,
+        getBooksByName,
+        booksByName,
       }}
     >
       {children}
