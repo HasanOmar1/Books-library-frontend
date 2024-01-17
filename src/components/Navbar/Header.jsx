@@ -3,6 +3,7 @@ import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 import { Link, useNavigate } from "react-router-dom";
 import { useNewUsersContext } from "../../Context/NewUsersContext";
+import SearchIcon from "@mui/icons-material/Search";
 import "./Header.css";
 
 function Header() {
@@ -31,6 +32,12 @@ function Header() {
             <Nav.Link as="li" href="#home">
               <Link to={"/"} className="nav-link">
                 Home
+              </Link>
+            </Nav.Link>
+
+            <Nav.Link as="li" href="#search">
+              <Link to={"/search"} className="nav-link">
+                <SearchIcon className="search-icon" />
               </Link>
             </Nav.Link>
 

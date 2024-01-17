@@ -22,6 +22,7 @@ import Adventure from "./pages/Categories/Adventure";
 import Romance from "./pages/Categories/Romance";
 import Cooking from "./pages/Categories/Cooking";
 import Horror from "./pages/Categories/Horror";
+import Search from "./pages/Search/Search";
 
 function App() {
   return (
@@ -37,6 +38,7 @@ function App() {
               <Route path={"/:name"} element={<BookDetails />} />
               <Route path={"/library"} element={<MyLibrary />} />
               <Route path={"/reading-book"} element={<ReadBook />} />
+              <Route path={"/search"} element={<Search />} />
 
               {/* Categories */}
               <Route path={"/fiction"} element={<Fiction />} />

@@ -1,5 +1,5 @@
 import React, { createContext, useContext, useEffect, useState } from "react";
-import axios, { setAuthToken } from "../axiosConfig";
+import axios from "../axiosConfig";
 import { useNavigate } from "react-router-dom";
 const NewUsersContext = createContext();
 
@@ -35,8 +35,6 @@ export default function NewUsersProvider({ children }) {
       localStorage.setItem("user", userJSON);
       localStorage.setItem("token", response.data.token);
 
-      setAuthToken(response.data.token);
-
       navigate("/");
     } catch (error) {
       console.log(error.response.data.message);
@@ -55,15 +53,6 @@ export default function NewUsersProvider({ children }) {
     }
   }
 
-  // async function currentlyLoggedUser() {
-  //   try {
-  //     const response = await axios.get("/users/currentUser");
-  //     console.log(response.data);
-  //   } catch (error) {
-  //     console.log(error.response.data.message);
-  //   }
-  // }
-
   return (
     <NewUsersContext.Provider
       value={{
@@ -75,7 +64,6 @@ export default function NewUsersProvider({ children }) {
         errorMsg,
         setErrorMsg,
         usersAPI,
-        // currentlyLoggedUser,
       }}
     >
       {children}

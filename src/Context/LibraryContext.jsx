@@ -1,6 +1,5 @@
 import React, { createContext, useContext, useState } from "react";
 import axios from "../axiosConfig";
-import config from "../authConfig";
 import { useNewUsersContext } from "./NewUsersContext";
 
 const LibraryContext = createContext();
@@ -12,6 +11,9 @@ export default function LibraryProvider({ children }) {
 
   async function addBookToLibrary(bookId) {
     try {
+      const config = {
+        headers: { authorization: `Bearer ${localStorage.getItem("token")}` },
+      };
       const token = localStorage.getItem("token");
       if (token) {
         const response = await axios.put(
@@ -37,6 +39,9 @@ export default function LibraryProvider({ children }) {
 
   async function removeBookFromLibrary(bookId) {
     try {
+      const config = {
+        headers: { authorization: `Bearer ${localStorage.getItem("token")}` },
+      };
       const token = localStorage.getItem("token");
       if (token) {
         const response = await axios.put(
