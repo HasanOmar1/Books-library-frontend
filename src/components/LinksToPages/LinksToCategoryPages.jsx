@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 export default function LinksToCategoryPages() {
   return (
     <div className="LinksToPages">
-      <div className="learn-books">
+      <div className="books-container">
         <h5>Books by Categories</h5>
         <hr className="divider" />
         <div className="categories">

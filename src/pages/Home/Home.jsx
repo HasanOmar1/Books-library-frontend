@@ -88,10 +88,10 @@ export default function Home() {
             </div>
           </div>
 
-          <div className="learn-books" id="categories">
+          <div className="category-books">
             <LinksToCategoryPages />
           </div>
-          <div className="learn-books" id="categories">
+          <div className="authors">
             <LinksToAuthorPages />
           </div>
           <a href="#home" id="go-top">

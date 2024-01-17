@@ -23,6 +23,10 @@ import Romance from "./pages/Categories/Romance";
 import Cooking from "./pages/Categories/Cooking";
 import Horror from "./pages/Categories/Horror";
 import Search from "./pages/Search/Search";
+import Rowling from "./pages/Authors/Rowling";
+import George from "./pages/Authors/George";
+import StanLee from "./pages/Authors/StanLee";
+import StephenKing from "./pages/Authors/StephenKing";
 
 function App() {
   return (
@@ -53,6 +57,13 @@ function App() {
               <Route path={"/romance"} element={<Romance />} />
               <Route path={"/cooking"} element={<Cooking />} />
               <Route path={"/horror"} element={<Horror />} />
+              {/*  */}
+
+              {/* Authors */}
+              <Route path={"/j-k-rowling"} element={<Rowling />} />
+              <Route path={"/george-martin"} element={<George />} />
+              <Route path={"/stan-Lee"} element={<StanLee />} />
+              <Route path={"/stephen-king"} element={<StephenKing />} />
               {/*  */}
             </Routes>
           </LibraryProvider>
