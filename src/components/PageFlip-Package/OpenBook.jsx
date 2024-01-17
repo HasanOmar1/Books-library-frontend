@@ -32,7 +32,11 @@ const Page = React.forwardRef(({ pageNumber, children }, ref) => {
 function OpenBook() {
   const book = useRef();
   const { state } = useLocation();
-  console.log(state);
+  const [currentPageNum, setCurrentPageNum] = useState(1);
+
+  function handlePageChange(pageNum) {
+    setCurrentPageNum(pageNum);
+  }
 
   return (
     <section className="read-book">
@@ -47,65 +51,19 @@ function OpenBook() {
           ref={book}
         >
           <PageCover>
-            {/* <div className="cover-title">{state?.title}</div> */}
-            {/* <img
-              src="https://ia803101.us.archive.org/BookReader/BookReaderPreview.php?id=sherlockholmesfo0000unse&subPrefix=sherlockholmesfo0000unse&itemPath=/5/items/sherlockholmesfo0000unse&server=ia803101.us.archive.org&page=leaf1&fail=preview&&scale=4&rotate=0"
-              alt=""
-            /> */}
             <img src={state?.imageLinks?.thumbnail} alt={state?.title} />
           </PageCover>
           <PageCover></PageCover>
 
-          {messages.map((para) => {
+          {messages.map((para, i) => {
+            const pageNum = i + 1;
             return (
-              <Page pageNumber={`${state?.pageCount}`}>
+              <Page key={i} pageNumber={pageNum}>
                 <p>{para.p}</p>
               </Page>
             );
           })}
 
-          {/* <Page pageNumber="1">
-            <h4>
-              Are you ready to read <span className="info">{state?.title}</span>
-              ?
-            </h4>
-            <h4>
-              Before you start , im going to tell you a little bit about this
-              book
-            </h4>
-          </Page>
-          <Page pageNumber="2">
-            <h3>This book is</h3>
-            <h4>Written by {state?.authors.join(", ")}</h4>
-          </Page>
-          <Page pageNumber="3">
-            <h4>And published by {state?.publisher}</h4>
-          </Page>
-          <Page pageNumber="4">
-            <h4>It has {state?.pageCount ? state?.pageCount : 211} Pages</h4>
-          </Page>
-          <Page pageNumber="5">
-            <h4>
-              And an average rating of{" "}
-              {state?.averageRating ? state?.averageRating : 3}{" "}
-            </h4>
-          </Page>
-          <Page pageNumber="6">
-            <h4>Lets start reading</h4>
-            <p>{state?.description.slice(0, 101)}</p>
-          </Page>
-          <Page pageNumber="7">
-            <p>{state?.description.slice(101, 201)}</p>
-          </Page>
-          <Page pageNumber="8">
-            <p>{state?.description.slice(201, 301)}</p>
-          </Page>
-          <Page pageNumber="9">
-            <p>{state?.description.slice(301, 401)}</p>
-          </Page>
-          <Page pageNumber="10">
-            <p>{state?.description.slice(401)}</p>
-          </Page> */}
           <PageCover></PageCover>
           <PageCover>
             <div className="cover-title">The End</div>
@@ -114,26 +72,36 @@ function OpenBook() {
         <div className="btns-container">
           <Button
             variant="primary"
-            onClick={() => book.current.pageFlip().flipPrev()}
+            onClick={() => {
+              book.current.pageFlip().flipPrev();
+              handlePageChange(currentPageNum - 1);
+            }}
           >
             <KeyboardDoubleArrowLeftIcon />
             Previous Page
           </Button>
           <Button
             variant="secondary"
-            onClick={() => book.current.pageFlip().flip(0)}
+            onClick={() => {
+              book.current.pageFlip().flip(0);
+            }}
           >
             Start
           </Button>
           <Button
             variant="secondary"
-            onClick={() => book.current.pageFlip().flip(109)}
+            onClick={() => {
+              book.current.pageFlip().flip(109);
+            }}
           >
             End
           </Button>
           <Button
             variant="primary"
-            onClick={() => book.current.pageFlip().flipNext()}
+            onClick={() => {
+              book.current.pageFlip().flipNext();
+              handlePageChange(currentPageNum + 1);
+            }}
           >
             Next Page
             <KeyboardDoubleArrowRightIcon />
