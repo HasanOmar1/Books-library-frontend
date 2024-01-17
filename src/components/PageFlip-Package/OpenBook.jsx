@@ -33,6 +33,10 @@ function OpenBook() {
   const book = useRef();
   const { state } = useLocation();
   console.log(state);
+
+  // const test = messages?.map((p) => {
+  //   console.log(p.p);
+  // });
   return (
     <section className="read-book">
       <div>
@@ -54,6 +58,7 @@ function OpenBook() {
             <img src={state?.imageLinks?.thumbnail} alt={state?.title} />
           </PageCover>
           <PageCover></PageCover>
+
           <Page pageNumber="1">
             <h4>
               Are you ready to read <span className="info">{state?.title}</span>
