@@ -34,9 +34,6 @@ function OpenBook() {
   const { state } = useLocation();
   console.log(state);
 
-  // const test = messages?.map((p) => {
-  //   console.log(p.p);
-  // });
   return (
     <section className="read-book">
       <div>
@@ -59,7 +56,15 @@ function OpenBook() {
           </PageCover>
           <PageCover></PageCover>
 
-          <Page pageNumber="1">
+          {messages.map((para) => {
+            return (
+              <Page pageNumber={`${state?.pageCount}`}>
+                <p>{para.p}</p>
+              </Page>
+            );
+          })}
+
+          {/* <Page pageNumber="1">
             <h4>
               Are you ready to read <span className="info">{state?.title}</span>
               ?
@@ -100,7 +105,7 @@ function OpenBook() {
           </Page>
           <Page pageNumber="10">
             <p>{state?.description.slice(401)}</p>
-          </Page>
+          </Page> */}
           <PageCover></PageCover>
           <PageCover>
             <div className="cover-title">The End</div>
@@ -122,7 +127,7 @@ function OpenBook() {
           </Button>
           <Button
             variant="secondary"
-            onClick={() => book.current.pageFlip().flip(13)}
+            onClick={() => book.current.pageFlip().flip(109)}
           >
             End
           </Button>
