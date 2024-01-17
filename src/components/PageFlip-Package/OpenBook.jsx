@@ -5,6 +5,7 @@ import { useLocation } from "react-router-dom";
 import Button from "react-bootstrap/Button";
 import KeyboardDoubleArrowLeftIcon from "@mui/icons-material/KeyboardDoubleArrowLeft";
 import KeyboardDoubleArrowRightIcon from "@mui/icons-material/KeyboardDoubleArrowRight";
+import messages from "./data";
 
 const PageCover = React.forwardRef(({ children }, ref) => {
   return (
@@ -20,10 +21,10 @@ const Page = React.forwardRef(({ pageNumber, children }, ref) => {
   const { state } = useLocation();
   return (
     <div className="page" ref={ref}>
-      <h5 className="page-header">{state?.title}</h5>
-      <hr />
+      {/* <h5 className="page-header">{state?.title}</h5> */}
+      {/* <hr /> */}
       <div>{children}</div>
-      <div className="page-number">{pageNumber}</div>
+      {/* <div className="page-number">{pageNumber}</div> */}
     </div>
   );
 });
@@ -31,7 +32,7 @@ const Page = React.forwardRef(({ pageNumber, children }, ref) => {
 function OpenBook() {
   const book = useRef();
   const { state } = useLocation();
-
+  console.log(state);
   return (
     <section className="read-book">
       <div>
@@ -45,7 +46,13 @@ function OpenBook() {
           ref={book}
         >
           <PageCover>
-            <div className="cover-title">{state?.title}</div>
+            {/* <div className="cover-title">{state?.title}</div> */}
+            {/* <img
+              src="https://ia803101.us.archive.org/BookReader/BookReaderPreview.php?id=sherlockholmesfo0000unse&subPrefix=sherlockholmesfo0000unse&itemPath=/5/items/sherlockholmesfo0000unse&server=ia803101.us.archive.org&page=leaf1&fail=preview&&scale=4&rotate=0"
+              alt=""
+            /> */}
+
+            <img src={state?.imageLinks?.thumbnail} alt={state?.title} />
           </PageCover>
           <PageCover></PageCover>
           <Page pageNumber="1">

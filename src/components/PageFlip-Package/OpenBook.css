@@ -1,55 +1,46 @@
-
-.read-book{
-
+.read-book {
   padding: 20px 450px;
- 
-
-
 }
 .read-book .album-web {
-    text-align: center;
-    color: black;
-    letter-spacing: 2px;
-    line-height: 1.7;
-    overflow: hidden;
-    background-image: url("https://media.istockphoto.com/id/583726578/photo/wood-desk-plank-to-use-as-background-or-texture.jpg?s=612x612&w=0&k=20&c=nZuqX58HAgvD5UkumW_z0xfjeKu-hWncgQbstb4k35A=") ;
-    border-radius: 10px;
-  }
-  
-  .read-book .page {
-    box-shadow: 0 1.5em 3em -1em rgb(70, 69, 69);
-    background-color: rgb(212, 209, 209);;
-  }
-  
-  .read-book .cover {
-    background-color: #e3d0b5;
-    box-shadow: 0 1.5em 3em -1em rgb(70, 69, 69);
-  }
-  
+  text-align: center;
+  color: black;
+  letter-spacing: 2px;
+  line-height: 1.7;
+  overflow: hidden;
+  background-image: url("https://media.istockphoto.com/id/583726578/photo/wood-desk-plank-to-use-as-background-or-texture.jpg?s=612x612&w=0&k=20&c=nZuqX58HAgvD5UkumW_z0xfjeKu-hWncgQbstb4k35A=");
+  border-radius: 10px;
+}
 
-.read-book .page-header{
+.read-book .page {
+  box-shadow: 0 1.5em 3em -1em rgb(70, 69, 69);
+  background-color: rgb(212, 209, 209);
+}
 
+.read-book .cover {
+  background-color: #e3d0b5;
+  box-shadow: 0 1.5em 3em -1em rgb(70, 69, 69);
+}
+
+.read-book .page-header {
   padding-top: 10px;
 }
 
-.read-book .page-number{
+.read-book .page-number {
   position: absolute;
   bottom: 40px;
   left: 50%;
 }
 
-.read-book .info{
+.read-book .info {
   color: rgb(21, 11, 201);
 }
 
-.read-book .cover-title{
-
+.read-book .cover-title {
   padding-top: 30%;
   line-height: 2;
 }
 
-
-.read-book .btns-container{
+.read-book .btns-container {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -59,8 +50,11 @@
 
 .read-book h4,
 .read-book h5,
-.read-book p{
+.read-book p {
   padding: 0 30px;
 }
 
-
+.read-book img {
+  width: 100%;
+  height: 71vh;
+}
