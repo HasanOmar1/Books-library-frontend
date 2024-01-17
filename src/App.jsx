@@ -28,6 +28,8 @@ import George from "./pages/Authors/George";
 import StanLee from "./pages/Authors/StanLee";
 import StephenKing from "./pages/Authors/StephenKing";
 import AuthorsProvider from "./Context/AuthorsContext";
+import Footer from "./components/Footer/Footer";
+import ScrollToTop from "./components/ScrollToTop/ScrollToTop";
 
 function App() {
   return (
@@ -37,6 +39,7 @@ function App() {
           <LibraryProvider>
             <AuthorsProvider>
               <Header />
+              <ScrollToTop />
               <Routes>
                 <Route path={"/"} exact element={<Home />} />
                 <Route path={"/sign-up"} element={<SignUp />} />
@@ -68,6 +71,7 @@ function App() {
                 <Route path={"/stephen-king"} element={<StephenKing />} />
                 {/*  */}
               </Routes>
+              <Footer />
             </AuthorsProvider>
           </LibraryProvider>
         </NewUsersProvider>

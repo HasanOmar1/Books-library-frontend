@@ -2,24 +2,20 @@ import React, { useEffect, useState } from "react";
 import "./Home.css";
 import { useNewUsersContext } from "../../Context/NewUsersContext";
 import { useBooksData } from "../../Context/BooksContext";
-import BooksCards from "../../components/BooksCards/BooksCards";
 import Carousel from "../../components/Carousel/Carousel";
 import BookOfTheDay from "../../components/BooksCards/BookOfTheDay";
 import WeeklyFeaturedBooks from "../../components/BooksCards/WeeklyFeaturedBooks/WeeklyFeaturedBooks";
-import { Link } from "react-router-dom";
 import { FaArrowUp } from "react-icons/fa";
 import LinksToCategoryPages from "../../components/LinksToPages/LinksToCategoryPages";
 import LinksToAuthorPages from "../../components/LinksToPages/LinksToAuthorPages";
-// import LinksToCategoryPages from "../../components/LinksToPages/LinksToCategoryPages";
 
 export default function Home() {
-  const { users, setCurrentUser, currentUser } = useNewUsersContext();
-  const { books, fetchBooks } = useBooksData();
+  const { setCurrentUser, currentUser } = useNewUsersContext();
+  const { books } = useBooksData();
 
   useEffect(() => {
     const loggedInUser = localStorage.getItem("user");
     const token = localStorage.getItem("token");
-    // console.log(currentUser);
     if (loggedInUser) {
       const foundUser = JSON.parse(loggedInUser);
       setCurrentUser(foundUser);
@@ -46,7 +42,7 @@ export default function Home() {
               </div>
             </>
           )}
-          <h4 className="titles" id="home">
+          <h4 className="titles" id="top">
             Fan Favorite Series
           </h4>
           <div className="fav-books">
@@ -86,9 +82,10 @@ export default function Home() {
           <div className="authors">
             <LinksToAuthorPages />
           </div>
-          <a href="#home" id="go-top">
+          <a href="#top" id="go-top">
             <FaArrowUp />
           </a>
+          {/* <Footer /> */}
         </>
       ) : (
         <h3>Loading Data...</h3>

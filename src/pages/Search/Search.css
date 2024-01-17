@@ -35,7 +35,13 @@
     margin-left: -30px;
     border-top-left-radius: 0;
     border-bottom-left-radius: 0;
+    transition: all 0.1s;
 
+}
+
+.Search .search-btn:hover{
+    background-color: rgb(20, 114, 37);
+    color: white;
 }
 
 .Search .search-input-container input:focus{
