@@ -17,3 +17,13 @@
 .Header .search-icon{
     color: gold;
 }
+
+.Header .search-icon:hover{
+    color: green;
+}
+
+.Header .move-right{
+    margin-left: 40vw;
+
+}
+

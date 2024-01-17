@@ -35,7 +35,7 @@ function Header() {
               </Link>
             </Nav.Link>
 
-            <Nav.Link as="li" href="#search">
+            <Nav.Link as="li" href="#search" className="move-right">
               <Link to={"/search"} className="nav-link">
                 <SearchIcon className="search-icon" />
               </Link>
