@@ -2,11 +2,11 @@ import React from "react";
 import "./LinksToPages.css";
 import { Link } from "react-router-dom";
 
-export default function LinksToPages() {
+export default function LinksToAuthorPages() {
   return (
     <div className="LinksToPages">
       <div className="learn-books">
-        <h5>Books by Categories</h5>
+        <h5>Books by Authors</h5>
         <hr className="divider" />
         <div className="categories">
           <Link to={"/fiction"} className="link">

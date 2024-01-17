@@ -30,7 +30,7 @@ export default function Search() {
         <form onSubmit={handleOnSubmit}>
           <input
             type="text"
-            placeholder="Search for a book by name"
+            placeholder="Search for books"
             value={searchValue}
             onChange={(e) => setSearchValue(e.target.value)}
           />

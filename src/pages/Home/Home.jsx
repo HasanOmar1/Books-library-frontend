@@ -8,7 +8,9 @@ import BookOfTheDay from "../../components/BooksCards/BookOfTheDay";
 import WeeklyFeaturedBooks from "../../components/BooksCards/WeeklyFeaturedBooks/WeeklyFeaturedBooks";
 import { Link } from "react-router-dom";
 import { FaArrowUp } from "react-icons/fa";
-import LinksToPages from "../../components/LinksToPages/LinksToPages";
+import LinksToCategoryPages from "../../components/LinksToPages/LinksToCategoryPages";
+import LinksToAuthorPages from "../../components/LinksToPages/LinksToAuthorPages";
+// import LinksToCategoryPages from "../../components/LinksToPages/LinksToCategoryPages";
 
 export default function Home() {
   const { users, setCurrentUser, currentUser } = useNewUsersContext();
@@ -87,7 +89,10 @@ export default function Home() {
           </div>
 
           <div className="learn-books" id="categories">
-            <LinksToPages />
+            <LinksToCategoryPages />
+          </div>
+          <div className="learn-books" id="categories">
+            <LinksToAuthorPages />
           </div>
           <a href="#home" id="go-top">
             <FaArrowUp />
