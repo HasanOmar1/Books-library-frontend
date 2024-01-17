@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import "./Search.css";
 import { useBooksData } from "../../Context/BooksContext";
 import BooksByCategories from "../../components/BooksCards/CategoryBooksCards/BooksByCategory";
+import SearchIcon from "@mui/icons-material/Search";
 
 export default function Search() {
   const [results, setResults] = useState(0);
@@ -33,7 +34,9 @@ export default function Search() {
             value={searchValue}
             onChange={(e) => setSearchValue(e.target.value)}
           />
-          <button type="submit">Search</button>
+          <button type="submit" className="search-btn">
+            <SearchIcon />
+          </button>
         </form>
       </div>
       <div className="info-container">

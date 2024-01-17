@@ -21,10 +21,25 @@
     font-size: 1.2rem;
     border-radius: 10px;
     border: none;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+}
+
+.Search .search-btn{
+    padding: 5px 10px;
+    border: none;
+    border-radius: 10px;
+    font-size: 1.2rem;
+    background-color: rgb(70, 68, 66);
+    color: #ddff00;
+    margin-left: -30px;
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+
 }
 
 .Search .search-input-container input:focus{
-    outline: 4px solid rgb(2, 154, 170);
+    outline: none
     
 }
 
@@ -32,4 +47,8 @@
 
     margin-left: 45%;
     padding-top: 20px;
+    color: rgb(4, 174, 186);
+    letter-spacing: 1.5px;
+    font-weight: bold;
 }
+

@@ -1,5 +1,5 @@
-const config = {
-  headers: { authorization: `Bearer ${localStorage.getItem("token")}` },
-};
+// const config = {
+//   headers: { authorization: `Bearer ${localStorage.getItem("token")}` },
+// };
 
-export default config;
+// export default config;
