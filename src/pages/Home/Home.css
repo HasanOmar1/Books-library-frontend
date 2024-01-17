@@ -1,9 +1,10 @@
 .Home{
-    min-height: 300vh;
+    min-height: 200vh;
     background-color: #333;
     color: white;
     padding-top: 50px;
     padding-left: 16%;
+    padding-bottom: 50px;
 
 }
 
@@ -48,7 +49,7 @@
 }
 
 
-.Home .big-book-and-more-books{
+.Home .big-book-container{
     padding-top: 30px;
     display: flex;
     gap: 20px;
@@ -56,26 +57,26 @@
 }
 
 
-.Home .left-side .book-of-the-day{
+.Home .book-of-the-day-container .book-of-the-day{
     margin-top: 20px;
     background-color: #494f3e2d;
-    width: 50vw;
+    width: 70vw;
     height: 40vh;
     padding: 20px;
     border-radius: 10px;
 
 }
 
-.Home .big-book-and-more-books .right-side {
+.Home .big-book-container .right-side {
     margin-top: 4vh;
 }
 
-.Home .big-book-and-more-books .right-side  h5{
+.Home .big-book-container .right-side  h5{
     color: rgb(4, 195, 170);
     font-size: 1.1rem;
 }
 
-.Home .big-book-and-more-books .right-side .same-more-books{
+.Home .big-book-container .right-side .same-more-books{
 
     width: 19vw;
     height: 40vh;
@@ -87,7 +88,7 @@
 
 }
 
-.Home .big-book-and-more-books .right-side .same-more-books .books{
+.Home .big-book-container .right-side .same-more-books .books{
     
     padding-top: 3vh;
 

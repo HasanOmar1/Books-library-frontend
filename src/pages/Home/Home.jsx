@@ -52,19 +52,11 @@ export default function Home() {
           <div className="fav-books">
             <Carousel />
           </div>
-          <div className="big-book-and-more-books">
-            <div className="left-side">
+          <div className="big-book-container">
+            <div className="book-of-the-day-container">
               <h4 className="titles">Book of the day</h4>
               <div className="book-of-the-day">
-                <BookOfTheDay sliceStart={30} sliceEnd={31} />
-              </div>
-            </div>
-            <div className="right-side">
-              <div className="same-more-books">
-                <h5>More Batman Books</h5>
-                <div className="books">
-                  <BooksCards sliceStart={32} sliceEnd={34} />
-                </div>
+                <BookOfTheDay sliceStart={28} sliceEnd={29} />
               </div>
             </div>
           </div>
@@ -76,14 +68,14 @@ export default function Home() {
             <div className="weekly-featured ">
               <p>Marvel Series</p>
               <div className="books">
-                <WeeklyFeaturedBooks sliceStart={34} sliceEnd={40} />
+                <WeeklyFeaturedBooks sliceStart={32} sliceEnd={38} />
               </div>
             </div>
 
             <div className="weekly-featured">
               <p>A Song of Ice and Fire Series </p>
               <div className="books">
-                <WeeklyFeaturedBooks sliceStart={40} sliceEnd={48} />
+                <WeeklyFeaturedBooks sliceStart={38} sliceEnd={46} />
               </div>
             </div>
           </div>
