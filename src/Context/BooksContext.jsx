@@ -28,7 +28,7 @@ export default function BooksProvider({ children }) {
   async function fetchBooks() {
     try {
       const response = await axios.get("/books");
-      //   console.log(response.data);
+      console.log(response.data);
       setBooks(response?.data);
     } catch (error) {
       console.log(error);

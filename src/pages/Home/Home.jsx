@@ -23,10 +23,6 @@ export default function Home() {
     }
   }, []);
 
-  useEffect(() => {
-    console.log(books);
-  }, [books]);
-
   const loggedUser = localStorage.getItem("user");
 
   return (
@@ -83,6 +79,11 @@ export default function Home() {
           <div className="authors">
             <LinksToAuthorPages />
           </div>
+
+          <div className="fairy-books-container">
+            <h4 className="titles">Fairy Tales Books</h4>
+          </div>
+
           <a href="#top" id="go-top">
             <FaArrowUp />
           </a>
