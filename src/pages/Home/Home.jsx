@@ -8,6 +8,7 @@ import WeeklyFeaturedBooks from "../../components/BooksCards/WeeklyFeaturedBooks
 import { FaArrowUp } from "react-icons/fa";
 import LinksToCategoryPages from "../../components/LinksToPages/LinksToCategoryPages";
 import LinksToAuthorPages from "../../components/LinksToPages/LinksToAuthorPages";
+import SkeletonComp from "../../components/Skeleton/Skeleton";
 
 export default function Home() {
   const { setCurrentUser, currentUser } = useNewUsersContext();
@@ -88,7 +89,10 @@ export default function Home() {
           {/* <Footer /> */}
         </>
       ) : (
-        <h3>Loading Data...</h3>
+        <>
+          <h3>Loading Data...</h3>
+          <SkeletonComp />
+        </>
       )}
     </main>
   );

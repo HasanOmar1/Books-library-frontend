@@ -44,6 +44,35 @@ function OpenBook() {
     book.current.pageFlip().flip(+goToPageValue + 1);
   }
 
+  const getPara = messages.map((para) => para.p);
+  let bookContent = [];
+
+  function sliceParas() {
+    let start = 0;
+    let end = 702;
+    let paraLength = getPara.join("").length;
+
+    // Calculate the number of slices needed
+    let numSlices = Math.ceil(paraLength / end);
+
+    // Iterate over the slices
+    for (let i = 0; i < numSlices; i++) {
+      // Calculate the end index for each slice
+      end = Math.min(start + 702, paraLength);
+
+      // Slice the paragraphs and push into bookContent
+      bookContent.push(getPara.join("").slice(start, end));
+
+      // Update the start index for the next slice
+      start = end;
+    }
+
+    console.log(bookContent);
+    console.log(bookContent.join("."));
+  }
+
+  sliceParas();
+
   return (
     <section className="read-book">
       <div>
@@ -64,11 +93,13 @@ function OpenBook() {
           </PageCover>
           <PageCover></PageCover>
 
-          {messages.map((para, i) => {
+          {bookContent.map((para, i) => {
             const pageNum = i + 1;
+            console.log(bookContent.length);
             return (
               <Page key={i} pageNumber={pageNum}>
-                <p>{para.p}</p>
+                {/* <p>{para.p}</p> */}
+                <p>{bookContent[i]}</p>
               </Page>
             );
           })}
@@ -104,7 +135,7 @@ function OpenBook() {
               type="number"
               value={goToPageValue}
               min={-1}
-              max={108}
+              max={bookContent.length + 2}
               onChange={(e) => setGoToPageValue(e.target.value)}
             />
             <Button variant="success" type="submit" className="goto-button">
@@ -115,7 +146,7 @@ function OpenBook() {
           <Button
             variant="secondary"
             onClick={() => {
-              book.current.pageFlip().flip(109);
+              book.current.pageFlip().flip(bookContent.length + 3);
             }}
           >
             End
