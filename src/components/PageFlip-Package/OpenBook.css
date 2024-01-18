@@ -59,3 +59,21 @@
   width: 100%;
   height: 71vh;
 }
+
+.read-book .goto-input {
+  padding: 3px 10px;
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+  height: 37px;
+  border: none;
+}
+
+.read-book .goto-input:focus {
+  outline: none;
+}
+
+.read-book .goto-button {
+  margin-left: -3px;
+  border-top-left-radius: 0px;
+  border-bottom-left-radius: 0px;
+}

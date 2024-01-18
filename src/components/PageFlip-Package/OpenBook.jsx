@@ -1,4 +1,4 @@
-import React, { useRef, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import HTMLFlipBook from "react-pageflip";
 import "./OpenBook.css";
 import { useLocation } from "react-router-dom";
@@ -33,9 +33,15 @@ function OpenBook() {
   const book = useRef();
   const { state } = useLocation();
   const [currentPageNum, setCurrentPageNum] = useState(1);
+  const [goToPageValue, setGoToPageValue] = useState(0);
 
   function handlePageChange(pageNum) {
     setCurrentPageNum(pageNum);
+  }
+
+  function goToPage(e) {
+    e.preventDefault();
+    book.current.pageFlip().flip(+goToPageValue + 1);
   }
 
   return (
@@ -51,7 +57,10 @@ function OpenBook() {
           ref={book}
         >
           <PageCover>
-            <img src={state?.imageLinks?.thumbnail} alt={state?.title} />
+            <img
+              src={state?.imageLinks?.thumbnail.replace("zoom=1", "zoom=6")}
+              alt={state?.title}
+            />
           </PageCover>
           <PageCover></PageCover>
 
@@ -88,6 +97,21 @@ function OpenBook() {
           >
             Start
           </Button>
+
+          <form onSubmit={goToPage}>
+            <input
+              className="goto-input"
+              type="number"
+              value={goToPageValue}
+              min={-1}
+              max={108}
+              onChange={(e) => setGoToPageValue(e.target.value)}
+            />
+            <Button variant="success" type="submit" className="goto-button">
+              Go
+            </Button>
+          </form>
+
           <Button
             variant="secondary"
             onClick={() => {
