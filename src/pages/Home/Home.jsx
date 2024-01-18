@@ -86,7 +86,6 @@ export default function Home() {
           <a href="#top" id="go-top">
             <FaArrowUp />
           </a>
-          {/* <Footer /> */}
         </>
       ) : (
         <>

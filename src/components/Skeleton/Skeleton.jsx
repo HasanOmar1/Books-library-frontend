@@ -10,7 +10,6 @@ export default function SkeletonComp() {
       <Skeleton variant="rounded" width={1300} height={300} />
       <Skeleton variant="rounded" width={1300} height={300} />
       <Skeleton variant="rounded" width={1300} height={300} />
-
       {/* <Skeleton variant="rectangular" width={310} height={100} /> */}
     </Stack>
   );

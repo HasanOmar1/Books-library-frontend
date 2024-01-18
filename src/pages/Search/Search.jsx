@@ -8,7 +8,7 @@ export default function Search() {
   const [results, setResults] = useState(0);
   const [searchValue, setSearchValue] = useState("");
   const [searchValueAfterSubmit, setSearchValueAfterSubmit] = useState("");
-  const { booksByName, getBooksByName, errorMsg } = useBooksData();
+  const { booksByName, getBooksByName } = useBooksData();
 
   useEffect(() => {
     if (booksByName) {
