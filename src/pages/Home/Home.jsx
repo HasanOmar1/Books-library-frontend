@@ -9,6 +9,7 @@ import { FaArrowUp } from "react-icons/fa";
 import LinksToCategoryPages from "../../components/LinksToPages/LinksToCategoryPages";
 import LinksToAuthorPages from "../../components/LinksToPages/LinksToAuthorPages";
 import SkeletonComp from "../../components/Skeleton/Skeleton";
+import FairyBooksCards from "../../components/FairyBooksCards/FairyBooksCards";
 
 export default function Home() {
   const { setCurrentUser, currentUser } = useNewUsersContext();
@@ -82,6 +83,9 @@ export default function Home() {
 
           <div className="fairy-books-container">
             <h4 className="titles">Fairy Tales Books</h4>
+            <div className="fairy-books">
+              <FairyBooksCards />
+            </div>
           </div>
 
           <a href="#top" id="go-top">
