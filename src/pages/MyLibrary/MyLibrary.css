@@ -15,11 +15,3 @@
   display: flex;
   width: 30vw;
 }
-
-.MyLibrary .library-books-container {
-  display: flex;
-}
-
-.MyLibrary .library-fairy-container {
-  display: flex;
-}

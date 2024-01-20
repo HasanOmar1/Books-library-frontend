@@ -13,12 +13,8 @@ export default function MyLibrary() {
     <main className="MyLibrary">
       <h4 className="title">My Library</h4>
       <div className="library-container">
-        <div className="library-books-container">
-          <LibraryBooks library={loggedUserObj?.books} />
-        </div>
-        <div className="library-fairy-container">
-          <FairyLibraryBooks library={loggedUserObj?.fairyBooks} />
-        </div>
+        <LibraryBooks library={loggedUserObj?.books} />
+        <FairyLibraryBooks library={loggedUserObj?.fairyBooks} />
       </div>
     </main>
   );

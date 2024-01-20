@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from "react";
+import React, { useRef } from "react";
 import "./BookDetails.css";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import Button from "react-bootstrap/Button";
@@ -6,12 +6,10 @@ import StarsRating from "../../components/Rating/Rating";
 import ArrowBackIosIcon from "@mui/icons-material/ArrowBackIos";
 import { useLibraryContext } from "../../Context/LibraryContext";
 import BooksErrorModal from "../../components/Modals/BooksErrorMsg";
-import { useNewUsersContext } from "../../Context/NewUsersContext";
 
 export default function BookDetails() {
   const { addBookToLibrary, booksErrorMsg, addFairyBookToLibrary } =
     useLibraryContext();
-  const { currentUser } = useNewUsersContext();
   const { state } = useLocation();
   const newState = state.volumeInfo;
   const navigate = useNavigate();
@@ -138,13 +136,15 @@ export default function BookDetails() {
             />
           </div>
           <div className="buttons">
-            <Link to={"/reading-book"} state={newState}>
+            <Link
+              to={"/reading-book"}
+              state={state?.volumeInfo ? state?.volumeInfo : state}
+            >
               <Button variant="success" className="read-me">
                 Read me
               </Button>
             </Link>
             <Button variant="primary" onClick={addToLibraryFunction}>
-              {/* <Button variant="primary" onClick={newState}> */}
               Add to Library
             </Button>
           </div>

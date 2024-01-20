@@ -35,6 +35,8 @@ function OpenBook() {
   const [currentPageNum, setCurrentPageNum] = useState(1);
   const [goToPageValue, setGoToPageValue] = useState(0);
 
+  console.log(state);
+
   function handlePageChange(pageNum) {
     setCurrentPageNum(pageNum);
   }
@@ -45,12 +47,16 @@ function OpenBook() {
   }
 
   const getPara = messages.map((para) => para.p);
+
   let bookContent = [];
 
   function sliceParas() {
     let start = 0;
     let end = 702;
-    let paraLength = getPara.join("").length;
+
+    let paraLength = state?.content
+      ? state?.content.join("").length
+      : getPara.join("").length;
 
     // Calculate the number of slices needed
     let numSlices = Math.ceil(paraLength / end);
@@ -61,16 +67,16 @@ function OpenBook() {
       end = Math.min(start + 702, paraLength);
 
       // Slice the paragraphs and push into bookContent
-      bookContent.push(getPara.join("").slice(start, end));
+      bookContent.push(
+        state?.content
+          ? state?.content.join("").slice(start, end)
+          : getPara.join("").slice(start, end)
+      );
 
       // Update the start index for the next slice
       start = end;
     }
-
-    // console.log(bookContent);
-    // console.log(bookContent.join("."));
   }
-
   sliceParas();
 
   return (
@@ -87,7 +93,11 @@ function OpenBook() {
         >
           <PageCover>
             <img
-              src={state?.imageLinks?.thumbnail.replace("zoom=1", "zoom=6")}
+              src={
+                state?.imageLinks?.thumbnail.replace("zoom=1", "zoom=6")
+                  ? state?.imageLinks?.thumbnail.replace("zoom=1", "zoom=6")
+                  : state?.img
+              }
               alt={state?.title}
             />
           </PageCover>
@@ -95,7 +105,6 @@ function OpenBook() {
 
           {bookContent.map((para, i) => {
             const pageNum = i + 1;
-            // console.log(bookContent.length);
             return (
               <Page key={i} pageNumber={pageNum}>
                 <p>{bookContent[i]}</p>
