@@ -133,8 +133,11 @@
   margin-top: 20px;
 }
 .Home .fairy-books {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   background-color: #262724;
-  width: 50vw;
+  width: 72vw;
   border-radius: 20px;
   margin-top: 20px;
   padding: 20px 30px;

@@ -7,7 +7,7 @@ export default function FairyBooksCards() {
   const { fairyBooks } = useFairyContext();
   return (
     <div className="BooksCards WeeklyFeaturedBooks">
-      <div className="fan-favorite-container weekly-books ">
+      <div className="fan-favorite-container weekly-books fairy-books ">
         {fairyBooks?.map((info) => {
           return (
             <Link
@@ -18,7 +18,7 @@ export default function FairyBooksCards() {
             >
               <div className="book-container">
                 <img src={info?.img} alt={info?.title} />
-                <div className="category">Fairy Tales</div>
+                <div className="category">{info?.title}</div>
               </div>
             </Link>
           );

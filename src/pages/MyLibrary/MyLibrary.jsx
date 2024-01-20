@@ -2,8 +2,10 @@ import React, { useEffect } from "react";
 import "./MyLibrary.css";
 import LibraryBooks from "../../components/BooksCards/LibraryBooks/LibraryBooks";
 import FairyLibraryBooks from "../../components/BooksCards/LibraryBooks/FairyLibraryBooks";
+import { useNewUsersContext } from "../../Context/NewUsersContext";
 
 export default function MyLibrary() {
+  const { currentUser } = useNewUsersContext();
   const loggedUser = localStorage.getItem("user");
   const loggedUserObj = JSON.parse(loggedUser);
   console.log(loggedUserObj.books);
