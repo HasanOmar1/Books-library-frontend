@@ -6,17 +6,24 @@ import { useFairyContext } from "../../Context/FairyBooksContext";
 export default function FairyBooksCards() {
   const { fairyBooks } = useFairyContext();
   return (
-    <div className="FairyBooksCards">
-      <p>
+    <div className="BooksCards WeeklyFeaturedBooks">
+      <div className="fan-favorite-container weekly-books ">
         {fairyBooks?.map((info) => {
           return (
-            <div key={info._id}>
-              {/* <img src={info.img} alt={info.title} /> */}
-              <p>{info.title}</p>
-            </div>
+            <Link
+              key={info?._id}
+              to={`${info?.title}`}
+              state={info}
+              className="link"
+            >
+              <div className="book-container">
+                <img src={info?.img} alt={info?.title} />
+                <div className="category">Fairy Tales</div>
+              </div>
+            </Link>
           );
         })}
-      </p>
+      </div>
     </div>
   );
 }

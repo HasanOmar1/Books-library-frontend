@@ -18,7 +18,7 @@ export default function NewUsersProvider({ children }) {
   async function usersAPI() {
     try {
       const response = await axios.get("/users");
-      console.log(response.data);
+      // console.log(response.data);
       setUsers(response.data);
     } catch (error) {
       console.log(error.response.data.message);

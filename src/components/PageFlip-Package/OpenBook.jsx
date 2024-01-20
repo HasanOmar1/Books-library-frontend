@@ -67,8 +67,8 @@ function OpenBook() {
       start = end;
     }
 
-    console.log(bookContent);
-    console.log(bookContent.join("."));
+    // console.log(bookContent);
+    // console.log(bookContent.join("."));
   }
 
   sliceParas();
@@ -95,10 +95,9 @@ function OpenBook() {
 
           {bookContent.map((para, i) => {
             const pageNum = i + 1;
-            console.log(bookContent.length);
+            // console.log(bookContent.length);
             return (
               <Page key={i} pageNumber={pageNum}>
-                {/* <p>{para.p}</p> */}
                 <p>{bookContent[i]}</p>
               </Page>
             );

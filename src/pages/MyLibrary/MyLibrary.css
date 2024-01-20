@@ -1,12 +1,25 @@
-.MyLibrary{
-    min-height: 92vh;
-    background-color: #333;
-    color: white;
-    padding-left: 10%;
-    padding-top: 30px;
+.MyLibrary {
+  min-height: 92vh;
+  background-color: #333;
+  color: white;
+  padding-left: 10%;
+  padding-top: 30px;
 }
 
-.MyLibrary .title{
-    color: rgb(145, 214, 41);
-    padding-bottom: 20px;
+.MyLibrary .title {
+  color: rgb(145, 214, 41);
+  padding-bottom: 20px;
+}
+
+.MyLibrary .library-container {
+  display: flex;
+  width: 30vw;
+}
+
+.MyLibrary .library-books-container {
+  display: flex;
+}
+
+.MyLibrary .library-fairy-container {
+  display: flex;
 }

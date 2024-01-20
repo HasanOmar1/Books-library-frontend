@@ -58,6 +58,7 @@ export default function Home() {
           <div className="weekly-featured-title">
             <h4 className="titles">Weekly Featured Series</h4>
           </div>
+
           <div className="weekly-featured-container ">
             <div className="weekly-featured ">
               <p>Marvel Series</p>

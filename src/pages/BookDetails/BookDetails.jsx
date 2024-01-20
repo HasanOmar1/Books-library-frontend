@@ -9,11 +9,14 @@ import BooksErrorModal from "../../components/Modals/BooksErrorMsg";
 import { useNewUsersContext } from "../../Context/NewUsersContext";
 
 export default function BookDetails() {
-  const { addBookToLibrary, booksErrorMsg } = useLibraryContext();
+  const { addBookToLibrary, booksErrorMsg, addFairyBookToLibrary } =
+    useLibraryContext();
   const { currentUser } = useNewUsersContext();
   const { state } = useLocation();
   const newState = state.volumeInfo;
   const navigate = useNavigate();
+
+  console.log(state);
 
   const errorRef = useRef();
 
@@ -22,7 +25,12 @@ export default function BookDetails() {
   }
 
   function addToLibraryFunction() {
-    addBookToLibrary(state?._id);
+    if (state?.volumeInfo) {
+      addBookToLibrary(state?._id);
+    }
+    if (state?.content) {
+      addFairyBookToLibrary(state?._id);
+    }
   }
 
   return (
@@ -37,32 +45,66 @@ export default function BookDetails() {
       </div>
       <div className="info-container">
         <div className="img-container">
-          <img src={newState?.imageLinks?.thumbnail} alt={newState?.title} />
+          <img
+            src={
+              newState?.imageLinks?.thumbnail
+                ? newState?.imageLinks?.thumbnail
+                : state?.img
+            }
+            alt={newState?.title ? newState?.title : state?.title}
+          />
         </div>
         <div className="more-info-container">
-          <h4>{newState?.title}</h4>
+          <h4>{newState?.title ? newState?.title : state?.title}</h4>
           <div className="mid-info">
             <h5>
-              Written by
-              <span className="important-info">
-                {newState?.authors.join(" , ")}
-              </span>
+              {newState ? (
+                <>
+                  Written by
+                  <span className="important-info">
+                    {newState?.authors.join(" , ")}
+                  </span>
+                </>
+              ) : (
+                <>
+                  Written by
+                  <span className="important-info">{state?.author}</span>
+                </>
+              )}
             </h5>
             <h5>
-              Published By
-              <span className="important-info">{newState?.publisher}</span>
+              {newState ? (
+                <>
+                  Published By
+                  <span className="important-info">{newState?.publisher}</span>
+                </>
+              ) : (
+                ""
+              )}
             </h5>
             <h5>
-              Published Date
-              <span className="important-info">
-                {newState?.publishedDate.slice(0, 10)}
-              </span>
+              {newState ? (
+                <>
+                  Published Date
+                  <span className="important-info">
+                    {newState?.publishedDate.slice(0, 10)}
+                  </span>
+                </>
+              ) : (
+                ""
+              )}
             </h5>
           </div>
           <div className="row-info">
             <div className="small-p">
               <h5>
-                <span>{newState?.categories}</span>
+                {newState ? (
+                  <>
+                    <span>{newState?.categories}</span>
+                  </>
+                ) : (
+                  "Fairy Tales"
+                )}
               </h5>
               <p>Categories</p>
             </div>
@@ -79,9 +121,14 @@ export default function BookDetails() {
             <hr className="divider" />
 
             <div className="small-p">
-              <h5>
-                <span>{newState?.maturityRating.split("_").join(" ")}</span>
-              </h5>
+              {newState ? (
+                <>
+                  <span>{newState?.maturityRating.split("_").join(" ")}</span>
+                </>
+              ) : (
+                "Kids"
+              )}
+              <h5></h5>
               <p>Maturity Rating</p>
             </div>
           </div>
@@ -97,6 +144,7 @@ export default function BookDetails() {
               </Button>
             </Link>
             <Button variant="primary" onClick={addToLibraryFunction}>
+              {/* <Button variant="primary" onClick={newState}> */}
               Add to Library
             </Button>
           </div>
@@ -104,7 +152,11 @@ export default function BookDetails() {
       </div>
       <div className="description">
         <h3>About</h3>
-        <p>{newState?.description}</p>
+        <p>
+          {newState?.description
+            ? newState?.description
+            : "Click on read me to read about this book"}
+        </p>
       </div>
       <BooksErrorModal ref={errorRef} />
     </main>

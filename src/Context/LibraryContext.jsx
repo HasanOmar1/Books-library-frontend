@@ -32,7 +32,6 @@ export default function LibraryProvider({ children }) {
       }
     } catch (error) {
       console.log(error.response.data.message);
-      console.log(error.response.data);
       setBooksErrorMsg(error.response.data.message);
     }
   }
@@ -59,10 +58,64 @@ export default function LibraryProvider({ children }) {
       }
     } catch (error) {
       console.log(error.response.data.message);
-      setErrorMsg(error.response.data.message);
+      setBooksErrorMsg(error.response.data.message);
+    }
+  }
+  //
+  //
+
+  async function addFairyBookToLibrary(bookId) {
+    try {
+      const config = {
+        headers: { authorization: `Bearer ${localStorage.getItem("token")}` },
+      };
+      const token = localStorage.getItem("token");
+      if (token) {
+        const response = await axios.put(
+          `/fairy/addBook/${bookId}`,
+          {},
+          config
+        );
+        console.log(response.data);
+        const userJSON = JSON.stringify(response.data);
+        localStorage.setItem("user", userJSON);
+        setCurrentUser(response.data);
+
+        setBooksErrorMsg("Book has been added to your library");
+      } else {
+        setBooksErrorMsg("Login to add it to your library");
+      }
+    } catch (error) {
+      console.log(error.response.data.message);
+      setBooksErrorMsg(error.response.data.message);
     }
   }
 
+  async function removeFairyBookFromLibrary(bookId) {
+    try {
+      const config = {
+        headers: { authorization: `Bearer ${localStorage.getItem("token")}` },
+      };
+      const token = localStorage.getItem("token");
+      if (token) {
+        const response = await axios.put(
+          `/fairy/removeBook/${bookId}`,
+          {},
+          config
+        );
+        console.log(response.data);
+        const userJSON = JSON.stringify(response.data);
+        localStorage.setItem("user", userJSON);
+        setCurrentUser(response.data);
+      } else {
+        console.log("Login first");
+        setBooksErrorMsg("Please login first");
+      }
+    } catch (error) {
+      console.log(error.response.data.message);
+      setErrorMsg(error.response.data.message);
+    }
+  }
   return (
     <LibraryContext.Provider
       value={{
@@ -72,6 +125,8 @@ export default function LibraryProvider({ children }) {
         setLibraryBooks,
         setBooksErrorMsg,
         booksErrorMsg,
+        addFairyBookToLibrary,
+        removeFairyBookFromLibrary,
       }}
     >
       {children}

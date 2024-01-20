@@ -1,71 +1,62 @@
-.LibraryBooks{
-padding-bottom: 30px;
-
+.LibraryBooks {
+  padding-bottom: 30px;
 }
 
-
-.LibraryBooks .library-container{
-    display: flex;
-    gap: 30px;
-    flex-wrap: wrap;
+.LibraryBooks .library-container {
+  display: flex;
+  gap: 30px;
+  flex-wrap: wrap;
 }
 
-.LibraryBooks .library-book-container{
-    display: flex;
-    gap: 20px;
-    background-color: rgba(60, 55, 55, 0.704);
-    width: 27vw;
-    height: 40vh;
-    padding: 20px;
-    
+.LibraryBooks .library-book-container {
+  display: flex;
+  gap: 20px;
+  background-color: rgba(60, 55, 55, 0.704);
+  width: 27vw;
+  height: 40vh;
+  padding: 20px;
 }
 
-.LibraryBooks .library-book-container img{
-    width: fit-content;
-    height: 250px;
-    
+.LibraryBooks .library-book-container img {
+  width: fit-content;
+  height: 250px;
 }
 
-.LibraryBooks .books-more-info{
-    letter-spacing: 1.3px;
-    line-height: 1.7;
-    margin-left: -20px;
+.LibraryBooks .books-more-info {
+  letter-spacing: 1.3px;
+  line-height: 1.7;
+  margin-left: -20px;
 }
 
-.LibraryBooks .books-more-info .book-title{
-    color: rgb(3, 195, 195);
+.LibraryBooks .books-more-info .book-title {
+  color: rgb(3, 195, 195);
+  display: flex;
+  justify-content: center;
 }
 
-.LibraryBooks .category{
-    padding-top: 20px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+.LibraryBooks .category {
+  padding-top: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
-.LibraryBooks .span-title{
-
-    color: greenyellow;
-
+.LibraryBooks .span-title {
+  color: greenyellow;
 }
 
-
-.LibraryBooks .img-and-button{
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
+.LibraryBooks .img-and-button {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
 }
 
-.LibraryBooks .img-and-button .btns{
-
-    display: flex;
-    gap:20px;
-    width: 210px;
-
-
+.LibraryBooks .img-and-button .btns {
+  display: flex;
+  gap: 20px;
+  width: 210px;
 }
-
 
 /* .LibraryBooks .remove-btn,
 .LibraryBooks .info-btn{

@@ -12,6 +12,7 @@ export default function Footer() {
             <li>Material UI</li>
             <li>Bootstrap</li>
             <li>React page-flip</li>
+            <li>Puppeteer</li>
           </ul>
         </div>
         <div className="contact">
