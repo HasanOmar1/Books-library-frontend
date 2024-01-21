@@ -22,9 +22,9 @@ export default function BooksByCategories({ categoryName, array }) {
         Collection of {categoryName} Books
       </h4>
       <div className="big-container">
-        {array?.map((books) => {
+        {array?.map((books, i) => {
           return (
-            <div className="container" key={books?._id}>
+            <div className="container" key={i}>
               <Link
                 to={`/${
                   books?.volumeInfo?.title

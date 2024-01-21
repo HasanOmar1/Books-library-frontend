@@ -31,6 +31,7 @@ import AuthorsProvider from "./Context/AuthorsContext";
 import Footer from "./components/Footer/Footer";
 import ScrollToTop from "./components/ScrollToTop/ScrollToTop";
 import FairyBooksProvider from "./Context/FairyBooksContext";
+import CommentsContextProvider from "./Context/CommentsContext";
 
 function App() {
   return (
@@ -40,40 +41,42 @@ function App() {
           <LibraryProvider>
             <AuthorsProvider>
               <FairyBooksProvider>
-                <Header />
-                <ScrollToTop />
-                <Routes>
-                  <Route path={"/"} exact element={<Home />} />
-                  <Route path={"/sign-up"} element={<SignUp />} />
-                  <Route path={"/login"} element={<Login />} />
-                  <Route path={"/:name"} element={<BookDetails />} />
-                  <Route path={"/library"} element={<MyLibrary />} />
-                  <Route path={"/reading-book"} element={<ReadBook />} />
-                  <Route path={"/search"} element={<Search />} />
+                <CommentsContextProvider>
+                  <Header />
+                  <ScrollToTop />
+                  <Routes>
+                    <Route path={"/"} exact element={<Home />} />
+                    <Route path={"/sign-up"} element={<SignUp />} />
+                    <Route path={"/login"} element={<Login />} />
+                    <Route path={"/:name"} element={<BookDetails />} />
+                    <Route path={"/library"} element={<MyLibrary />} />
+                    <Route path={"/reading-book"} element={<ReadBook />} />
+                    <Route path={"/search"} element={<Search />} />
 
-                  {/* Categories */}
-                  <Route path={"/fiction"} element={<Fiction />} />
-                  <Route path={"/comics"} element={<Comics />} />
-                  <Route path={"/art"} element={<Art />} />
-                  <Route path={"/educational"} element={<HowToBooks />} />
-                  <Route path={"/crime"} element={<Crime />} />
-                  <Route path={"/criticism"} element={<Criticism />} />
-                  <Route path={"/cars"} element={<Cars />} />
-                  <Route path={"/history"} element={<History />} />
-                  <Route path={"/adventure"} element={<Adventure />} />
-                  <Route path={"/romance"} element={<Romance />} />
-                  <Route path={"/cooking"} element={<Cooking />} />
-                  <Route path={"/horror"} element={<Horror />} />
-                  {/*  */}
+                    {/* Categories */}
+                    <Route path={"/fiction"} element={<Fiction />} />
+                    <Route path={"/comics"} element={<Comics />} />
+                    <Route path={"/art"} element={<Art />} />
+                    <Route path={"/educational"} element={<HowToBooks />} />
+                    <Route path={"/crime"} element={<Crime />} />
+                    <Route path={"/criticism"} element={<Criticism />} />
+                    <Route path={"/cars"} element={<Cars />} />
+                    <Route path={"/history"} element={<History />} />
+                    <Route path={"/adventure"} element={<Adventure />} />
+                    <Route path={"/romance"} element={<Romance />} />
+                    <Route path={"/cooking"} element={<Cooking />} />
+                    <Route path={"/horror"} element={<Horror />} />
+                    {/*  */}
 
-                  {/* Authors */}
-                  <Route path={"/j-k-rowling"} element={<Rowling />} />
-                  <Route path={"/george-martin"} element={<George />} />
-                  <Route path={"/stan-Lee"} element={<StanLee />} />
-                  <Route path={"/stephen-king"} element={<StephenKing />} />
-                  {/*  */}
-                </Routes>
-                <Footer />
+                    {/* Authors */}
+                    <Route path={"/j-k-rowling"} element={<Rowling />} />
+                    <Route path={"/george-martin"} element={<George />} />
+                    <Route path={"/stan-Lee"} element={<StanLee />} />
+                    <Route path={"/stephen-king"} element={<StephenKing />} />
+                    {/*  */}
+                  </Routes>
+                  <Footer />
+                </CommentsContextProvider>
               </FairyBooksProvider>
             </AuthorsProvider>
           </LibraryProvider>

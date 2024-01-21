@@ -1,4 +1,4 @@
-import React, { useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import "./BookDetails.css";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import Button from "react-bootstrap/Button";
@@ -6,16 +6,20 @@ import StarsRating from "../../components/Rating/Rating";
 import ArrowBackIosIcon from "@mui/icons-material/ArrowBackIos";
 import { useLibraryContext } from "../../Context/LibraryContext";
 import BooksErrorModal from "../../components/Modals/BooksErrorMsg";
+import { useNewUsersContext } from "../../Context/NewUsersContext";
+import { useCommentsContext } from "../../Context/CommentsContext";
 
 export default function BookDetails() {
   const { addBookToLibrary, booksErrorMsg, addFairyBookToLibrary } =
     useLibraryContext();
+  const { currentUser } = useNewUsersContext();
+  const { createComment, comments, getBooksByName } = useCommentsContext();
   const { state } = useLocation();
-  const newState = state.volumeInfo;
+  const newState = state?.volumeInfo;
   const navigate = useNavigate();
+  const [commentValue, setCommentValue] = useState("");
 
   console.log(state);
-
   const errorRef = useRef();
 
   if (booksErrorMsg) {
@@ -30,6 +34,20 @@ export default function BookDetails() {
       addFairyBookToLibrary(state?._id);
     }
   }
+
+  function handleComments(e) {
+    e.preventDefault();
+    createComment({
+      bookName: state?._id,
+      comment: commentValue,
+    });
+  }
+
+  useEffect(() => {
+    getBooksByName(state?.volumeInfo?.title);
+  }, []);
+
+  console.log(comments);
 
   return (
     <main className="BookDetails">
@@ -157,6 +175,36 @@ export default function BookDetails() {
             ? newState?.description
             : "Click on read me to read about this book"}
         </p>
+      </div>
+      <div className="comments-section">
+        <h4>Comments Section</h4>
+        <div className="add-comment">
+          <form onSubmit={handleComments} className="submit-comment">
+            <div className="comment-container">
+              <button type="submit">Comment</button>
+              <input
+                required
+                type="text"
+                value={commentValue}
+                onChange={(e) => setCommentValue(e.target.value)}
+              />
+            </div>
+          </form>
+        </div>
+
+        <div className="read-comments-container">
+          <div className="read-comment-box">
+            {comments?.map((data) => {
+              console.log(data);
+              return (
+                <div className="read-comment" key={data?._id}>
+                  <h5>{data?.user?.name} commented:</h5>
+                  <p>{data?.comment}</p>
+                </div>
+              );
+            })}
+          </div>
+        </div>
       </div>
       <BooksErrorModal ref={errorRef} />
     </main>

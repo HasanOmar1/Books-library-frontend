@@ -50,7 +50,7 @@ export default function Home() {
             <div className="book-of-the-day-container">
               <h4 className="titles">Book of the day</h4>
               <div className="book-of-the-day">
-                <BookOfTheDay sliceStart={28} sliceEnd={29} />
+                <BookOfTheDay sliceStart={27} sliceEnd={28} />
               </div>
             </div>
           </div>
@@ -63,14 +63,14 @@ export default function Home() {
             <div className="weekly-featured ">
               <p>Marvel Series</p>
               <div className="books">
-                <WeeklyFeaturedBooks sliceStart={32} sliceEnd={38} />
+                <WeeklyFeaturedBooks sliceStart={31} sliceEnd={37} />
               </div>
             </div>
 
             <div className="weekly-featured">
               <p>A Song of Ice and Fire Series </p>
               <div className="books">
-                <WeeklyFeaturedBooks sliceStart={38} sliceEnd={46} />
+                <WeeklyFeaturedBooks sliceStart={37} sliceEnd={45} />
               </div>
             </div>
           </div>

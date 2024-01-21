@@ -22,7 +22,7 @@ function BooksCarousel() {
       <Carousel.Item>
         <h5>Lord of the rings</h5>
         <div className="books">
-          <BooksCards sliceStart={23} sliceEnd={27} />
+          <BooksCards sliceStart={22} sliceEnd={26} />
         </div>
       </Carousel.Item>
     </Carousel>
