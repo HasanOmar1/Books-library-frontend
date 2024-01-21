@@ -39,6 +39,7 @@ export default function BooksProvider({ children }) {
     try {
       const response = await axios.get(`/books/search/${bookName}`);
       // console.log(response.data);
+
       setBooksByName(response.data);
     } catch (error) {
       console.log(error.response.data.message);

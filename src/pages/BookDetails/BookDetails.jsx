@@ -6,21 +6,25 @@ import StarsRating from "../../components/Rating/Rating";
 import ArrowBackIosIcon from "@mui/icons-material/ArrowBackIos";
 import { useLibraryContext } from "../../Context/LibraryContext";
 import BooksErrorModal from "../../components/Modals/BooksErrorMsg";
-import { useNewUsersContext } from "../../Context/NewUsersContext";
 import { useCommentsContext } from "../../Context/CommentsContext";
+import { useNewUsersContext } from "../../Context/NewUsersContext";
 
 export default function BookDetails() {
   const { addBookToLibrary, booksErrorMsg, addFairyBookToLibrary } =
     useLibraryContext();
+  const { createComment, comments, getBooksByName, removeComment } =
+    useCommentsContext();
   const { currentUser } = useNewUsersContext();
-  const { createComment, comments, getBooksByName } = useCommentsContext();
   const { state } = useLocation();
   const newState = state?.volumeInfo;
   const navigate = useNavigate();
   const [commentValue, setCommentValue] = useState("");
 
-  console.log(state);
+  // console.log(state);
   const errorRef = useRef();
+
+  const loggedUser = localStorage.getItem("user");
+  const parsedUser = JSON.parse(loggedUser);
 
   if (booksErrorMsg) {
     errorRef?.current?.showModal();
@@ -41,13 +45,14 @@ export default function BookDetails() {
       bookName: state?._id,
       comment: commentValue,
     });
+    setCommentValue("");
   }
 
   useEffect(() => {
     getBooksByName(state?.volumeInfo?.title);
   }, []);
 
-  console.log(comments);
+  // console.log(comments);
 
   return (
     <main className="BookDetails">
@@ -176,28 +181,36 @@ export default function BookDetails() {
             : "Click on read me to read about this book"}
         </p>
       </div>
-      <div className="comments-section">
-        <h4>Comments Section</h4>
-        <div className="add-comment">
-          <form onSubmit={handleComments} className="submit-comment">
-            <div className="comment-container">
-              <button type="submit">Comment</button>
-              <input
-                required
-                type="text"
-                value={commentValue}
-                onChange={(e) => setCommentValue(e.target.value)}
-              />
-            </div>
-          </form>
-        </div>
 
-        <div className="read-comments-container">
+      <div className="read-comments-container">
+        <div className="comments-section">
+          <h4>Comments Section</h4>
+          {parsedUser ? (
+            <>
+              <div className="add-comment">
+                <form onSubmit={handleComments} className="submit-comment">
+                  <div className="comment-container">
+                    <input
+                      required
+                      type="text"
+                      value={commentValue}
+                      onChange={(e) => setCommentValue(e.target.value)}
+                    />
+                    <button type="submit">Comment</button>
+                  </div>
+                </form>
+              </div>
+            </>
+          ) : (
+            <p>Login to comment</p>
+          )}
+
           <div className="read-comment-box">
             {comments?.map((data) => {
-              console.log(data);
+              // console.log(data);
               return (
                 <div className="read-comment" key={data?._id}>
+                  <p onClick={() => removeComment(data?._id)}>X</p>
                   <h5>{data?.user?.name} commented:</h5>
                   <p>{data?.comment}</p>
                 </div>

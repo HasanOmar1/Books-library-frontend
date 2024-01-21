@@ -5,7 +5,7 @@ const NewUsersContext = createContext();
 
 export default function NewUsersProvider({ children }) {
   const [users, setUsers] = useState({});
-  const [currentUser, setCurrentUser] = useState({});
+  const [currentUser, setCurrentUser] = useState();
   const [errorMsg, setErrorMsg] = useState("");
 
   const navigate = useNavigate();

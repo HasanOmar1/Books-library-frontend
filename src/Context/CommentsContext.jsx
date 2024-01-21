@@ -33,18 +33,35 @@ export default function CommentsContextProvider({ children }) {
     }
   }
 
-  async function getBooksByName(bookName) {
+  async function getBooksByName(bookId) {
     try {
-      const response = await axios.get(`/books/search/${bookName}`);
+      const response = await axios.get(`/books/search/${bookId}`);
       console.log(response.data[0]?.comments);
       setComments(response.data[0]?.comments);
     } catch (error) {
       console.log(error.response.data.message);
     }
   }
+
+  async function removeComment(bookId) {
+    try {
+      const config = {
+        headers: { authorization: `Bearer ${localStorage.getItem("token")}` },
+      };
+      const response = await axios.delete(
+        `/comments/remove/${bookId}`,
+        {},
+        config
+      );
+      console.log(response.data.comments);
+      // setComments(response.data[0]?.comments);
+    } catch (error) {
+      console.log(error.response.data.message);
+    }
+  }
   return (
     <CommentsContext.Provider
-      value={{ createComment, comments, getBooksByName }}
+      value={{ createComment, comments, getBooksByName, removeComment }}
     >
       {children}
     </CommentsContext.Provider>
