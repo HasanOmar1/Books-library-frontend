@@ -1,29 +1,30 @@
-.Header{
-
-    position: sticky;
-    width: 100%;
-    z-index: 99999;
-    top: 0;
-    background-color: #23262a;
-
+.Header {
+  position: sticky;
+  width: 100%;
+  z-index: 99999;
+  top: 0;
+  background-color: #23262a;
 }
 
-
-.Header .library{
-    border: 1px solid rgb(43, 137, 226);
-    border-radius: 10px;
+.Header .library {
+  border: 1px solid rgb(43, 137, 226);
+  border-radius: 10px;
 }
 
-.Header .search-icon{
-    color: gold;
+.Header .search-icon {
+  color: gold;
 }
 
-.Header .search-icon:hover{
-    color: green;
+.Header .search-icon:hover {
+  color: green;
 }
 
-.Header .move-right{
-    margin-left: 40vw;
-
+.Header .move-right {
+  margin-left: 40vw;
 }
 
+@media (max-width: 600px) {
+  .Header .move-right {
+    margin-left: 0vw;
+  }
+}

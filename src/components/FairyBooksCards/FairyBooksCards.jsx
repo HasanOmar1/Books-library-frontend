@@ -1,5 +1,4 @@
 import React from "react";
-import "./FairyBooksCards.css";
 import { Link } from "react-router-dom";
 import { useFairyContext } from "../../Context/FairyBooksContext";
 

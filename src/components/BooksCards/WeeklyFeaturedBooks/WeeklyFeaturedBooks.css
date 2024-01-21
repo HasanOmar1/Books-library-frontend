@@ -18,3 +18,19 @@
   font-size: 0.8rem;
   padding-top: 5px;
 }
+
+@media (max-width: 600px) {
+  .WeeklyFeaturedBooks .weekly-books img {
+    margin-left: -20px;
+    width: 100%;
+    height: fit-content;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .WeeklyFeaturedBooks .weekly-books .category {
+    padding-top: 10px;
+    margin-left: -40px;
+    font-size: 0.8rem;
+  }
+}
