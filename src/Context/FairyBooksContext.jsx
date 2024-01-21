@@ -5,6 +5,7 @@ const FairyContext = createContext();
 
 export default function FairyBooksProvider({ children }) {
   const [fairyBooks, setFairyBooks] = useState();
+  const [searchForFairyBooks, setSearchForFairyBooks] = useState();
 
   useEffect(() => {
     getFairyBooks();
@@ -20,8 +21,21 @@ export default function FairyBooksProvider({ children }) {
     }
   }
 
+  async function searchForFairyBooksByName(bookName) {
+    try {
+      const response = await axios.get(`/fairy/title/${bookName}`);
+      // console.log(response.data);
+      setSearchForFairyBooks(response.data);
+    } catch (error) {
+      console.log(error);
+      setSearchForFairyBooks([]);
+    }
+  }
+
   return (
-    <FairyContext.Provider value={{ fairyBooks }}>
+    <FairyContext.Provider
+      value={{ fairyBooks, searchForFairyBooksByName, searchForFairyBooks }}
+    >
       {children}
     </FairyContext.Provider>
   );

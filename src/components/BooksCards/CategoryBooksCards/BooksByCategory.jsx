@@ -24,31 +24,58 @@ export default function BooksByCategories({ categoryName, array }) {
       <div className="big-container">
         {array?.map((books) => {
           return (
-            <div className="container" key={books._id}>
-              <Link to={`/${books?.volumeInfo?.title}`} state={books}>
+            <div className="container" key={books?._id}>
+              <Link
+                to={`/${
+                  books?.volumeInfo?.title
+                    ? books?.volumeInfo?.title
+                    : books?.title
+                }`}
+                state={books}
+              >
                 <img
-                  src={books?.volumeInfo?.imageLinks?.thumbnail}
-                  alt={books?.volumeInfo?.title}
+                  src={
+                    books?.volumeInfo?.imageLinks?.thumbnail
+                      ? books?.volumeInfo?.imageLinks?.thumbnail
+                      : books?.img
+                  }
+                  alt={
+                    books?.volumeInfo?.title
+                      ? books?.volumeInfo?.title
+                      : books?.title
+                  }
                 />
               </Link>
               <div className="book-info">
                 <Link
-                  to={`/${books?.volumeInfo?.title}`}
+                  to={`/${
+                    books?.volumeInfo?.title
+                      ? books?.volumeInfo?.title
+                      : books?.title
+                  }`}
                   state={books}
                   className="link"
                 >
-                  <h6 id="title">{books?.volumeInfo?.title}</h6>
+                  <h6 id="title">
+                    {books?.volumeInfo?.title
+                      ? books?.volumeInfo?.title
+                      : books?.title}
+                  </h6>
                 </Link>
                 <h6>
                   Written by
                   <span className="written-by">
-                    {books?.volumeInfo?.authors.slice(0, 2).join(", ")}
+                    {books?.volumeInfo?.authors.slice(0, 2).join(", ")
+                      ? books?.volumeInfo?.authors.slice(0, 2).join(", ")
+                      : books?.author}
                   </span>
                 </h6>
                 <div className="pages-rating">
                   <h6 className="pages">
                     {books?.volumeInfo?.pageCount
                       ? books?.volumeInfo?.pageCount
+                      : books?.content?.length
+                      ? books?.content?.length
                       : 211}{" "}
                     Pages
                   </h6>
@@ -64,7 +91,9 @@ export default function BooksByCategories({ categoryName, array }) {
                 </div>
 
                 <p className="description">
-                  {books?.volumeInfo?.description.slice(0, 121) + " ..."}
+                  {books?.volumeInfo?.description.slice(0, 121)
+                    ? books?.volumeInfo?.description.slice(0, 121) + " ..."
+                    : "A small fairy tale to read to your kids before they go to sleep"}
                 </p>
               </div>
             </div>
