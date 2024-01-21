@@ -227,3 +227,47 @@
   flex-wrap: wrap;
   width: 70vw;
 }
+
+@media (max-width: 600px) {
+  .BookDetails .info-container img {
+    display: none;
+  }
+  .BookDetails .more-info-container {
+    margin-left: -80px;
+  }
+  .BookDetails .more-info-container h4 {
+    font-size: 0.9rem;
+  }
+
+  .BookDetails .mid-info h5 {
+    font-size: 0.9rem;
+  }
+
+  .BookDetails .small-p {
+    font-size: 0.7rem;
+  }
+
+  .BookDetails .small-p h5 {
+    font-size: 0.7rem;
+    width: 10ch;
+  }
+
+  .BookDetails .description {
+    width: 50ch;
+    margin-left: 10%;
+    font-size: 0.8rem;
+  }
+
+  .BookDetails .back-btn-container {
+    padding-top: 5%;
+  }
+
+  .BookDetails .submit-comment {
+    width: fit-content;
+    background-color: transparent;
+  }
+
+  .BookDetails .read-comment p {
+    font-size: 1.2rem;
+  }
+}
