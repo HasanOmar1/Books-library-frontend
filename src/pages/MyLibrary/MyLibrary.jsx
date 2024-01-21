@@ -6,17 +6,14 @@ import { useNewUsersContext } from "../../Context/NewUsersContext";
 
 export default function MyLibrary() {
   const { currentUser } = useNewUsersContext();
-  const loggedUser = localStorage.getItem("user");
-  const loggedUserObj = JSON.parse(loggedUser);
-  console.log(loggedUserObj.books);
-  console.log(loggedUserObj.fairyBooks);
+  console.log(currentUser);
 
   return (
     <main className="MyLibrary">
       <h4 className="title">My Library</h4>
       <div className="library-container">
-        <LibraryBooks library={loggedUserObj?.books} />
-        <FairyLibraryBooks library={loggedUserObj?.fairyBooks} />
+        <LibraryBooks library={currentUser?.books} />
+        <FairyLibraryBooks library={currentUser?.fairyBooks} />
       </div>
     </main>
   );

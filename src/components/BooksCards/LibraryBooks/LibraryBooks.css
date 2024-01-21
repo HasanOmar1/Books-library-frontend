@@ -58,7 +58,20 @@
   width: 210px;
 }
 
-/* .LibraryBooks .remove-btn,
-.LibraryBooks .info-btn{
-    width: fit-content;
-} */
+.LibraryBooks .section {
+  color: rgb(5, 200, 203);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid rgb(90, 126, 7);
+  padding: 7px;
+  font-size: 1.2rem;
+  width: 60vw;
+}
+
+.LibraryBooks .section-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-bottom: 40px;
+}

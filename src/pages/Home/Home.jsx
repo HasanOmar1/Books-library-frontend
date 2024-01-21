@@ -83,7 +83,7 @@ export default function Home() {
           </div>
 
           <div className="fairy-books-container">
-            <h4 className="titles">Fairy Tales Books</h4>
+            <h4 className="titles">Fairy Tales</h4>
             <div className="fairy-books">
               <FairyBooksCards />
             </div>

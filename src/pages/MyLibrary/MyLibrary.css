@@ -12,6 +12,5 @@
 }
 
 .MyLibrary .library-container {
-  display: flex;
-  width: 30vw;
+  gap: 10vw;
 }

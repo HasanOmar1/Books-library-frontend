@@ -8,7 +8,6 @@
   height: 210px;
   border-radius: 10px;
   border: 5px solid #13667a;
-  transition: all 1s;
   --mask: radial-gradient(2px at 25% 0, #0000 98%, #000) 50% 2px/8px 51%
       repeat-x,
     radial-gradient(2px at 75% 50%, #000 99%, #0000 101%) top/8px 4px repeat-x,
@@ -18,6 +17,7 @@
       4px repeat-x;
   -webkit-mask: var(--mask);
   mask: var(--mask);
+  transition: all 0.5s;
 }
 
 .BooksCards .fan-favorite-container img:hover {

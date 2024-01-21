@@ -11,6 +11,12 @@ export default function NewUsersProvider({ children }) {
   const navigate = useNavigate();
 
   useEffect(() => {
+    const loggedUser = localStorage.getItem("user");
+    if (loggedUser) {
+      const parsedUser = JSON.parse(loggedUser);
+      setCurrentUser(parsedUser);
+    }
+
     usersAPI();
   }, []);
 
