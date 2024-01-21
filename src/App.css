@@ -83,4 +83,9 @@
   .back-icon {
     font-size: 1.2rem;
   }
+
+  .back-btn-container {
+    margin-left: 20%;
+    padding-top: 5%;
+  }
 }

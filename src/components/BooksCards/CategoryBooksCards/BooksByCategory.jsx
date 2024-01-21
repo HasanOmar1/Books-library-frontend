@@ -89,12 +89,13 @@ export default function BooksByCategories({ categoryName, array }) {
                     />
                   </div>
                 </div>
-
-                <p className="description">
-                  {books?.volumeInfo?.description.slice(0, 121)
-                    ? books?.volumeInfo?.description.slice(0, 121) + " ..."
-                    : "A small fairy tale to read to your kids before they go to sleep"}
-                </p>
+                <div className="desc-container">
+                  <p className="description">
+                    {books?.volumeInfo?.description.slice(0, 121)
+                      ? books?.volumeInfo?.description.slice(0, 121) + " ..."
+                      : "A small fairy tale to read to your kids before they go to sleep"}
+                  </p>
+                </div>
               </div>
             </div>
           );
