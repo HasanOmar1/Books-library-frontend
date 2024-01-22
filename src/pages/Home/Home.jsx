@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import "./Home.css";
 import { useNewUsersContext } from "../../Context/NewUsersContext";
 import { useBooksData } from "../../Context/BooksContext";
@@ -10,10 +10,12 @@ import LinksToCategoryPages from "../../components/LinksToPages/LinksToCategoryP
 import LinksToAuthorPages from "../../components/LinksToPages/LinksToAuthorPages";
 import SkeletonComp from "../../components/Skeleton/Skeleton";
 import FairyBooksCards from "../../components/FairyBooksCards/FairyBooksCards";
+import { useNewBookContext } from "../../Context/NewBookContext";
 
 export default function Home() {
   const { setCurrentUser, currentUser } = useNewUsersContext();
   const { books } = useBooksData();
+  const { addNewBook } = useNewBookContext();
 
   useEffect(() => {
     const loggedInUser = localStorage.getItem("user");

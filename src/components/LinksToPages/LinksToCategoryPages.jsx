@@ -46,6 +46,11 @@ export default function LinksToCategoryPages() {
             <p className="great-btn">Horror</p>
           </Link>
         </div>
+        <div className="people-books">
+          <Link to={"/books-by-people"} className="link">
+            <p className="great-btn">Books Added By People</p>
+          </Link>
+        </div>
         <hr className="divider" />
       </div>
     </div>

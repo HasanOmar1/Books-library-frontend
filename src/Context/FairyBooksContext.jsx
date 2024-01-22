@@ -34,7 +34,12 @@ export default function FairyBooksProvider({ children }) {
 
   return (
     <FairyContext.Provider
-      value={{ fairyBooks, searchForFairyBooksByName, searchForFairyBooks }}
+      value={{
+        fairyBooks,
+        getFairyBooks,
+        searchForFairyBooksByName,
+        searchForFairyBooks,
+      }}
     >
       {children}
     </FairyContext.Provider>

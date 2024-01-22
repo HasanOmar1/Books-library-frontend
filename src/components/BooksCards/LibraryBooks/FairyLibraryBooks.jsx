@@ -15,7 +15,7 @@ export default function FairyLibraryBooks({ library }) {
       {currentUser?.fairyBooks?.length !== 0 && (
         <>
           <div className="section-container">
-            <p className="section">Fairy Tales</p>
+            <p className="section">Fairy Tales & Books Added By People</p>
           </div>
           <div className="library-container">
             {library?.map((info) => {

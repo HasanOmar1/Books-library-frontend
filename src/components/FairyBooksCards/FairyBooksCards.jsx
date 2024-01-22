@@ -7,7 +7,7 @@ export default function FairyBooksCards() {
   return (
     <div className="BooksCards WeeklyFeaturedBooks">
       <div className="fan-favorite-container weekly-books fairy-books ">
-        {fairyBooks?.map((info) => {
+        {fairyBooks?.slice(0, 11).map((info) => {
           return (
             <Link
               key={info?._id}

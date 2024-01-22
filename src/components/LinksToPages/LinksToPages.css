@@ -13,6 +13,12 @@
   gap: 20px;
 }
 
+.LinksToPages .people-books {
+  margin-top: 1%;
+  display: flex;
+  justify-content: center;
+  margin-left: -15%;
+}
 @media (max-width: 600px) {
   .LinksToPages .books-container .categories {
     flex-wrap: wrap;

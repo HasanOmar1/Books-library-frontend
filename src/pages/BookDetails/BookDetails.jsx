@@ -140,7 +140,7 @@ export default function BookDetails() {
                     <span>{newState?.categories}</span>
                   </>
                 ) : (
-                  "Fairy Tales"
+                  <span>{state?.categories}</span>
                 )}
               </h5>
               <p>Categories</p>
@@ -150,7 +150,13 @@ export default function BookDetails() {
 
             <div className="small-p">
               <h5>
-                <span>{newState?.pageCount ? newState?.pageCount : 211}</span>
+                <span>
+                  {newState?.pageCount
+                    ? newState?.pageCount
+                    : state?.content?.length
+                    ? state?.content?.length
+                    : "UnKnown"}
+                </span>
               </h5>
               <p>Pages</p>
             </div>
