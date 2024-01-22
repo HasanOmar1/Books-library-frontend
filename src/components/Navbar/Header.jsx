@@ -22,7 +22,7 @@ function Header() {
     <nav className="Header">
       <Navbar bg="dark" data-bs-theme="dark">
         <Container>
-          <Navbar.Brand>
+          <Navbar.Brand className="brand">
             <Link to={"/"} className="nav-link">
               Library
             </Link>

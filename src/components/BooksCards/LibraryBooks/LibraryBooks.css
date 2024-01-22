@@ -75,3 +75,48 @@
   align-items: center;
   padding-bottom: 40px;
 }
+
+@media (max-width: 600px) {
+  .LibraryBooks .library-book-container {
+    width: fit-content;
+    height: fit-content;
+  }
+
+  .LibraryBooks .books-more-info {
+    margin-left: -5px;
+  }
+
+  .LibraryBooks .span-title {
+    color: greenyellow;
+  }
+
+  .LibraryBooks .img-and-button {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .LibraryBooks .img-and-button .btns {
+    display: flex;
+    gap: 20px;
+    width: 210px;
+  }
+
+  .LibraryBooks .section {
+    color: rgb(5, 200, 203);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid rgb(90, 126, 7);
+    padding: 7px;
+    font-size: 1.2rem;
+    width: 60vw;
+  }
+
+  .LibraryBooks .section-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 40px;
+  }
+}

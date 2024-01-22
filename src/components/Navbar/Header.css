@@ -25,6 +25,10 @@
 
 @media (max-width: 600px) {
   .Header .move-right {
-    margin-left: 0vw;
+    margin-left: 5vw;
+  }
+
+  .Header .brand {
+    display: none;
   }
 }
