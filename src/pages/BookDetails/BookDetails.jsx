@@ -236,7 +236,10 @@ export default function BookDetails() {
                   >
                     X
                   </p>
-                  <h5>{data?.user?.name} commented:</h5>
+                  <h5>
+                    <span className="username">{data?.user?.name} </span>{" "}
+                    commented:
+                  </h5>
                   <p>{data?.comment}</p>
                 </div>
               );
