@@ -35,7 +35,7 @@ function OpenBook() {
   const [currentPageNum, setCurrentPageNum] = useState(1);
   const [goToPageValue, setGoToPageValue] = useState(0);
 
-  console.log(state);
+  // console.log(state);
 
   function handlePageChange(pageNum) {
     setCurrentPageNum(pageNum);
@@ -79,12 +79,29 @@ function OpenBook() {
   }
   sliceParas();
 
+  const [flipPageWidth, setFlipPageWidth] = useState("");
+  const [flipPageHeight, setFlipPageHeight] = useState("");
+
+  useEffect(() => {
+    if (window.innerWidth > 1450) {
+      setFlipPageWidth("500");
+    } else {
+      setFlipPageWidth("200");
+    }
+
+    if (window.innerWidth > 1450) {
+      setFlipPageHeight("650");
+    } else {
+      setFlipPageHeight("600");
+    }
+  }, []);
+
   return (
     <section className="read-book">
       <div>
         <HTMLFlipBook
-          width={500}
-          height={650}
+          width={flipPageWidth}
+          height={flipPageHeight}
           showCover={true}
           flippingTime={800}
           maxShadowOpacity={1}
@@ -125,7 +142,7 @@ function OpenBook() {
               handlePageChange(currentPageNum - 1);
             }}
           >
-            <KeyboardDoubleArrowLeftIcon />
+            <KeyboardDoubleArrowLeftIcon className="double-arrow-icon" />
             Previous Page
           </Button>
           <Button
@@ -137,7 +154,7 @@ function OpenBook() {
             Start
           </Button>
 
-          <form onSubmit={goToPage}>
+          <form onSubmit={goToPage} className="go-container">
             <input
               className="goto-input"
               type="number"
@@ -152,6 +169,7 @@ function OpenBook() {
           </form>
 
           <Button
+            className="end-btn"
             variant="secondary"
             onClick={() => {
               book.current.pageFlip().flip(bookContent.length + 3);
@@ -167,7 +185,7 @@ function OpenBook() {
             }}
           >
             Next Page
-            <KeyboardDoubleArrowRightIcon />
+            <KeyboardDoubleArrowRightIcon className="double-arrow-icon" />
           </Button>
         </div>
       </div>

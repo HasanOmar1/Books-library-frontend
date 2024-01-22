@@ -77,3 +77,70 @@
   border-top-left-radius: 0px;
   border-bottom-left-radius: 0px;
 }
+
+@media (max-width: 600px) {
+  .read-book {
+    padding: 0px;
+    padding-top: 10px;
+    padding-left: 10px;
+  }
+
+  .read-book .page-header {
+    padding-top: 15px;
+  }
+
+  .read-book .page-number {
+    position: absolute;
+    bottom: 40px;
+    left: 50%;
+  }
+
+  .read-book .cover-title {
+    padding-top: 30%;
+  }
+
+  .read-book .btns-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 37px;
+    margin-top: 5px;
+  }
+
+  .read-book .btns-container button {
+    padding: 5px;
+    margin: 0;
+    font-size: 0.6rem;
+  }
+
+  .read-book h4,
+  .read-book h5,
+  .read-book p {
+    font-size: 0.5rem;
+  }
+
+  .read-book .go-container {
+    position: relative;
+    margin-left: -20px;
+  }
+  .read-book .goto-input {
+    height: 25px;
+    font-size: 0.6rem;
+  }
+
+  .read-book .goto-input:focus {
+    outline: none;
+  }
+
+  .read-book .goto-button {
+    position: absolute;
+  }
+
+  .read-book .end-btn {
+    margin-left: 5px;
+  }
+
+  .read-book .double-arrow-icon {
+    font-size: 0.8rem;
+  }
+}
