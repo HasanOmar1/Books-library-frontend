@@ -39,7 +39,7 @@ export default function CommentsContextProvider({ children }) {
       // console.log(response.data[0]?.comments);
       setComments(response.data[0]?.comments);
     } catch (error) {
-      console.log(error.response.data.message);
+      // console.log(error.response.data.message);
     }
   }
   async function getFairyBooksByName(bookId) {

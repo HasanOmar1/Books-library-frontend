@@ -247,6 +247,12 @@
 .BookDetails .remove-comment:hover {
   color: red;
 }
+
+.BookDetails .read-comment .comment {
+  width: 40ch;
+  overflow-wrap: break-word;
+}
+
 @media (max-width: 600px) {
   .BookDetails .info-container img {
     display: none;
@@ -288,5 +294,13 @@
 
   .BookDetails .read-comment p {
     font-size: 1.2rem;
+  }
+  .BookDetails .read-comment .comment {
+    width: 20ch;
+    overflow-wrap: break-word;
+  }
+
+  .BookDetails .read-comments-container .read-comment {
+    width: 300px;
   }
 }

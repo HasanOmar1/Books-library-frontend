@@ -210,6 +210,7 @@ export default function BookDetails() {
                       required
                       type="text"
                       value={commentValue}
+                      maxLength={100}
                       onChange={(e) => setCommentValue(e.target.value)}
                     />
                     <button type="submit">Comment</button>
@@ -223,7 +224,7 @@ export default function BookDetails() {
 
           <div className="read-comment-box">
             {comments?.map((data) => {
-              console.log(data);
+              // console.log(data);
               return (
                 <div className="read-comment" key={data?._id}>
                   <p
@@ -240,7 +241,7 @@ export default function BookDetails() {
                     <span className="username">{data?.user?.name} </span>{" "}
                     commented:
                   </h5>
-                  <p>{data?.comment}</p>
+                  <p className="comment">{data?.comment}</p>
                 </div>
               );
             })}
