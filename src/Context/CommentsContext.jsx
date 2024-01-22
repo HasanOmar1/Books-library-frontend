@@ -5,6 +5,7 @@ const CommentsContext = createContext();
 
 export default function CommentsContextProvider({ children }) {
   const [comments, setComments] = useState([]);
+  const token = localStorage.getItem("token");
 
   useEffect(() => {
     fetchComments();
@@ -14,7 +15,6 @@ export default function CommentsContextProvider({ children }) {
     try {
       const response = await axios.get("/comments");
       // console.log(response.data);
-      //   setComments(response.data);
     } catch (error) {
       console.log(error.response.data.message);
     }
@@ -23,10 +23,10 @@ export default function CommentsContextProvider({ children }) {
   async function createComment(comment) {
     try {
       const config = {
-        headers: { authorization: `Bearer ${localStorage.getItem("token")}` },
+        headers: { authorization: `Bearer ${token}` },
       };
       const response = await axios.post("/comments/create", comment, config);
-      console.log(response.data.comments);
+      // console.log(response.data.comments);
       setComments(response.data.comments);
     } catch (error) {
       console.log(error.response.data.message);
@@ -36,8 +36,7 @@ export default function CommentsContextProvider({ children }) {
   async function getBooksByName(bookId) {
     try {
       const response = await axios.get(`/books/search/${bookId}`);
-      console.log(response.data[0]?.comments);
-      console.log(response.data[0]);
+      // console.log(response.data[0]?.comments);
       setComments(response.data[0]?.comments);
     } catch (error) {
       console.log(error.response.data.message);
@@ -46,7 +45,7 @@ export default function CommentsContextProvider({ children }) {
   async function getFairyBooksByName(bookId) {
     try {
       const response = await axios.get(`/fairy/title/${bookId}`);
-      console.log(response.data[0]?.comments);
+      // console.log(response.data[0]?.comments);
       setComments(response.data[0]?.comments);
     } catch (error) {
       console.log(error.response.data.message);
@@ -55,20 +54,18 @@ export default function CommentsContextProvider({ children }) {
 
   async function removeComment(bookId) {
     try {
-      const config = {
-        headers: { authorization: `Bearer ${localStorage.getItem("token")}` },
-      };
-      const response = await axios.delete(
-        `/comments/remove/${bookId}`,
-        {},
-        config
-      );
-      console.log(response.data.comments);
-      // setComments(response.data[0]?.comments);
+      // const token = localStorage.getItem("token");
+      const response = await axios.delete(`/comments/remove/${bookId}`, {
+        headers: { authorization: `Bearer ${token}` },
+      });
+
+      // console.log(response.data.comments);
+      setComments(response.data.comments);
     } catch (error) {
       console.log(error.response.data.message);
     }
   }
+
   return (
     <CommentsContext.Provider
       value={{

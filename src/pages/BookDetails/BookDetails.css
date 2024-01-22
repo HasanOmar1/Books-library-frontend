@@ -202,7 +202,7 @@
 
 .BookDetails .read-comments-container .read-comment {
   border: 1px solid rgb(130, 117, 117);
-  padding: 20px;
+  padding: 40px 30px;
   display: flex;
   flex-direction: column;
   width: fit-content;
@@ -228,6 +228,19 @@
   width: 70vw;
 }
 
+.BookDetails .read-comment {
+  position: relative;
+}
+
+.BookDetails .remove-comment {
+  color: rgb(47, 137, 255);
+  position: absolute;
+  right: 7%;
+  top: 10%;
+}
+.BookDetails .remove-comment:hover {
+  color: red;
+}
 @media (max-width: 600px) {
   .BookDetails .info-container img {
     display: none;

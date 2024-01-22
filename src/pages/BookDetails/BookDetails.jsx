@@ -19,13 +19,15 @@ export default function BookDetails() {
     removeComment,
     getFairyBooksByName,
   } = useCommentsContext();
-  const { currentUser } = useNewUsersContext();
   const { state } = useLocation();
   const newState = state?.volumeInfo;
   const navigate = useNavigate();
   const [commentValue, setCommentValue] = useState("");
 
-  console.log(state);
+  const { currentUser } = useNewUsersContext();
+
+  // console.log(currentUser);
+  // console.log(state);
   const errorRef = useRef();
 
   const loggedUser = localStorage.getItem("user");
@@ -62,14 +64,11 @@ export default function BookDetails() {
 
     setCommentValue("");
   }
-  console.log(comments);
 
   useEffect(() => {
     getBooksByName(state?.volumeInfo?.title);
     getFairyBooksByName(state?.title);
   }, []);
-
-  // console.log(comments);
 
   return (
     <main className="BookDetails">
@@ -227,7 +226,16 @@ export default function BookDetails() {
               console.log(data);
               return (
                 <div className="read-comment" key={data?._id}>
-                  <p onClick={() => removeComment(data?._id)}>X</p>
+                  <p
+                    onClick={() => removeComment(data?._id)}
+                    className={
+                      data?.user?.name === currentUser?.name
+                        ? "remove-comment"
+                        : "hide"
+                    }
+                  >
+                    X
+                  </p>
                   <h5>{data?.user?.name} commented:</h5>
                   <p>{data?.comment}</p>
                 </div>
