@@ -14,7 +14,7 @@ export default function FairyBooksProvider({ children }) {
   async function getFairyBooks() {
     try {
       const response = await axios.get("/fairy");
-      console.log(response.data);
+      // console.log(response.data);
       setFairyBooks(response.data);
     } catch (error) {
       console.log(error);

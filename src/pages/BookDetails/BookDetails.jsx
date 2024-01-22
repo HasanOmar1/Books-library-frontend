@@ -12,15 +12,20 @@ import { useNewUsersContext } from "../../Context/NewUsersContext";
 export default function BookDetails() {
   const { addBookToLibrary, booksErrorMsg, addFairyBookToLibrary } =
     useLibraryContext();
-  const { createComment, comments, getBooksByName, removeComment } =
-    useCommentsContext();
+  const {
+    createComment,
+    comments,
+    getBooksByName,
+    removeComment,
+    getFairyBooksByName,
+  } = useCommentsContext();
   const { currentUser } = useNewUsersContext();
   const { state } = useLocation();
   const newState = state?.volumeInfo;
   const navigate = useNavigate();
   const [commentValue, setCommentValue] = useState("");
 
-  // console.log(state);
+  console.log(state);
   const errorRef = useRef();
 
   const loggedUser = localStorage.getItem("user");
@@ -41,15 +46,27 @@ export default function BookDetails() {
 
   function handleComments(e) {
     e.preventDefault();
-    createComment({
-      bookName: state?._id,
-      comment: commentValue,
-    });
+    if (state?.volumeInfo) {
+      createComment({
+        bookName: state?._id,
+        comment: commentValue,
+      });
+    }
+
+    if (state?.content) {
+      createComment({
+        fairyBookName: state?._id,
+        comment: commentValue,
+      });
+    }
+
     setCommentValue("");
   }
+  console.log(comments);
 
   useEffect(() => {
     getBooksByName(state?.volumeInfo?.title);
+    getFairyBooksByName(state?.title);
   }, []);
 
   // console.log(comments);
@@ -207,7 +224,7 @@ export default function BookDetails() {
 
           <div className="read-comment-box">
             {comments?.map((data) => {
-              // console.log(data);
+              console.log(data);
               return (
                 <div className="read-comment" key={data?._id}>
                   <p onClick={() => removeComment(data?._id)}>X</p>

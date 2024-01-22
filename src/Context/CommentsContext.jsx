@@ -13,7 +13,7 @@ export default function CommentsContextProvider({ children }) {
   async function fetchComments() {
     try {
       const response = await axios.get("/comments");
-      console.log(response.data);
+      // console.log(response.data);
       //   setComments(response.data);
     } catch (error) {
       console.log(error.response.data.message);
@@ -36,6 +36,16 @@ export default function CommentsContextProvider({ children }) {
   async function getBooksByName(bookId) {
     try {
       const response = await axios.get(`/books/search/${bookId}`);
+      console.log(response.data[0]?.comments);
+      console.log(response.data[0]);
+      setComments(response.data[0]?.comments);
+    } catch (error) {
+      console.log(error.response.data.message);
+    }
+  }
+  async function getFairyBooksByName(bookId) {
+    try {
+      const response = await axios.get(`/fairy/title/${bookId}`);
       console.log(response.data[0]?.comments);
       setComments(response.data[0]?.comments);
     } catch (error) {
@@ -61,7 +71,13 @@ export default function CommentsContextProvider({ children }) {
   }
   return (
     <CommentsContext.Provider
-      value={{ createComment, comments, getBooksByName, removeComment }}
+      value={{
+        createComment,
+        comments,
+        getBooksByName,
+        removeComment,
+        getFairyBooksByName,
+      }}
     >
       {children}
     </CommentsContext.Provider>
