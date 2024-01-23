@@ -16,7 +16,13 @@ export default function Footer() {
           </ul>
         </div>
         <div className="contact">
-          <MarkunreadTwoToneIcon className="icon" />
+          <a
+            href="https://mail.google.com/mail/u/0/?fs=1&to=hasanromar2002@gmail.com&tf=cm"
+            target="_blank"
+            className="mail-to"
+          >
+            <MarkunreadTwoToneIcon className="icon" />
+          </a>
           <p>Hasanromar2002@gmail.com</p>
         </div>
         <p>© 2024, Hasan Omar, All rights reserved</p>

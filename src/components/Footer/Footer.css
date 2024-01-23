@@ -25,3 +25,7 @@
 .Footer .icon {
   color: brown;
 }
+
+.Footer .icon:hover {
+  color: yellow;
+}
