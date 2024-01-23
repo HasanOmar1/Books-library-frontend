@@ -11,7 +11,7 @@ import LinksToAuthorPages from "../../components/LinksToPages/LinksToAuthorPages
 import SkeletonComp from "../../components/Skeleton/Skeleton";
 import FairyBooksCards from "../../components/FairyBooksCards/FairyBooksCards";
 import { useNewBookContext } from "../../Context/NewBookContext";
-import { BarLoader } from "react-spinners";
+import { BarLoader, CircleLoader, HashLoader } from "react-spinners";
 
 export default function Home() {
   const { setCurrentUser, currentUser } = useNewUsersContext();
@@ -99,12 +99,16 @@ export default function Home() {
       ) : (
         <>
           <h3>Loading Data...</h3>
-          <BarLoader
+          {/* <BarLoader
             color="#36d7b7"
             height={5}
             width={100}
             style={{ marginBottom: "100px" }}
-          />
+          /> */}
+          <div className="loader">
+            <HashLoader color="#36d7b7" />
+          </div>
+
           <SkeletonComp />
         </>
       )}

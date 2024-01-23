@@ -111,6 +111,14 @@
   padding: 20px 30px;
 }
 
+.Home .loader {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-bottom: 100px;
+  margin-left: -20%;
+}
+
 @media (max-width: 600px) {
   .Home {
     padding-top: 50px;
