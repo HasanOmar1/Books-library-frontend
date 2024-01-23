@@ -18,7 +18,7 @@
 }
 
 .LibraryBooks .library-book-container img {
-  width: fit-content;
+  width: 180px;
   height: 250px;
 }
 

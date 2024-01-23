@@ -64,7 +64,6 @@ export default function AddBook() {
               maxLength={20}
             />
             <input
-              required
               type="text"
               placeholder="Book Cover [ Link ]"
               ref={coverRef}

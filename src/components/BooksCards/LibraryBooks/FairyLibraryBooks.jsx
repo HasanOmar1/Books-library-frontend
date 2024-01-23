@@ -23,7 +23,14 @@ export default function FairyLibraryBooks({ library }) {
                 <div className="info-container" key={info?._id}>
                   <div className="library-book-container">
                     <div className="img-and-button">
-                      <img src={info?.img} alt={info?.title} />
+                      <img
+                        src={
+                          info?.img
+                            ? info?.img
+                            : "https://st4.depositphotos.com/14953852/24787/v/450/depositphotos_247872612-stock-illustration-no-image-available-icon-vector.jpg"
+                        }
+                        alt={info?.title}
+                      />
                       <div className="btns">
                         <Link to={`/${info?.title}`} state={info}>
                           <Button variant="primary" className="info-btn">
@@ -47,7 +54,7 @@ export default function FairyLibraryBooks({ library }) {
                       </p>
                       <div className="category">
                         <span className="span-title">Category</span>
-                        <p>Fairy Tale</p>
+                        <p>{info?.categories}</p>
                       </div>
                     </div>
                   </div>

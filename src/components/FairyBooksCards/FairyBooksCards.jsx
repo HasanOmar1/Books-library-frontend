@@ -16,7 +16,14 @@ export default function FairyBooksCards() {
               className="link"
             >
               <div className="book-container">
-                <img src={info?.img} alt={info?.title} />
+                <img
+                  src={
+                    info?.img
+                      ? info?.img
+                      : "https://st4.depositphotos.com/14953852/24787/v/450/depositphotos_247872612-stock-illustration-no-image-available-icon-vector.jpg"
+                  }
+                  alt={info?.title}
+                />
                 <div className="category">{info?.title}</div>
               </div>
             </Link>
