@@ -65,7 +65,7 @@ export default function AddBook() {
             />
             <input
               type="text"
-              placeholder="Book Cover [ Link ]"
+              placeholder="Book Cover [ Link ] (optional)"
               ref={coverRef}
             />
 

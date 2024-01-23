@@ -35,6 +35,7 @@ import CommentsContextProvider from "./Context/CommentsContext";
 import NewBookProvider from "./Context/NewBookContext";
 import AddBookPage from "./pages/AddBookPage/AddBookPage";
 import BooksByPeople from "./pages/Categories/BooksByPeople";
+import MyBooks from "./pages/MyBooks/MyBooks";
 
 function App() {
   return (
@@ -57,6 +58,7 @@ function App() {
                       <Route path={"/reading-book"} element={<ReadBook />} />
                       <Route path={"/search"} element={<Search />} />
                       <Route path={"/add-book"} element={<AddBookPage />} />
+                      <Route path={"/my-books"} element={<MyBooks />} />
 
                       {/* Categories */}
                       <Route path={"/fiction"} element={<Fiction />} />

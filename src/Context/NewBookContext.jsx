@@ -10,15 +10,20 @@ async function addNewBook(book) {
     const response = await axios.post("/fairy", book, {
       headers: { authorization: `Bearer ${token}` },
     });
-    console.log(response);
+    console.log(response.data);
   } catch (error) {
     console.log(error);
   }
 }
 
+async function removeMyBook(bookId) {
+  const response = await axios.delete(`/fairy/${bookId}`);
+  console.log(response.data);
+}
+
 export default function NewBookProvider({ children }) {
   return (
-    <NewBookContext.Provider value={{ addNewBook }}>
+    <NewBookContext.Provider value={{ addNewBook, removeMyBook }}>
       {children}
     </NewBookContext.Provider>
   );

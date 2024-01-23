@@ -35,11 +35,19 @@ function Header() {
               </Link>
             </Nav.Link>
             {loggedUser && (
-              <Nav.Link as="li" href="#home">
-                <Link to={"/add-book"} className="nav-link library">
-                  Add Book
-                </Link>
-              </Nav.Link>
+              <>
+                <Nav.Link as="li" href="#home">
+                  <Link to={"/add-book"} className="nav-link books">
+                    Add Book
+                  </Link>
+                </Nav.Link>
+
+                <Nav.Link as="li" href="#home">
+                  <Link to={"/my-books"} className="nav-link books">
+                    My Books
+                  </Link>
+                </Nav.Link>
+              </>
             )}
 
             <Nav.Link as="li" href="#search" className="move-right">
