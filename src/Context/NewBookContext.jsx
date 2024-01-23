@@ -1,6 +1,7 @@
 import React, { createContext, useContext } from "react";
 import axios from "../axiosConfig";
 import { useFairyContext } from "./FairyBooksContext";
+import { useNewUsersContext } from "./NewUsersContext";
 
 const NewBookContext = createContext();
 
@@ -8,6 +9,7 @@ const token = localStorage.getItem("token");
 
 export default function NewBookProvider({ children }) {
   const { getFairyBooks } = useFairyContext();
+  const { setCurrentUser } = useNewUsersContext();
 
   async function addNewBook(book) {
     try {
@@ -22,8 +24,16 @@ export default function NewBookProvider({ children }) {
 
   async function removeMyBook(bookId) {
     try {
-      const response = await axios.delete(`/fairy/${bookId}`);
+      const response = await axios.delete(`/fairy/${bookId}`, {
+        headers: { Authorization: `Bearer ${token}` },
+      });
       console.log(response.data);
+      if (response.data.fairyBooks) {
+        const userJSON = JSON.stringify(response.data);
+        localStorage.setItem("user", userJSON);
+        setCurrentUser(response.data);
+        getFairyBooks();
+      }
       getFairyBooks();
     } catch (error) {
       console.log(error);
