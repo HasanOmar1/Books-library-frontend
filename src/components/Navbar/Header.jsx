@@ -7,7 +7,7 @@ import SearchIcon from "@mui/icons-material/Search";
 import "./Header.css";
 
 function Header() {
-  const { setCurrentUser, currentUser } = useNewUsersContext();
+  const { setCurrentUser } = useNewUsersContext();
   const navigate = useNavigate();
 
   const loggedUser = localStorage.getItem("user");

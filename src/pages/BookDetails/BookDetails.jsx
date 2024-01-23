@@ -27,7 +27,7 @@ export default function BookDetails() {
   const { currentUser } = useNewUsersContext();
 
   // console.log(currentUser);
-  console.log(state);
+  // console.log(state);
   const errorRef = useRef();
 
   const loggedUser = localStorage.getItem("user");

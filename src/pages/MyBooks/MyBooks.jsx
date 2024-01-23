@@ -33,7 +33,7 @@ export default function MyBooks() {
       <div className="big-container">
         {fairyBooks?.length === 0 && <h4>You don't have any books</h4>}
 
-        {fairyBooks?.slice(11).map((books, i) => (
+        {fairyBooks?.map((books, i) => (
           <React.Fragment key={i}>
             {books?.author === currentUser?.name && (
               <div className="container">
@@ -66,13 +66,20 @@ export default function MyBooks() {
                       {books?.description.slice(0, 121) + " ..."}
                     </p>
                   </div>
-                  <Button
-                    variant="danger"
-                    className="remove-btn"
-                    onClick={() => removeMyBook(books?._id)}
-                  >
-                    Delete Book
-                  </Button>
+                  <div className="btns">
+                    <Link to={`/${books?.title}`} state={books}>
+                      <Button variant="primary" className="info-btn">
+                        More Info
+                      </Button>
+                    </Link>
+                    <Button
+                      variant="danger"
+                      className="remove-btn"
+                      onClick={() => removeMyBook(books?._id)}
+                    >
+                      Delete Book
+                    </Button>
+                  </div>
                 </div>
               </div>
             )}

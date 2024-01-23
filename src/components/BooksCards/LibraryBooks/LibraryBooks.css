@@ -28,12 +28,6 @@
   margin-left: -20px;
 }
 
-.LibraryBooks .books-more-info .book-title {
-  color: rgb(3, 195, 195);
-  display: flex;
-  justify-content: center;
-}
-
 .LibraryBooks .category {
   padding-top: 20px;
   display: flex;
@@ -74,6 +68,14 @@
   justify-content: center;
   align-items: center;
   padding-bottom: 40px;
+}
+
+.LibraryBooks .book-title {
+  letter-spacing: 1.5px;
+  color: rgb(3, 195, 195);
+  display: flex;
+  justify-content: center;
+  width: fit-content;
 }
 
 @media (max-width: 600px) {

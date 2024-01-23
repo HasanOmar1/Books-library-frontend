@@ -3,3 +3,8 @@
   background-color: #333;
   color: white;
 }
+
+.MyBooks .btns {
+  display: flex;
+  gap: 20px;
+}
