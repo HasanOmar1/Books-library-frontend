@@ -38,13 +38,7 @@ function Header() {
               <>
                 <Nav.Link as="li" href="#home">
                   <Link to={"/add-book"} className="nav-link books">
-                    Add Book
-                  </Link>
-                </Nav.Link>
-
-                <Nav.Link as="li" href="#home">
-                  <Link to={"/my-books"} className="nav-link books">
-                    My Books
+                    Add Book 📕
                   </Link>
                 </Nav.Link>
               </>
@@ -76,7 +70,13 @@ function Header() {
               <>
                 <Nav.Link as="li" href="#library">
                   <Link to={"/library"} className="nav-link library">
-                    Library 📚
+                    Library
+                  </Link>
+                </Nav.Link>
+
+                <Nav.Link as="li" href="#home">
+                  <Link to={"/my-books"} className="nav-link books">
+                    My Books 📚
                   </Link>
                 </Nav.Link>
 

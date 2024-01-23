@@ -7,12 +7,10 @@
 }
 
 .Header .library {
-  border: 1px solid rgb(43, 137, 226);
   border-radius: 10px;
 }
 
 .Header .books {
-  border-bottom: 1px solid rgb(43, 137, 226);
   padding-bottom: 0;
 }
 
@@ -34,7 +32,7 @@
 
 @media (max-width: 600px) {
   .Header {
-    font-size: 0.8rem;
+    font-size: 0.5rem;
   }
   .Header .move-right {
     margin-left: 0vw;
@@ -44,6 +42,6 @@
     display: none;
   }
   .Header .search-icon {
-    font-size: 1rem;
+    font-size: 0.7rem;
   }
 }

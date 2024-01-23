@@ -8,3 +8,9 @@
   display: flex;
   gap: 20px;
 }
+
+@media (max-width: 600px) {
+  .MyBooks .btns .info-btn {
+    font-size: 0.7rem;
+  }
+}

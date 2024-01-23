@@ -74,7 +74,7 @@ export default function MyBooks() {
                     </Link>
                     <Button
                       variant="danger"
-                      className="remove-btn"
+                      className="info-btn"
                       onClick={() => removeMyBook(books?._id)}
                     >
                       Delete Book
