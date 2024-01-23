@@ -33,11 +33,17 @@
 }
 
 @media (max-width: 600px) {
+  .Header {
+    font-size: 0.8rem;
+  }
   .Header .move-right {
-    margin-left: 5vw;
+    margin-left: 0vw;
   }
 
   .Header .brand {
     display: none;
+  }
+  .Header .search-icon {
+    font-size: 1rem;
   }
 }
