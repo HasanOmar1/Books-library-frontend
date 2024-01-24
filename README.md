@@ -29,6 +29,8 @@ I have created a responsive book library using React for the frontend and MongoD
 - You can check out books written by well known authors.
 - There are Fairy Tales books.
 
+---
+
 ### Things to know
 
 I have used puppeteer package to scrap books pages.
