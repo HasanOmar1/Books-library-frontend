@@ -124,10 +124,12 @@
   }
 
   .Home .fav-books {
-    width: 77%;
+    width: 86%;
     height: fit-content;
     padding-left: 20px;
+    height: 45vh;
   }
+
   .Home .titles {
     padding-top: 20px;
     padding-bottom: 5px;
