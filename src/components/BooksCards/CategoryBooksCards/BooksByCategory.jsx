@@ -1,13 +1,27 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import "./CategoryBooks.css";
 import StarsRating from "../../Rating/Rating";
 import { Link, useNavigate } from "react-router-dom";
 import { FaArrowUp } from "react-icons/fa";
 import Button from "react-bootstrap/Button";
 import ArrowBackIosIcon from "@mui/icons-material/ArrowBackIos";
+import { useBooksData } from "../../../Context/BooksContext";
 
 export default function BooksByCategories({ categoryName, array }) {
   const navigate = useNavigate(-1);
+  const { errorMsg } = useBooksData();
+  const [isError, setIsError] = useState("");
+
+  useEffect(() => {
+    if (array?.length === 0) {
+      setTimeout(() => {
+        setIsError("No books found");
+      }, 1300);
+    }
+  }, [array]);
+
+  console.log(errorMsg);
+
   return (
     <div className="CategoryBooksCards">
       <div className="back-btn-container">
@@ -22,7 +36,7 @@ export default function BooksByCategories({ categoryName, array }) {
         Collection of {categoryName} Books
       </h4>
       <div className="big-container">
-        {/* {array?.length === 0 && <h4>No books found</h4>} */}
+        {array?.length === 0 && <h4 className="middle">{isError}</h4>}
         {array?.map((books, i) => {
           return (
             <div className="container" key={i}>

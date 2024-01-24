@@ -25,6 +25,7 @@ export default function Search() {
       getBooksByName(searchValue);
       searchForFairyBooksByName(searchValue);
     }, 500);
+
     return () => clearTimeout(timer);
   }, [searchValue]);
 
