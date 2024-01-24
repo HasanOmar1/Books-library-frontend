@@ -26,6 +26,24 @@
   letter-spacing: 2px;
 }
 
+@media screen and (min-width: 768px) and (max-width: 1440px) {
+  .Carousel {
+    margin-top: 10px;
+  }
+
+  .Carousel .books {
+    margin-left: 00%;
+    padding-left: 0%;
+    background-color: transparent;
+    width: 100%;
+  }
+
+  .Carousel h5 {
+    padding-top: 20px;
+    margin-left: 0;
+  }
+}
+
 @media (max-width: 600px) {
   .Carousel {
     margin-top: 10px;

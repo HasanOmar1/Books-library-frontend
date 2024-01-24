@@ -44,6 +44,27 @@
   transform: scale(0.9);
 }
 
+@media screen and (min-width: 768px) and (max-width: 1440px) {
+  .AuthorCards .author-card {
+    width: 40vw;
+    height: 250px;
+  }
+
+  .AuthorCards .author-card .info-container {
+    gap: 20px;
+    padding-top: 0px;
+  }
+
+  .AuthorCards .author-card .info-container h4 {
+    padding-bottom: 3px;
+    font-size: 1rem;
+  }
+  .AuthorCards .author-card .info-container img {
+    width: 150px;
+    height: 150px;
+  }
+}
+
 @media (max-width: 600px) {
   .AuthorCards .author-card {
     width: 85vw;

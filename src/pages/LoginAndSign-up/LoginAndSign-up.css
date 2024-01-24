@@ -93,6 +93,20 @@
   padding-left: 50px;
 }
 
+@media screen and (min-width: 768px) and (max-width: 1440px) {
+  .login-sign-up .big-container {
+    width: 60vw;
+  }
+
+  .login-sign-up .left-container {
+    width: 30vw;
+  }
+
+  .login-sign-up .right-container {
+    width: 40vw;
+  }
+}
+
 @media (max-width: 600px) {
   .login-sign-up .title {
     padding-left: 10%;

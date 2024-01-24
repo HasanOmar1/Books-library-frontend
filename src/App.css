@@ -100,6 +100,20 @@ body::-webkit-scrollbar-thumb {
   display: none;
 }
 
+@media screen and (min-width: 768px) and (max-width: 1440px) {
+  #go-top {
+    right: 6rem;
+  }
+  .back-icon {
+    font-size: 1.2rem;
+  }
+
+  .back-btn-container {
+    margin-left: 20%;
+    padding-top: 5%;
+  }
+}
+
 @media (max-width: 600px) {
   #go-top {
     display: none;

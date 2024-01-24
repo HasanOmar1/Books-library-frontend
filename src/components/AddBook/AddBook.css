@@ -62,6 +62,18 @@
 .AddBook .extra-info {
   margin-top: 10px;
 }
+@media screen and (min-width: 768px) and (max-width: 1440px) {
+  .AddBook .form-container form {
+    width: 70%;
+  }
+
+  .AddBook .form-container form input {
+    width: 500px;
+  }
+  .AddBook .form-container form textarea {
+    width: 600px;
+  }
+}
 
 @media (max-width: 600px) {
   .AddBook .form-container form {

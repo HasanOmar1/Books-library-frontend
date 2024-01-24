@@ -78,6 +78,12 @@
   width: fit-content;
 }
 
+@media screen and (min-width: 768px) and (max-width: 1440px) {
+  .LibraryBooks .library-book-container {
+    width: 40vw;
+  }
+}
+
 @media (max-width: 600px) {
   .LibraryBooks .library-book-container {
     width: fit-content;

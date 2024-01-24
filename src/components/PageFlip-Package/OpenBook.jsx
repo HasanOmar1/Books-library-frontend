@@ -50,34 +50,6 @@ function OpenBook() {
 
   let bookContent = [];
 
-  // function sliceParas() {
-  //   let start = 0;
-  //   let end = 702;
-
-  //   let paraLength = state?.content
-  //     ? state?.content.join("").length
-  //     : getPara.join("").length;
-
-  //   // Calculate the number of slices needed
-  //   let numSlices = Math.ceil(paraLength / end);
-
-  //   // Iterate over the slices
-  //   for (let i = 0; i < numSlices; i++) {
-  //     // Calculate the end index for each slice
-  //     end = Math.min(start + 702, paraLength);
-
-  //     // Slice the paragraphs and push into bookContent
-  //     bookContent.push(
-  //       state?.content
-  //         ? state?.content.join("").slice(start, end)
-  //         : getPara.join("").slice(start, end)
-  //     );
-
-  //     // Update the start index for the next slice
-  //     start = end;
-  //   }
-  // }
-
   function sliceParas() {
     let start = 0;
     let end = 702;
@@ -118,12 +90,16 @@ function OpenBook() {
   useEffect(() => {
     if (window.innerWidth > 1450) {
       setFlipPageWidth("500");
+    } else if (window.innerWidth > 1300 && window.innerWidth < 1440) {
+      setFlipPageWidth("400");
     } else {
       setFlipPageWidth("200");
     }
 
     if (window.innerWidth > 1450) {
       setFlipPageHeight("650");
+    } else if (window.innerWidth > 1300 && window.innerWidth < 1440) {
+      setFlipPageHeight("600");
     } else {
       setFlipPageHeight("600");
     }

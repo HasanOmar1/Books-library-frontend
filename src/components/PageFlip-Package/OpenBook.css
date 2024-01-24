@@ -78,6 +78,32 @@
   border-bottom-left-radius: 0px;
 }
 
+@media screen and (min-width: 768px) and (max-width: 1440px) {
+  .read-book {
+    padding: 0px;
+    padding-top: 15px;
+    padding-left: 25%;
+  }
+
+  .read-book .page-header {
+    padding-top: 15px;
+  }
+
+  .read-book .cover-title {
+    padding-top: 50%;
+  }
+
+  .read-book h4,
+  .read-book h5,
+  .read-book p {
+    font-size: 0.8rem;
+  }
+
+  .read-book .btns-container {
+    margin-left: -20%;
+  }
+}
+
 @media (max-width: 600px) {
   .read-book {
     padding: 0px;

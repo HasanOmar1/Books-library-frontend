@@ -87,6 +87,16 @@
   margin: auto;
 }
 
+@media screen and (min-width: 768px) and (max-width: 1440px) {
+  .CategoryBooksCards .container {
+    width: 500px;
+  }
+
+  .CategoryBooksCards .desc-container {
+    overflow: hidden;
+  }
+}
+
 @media (max-width: 600px) {
   .CategoryBooksCards .big-container {
     margin-left: 1%;
