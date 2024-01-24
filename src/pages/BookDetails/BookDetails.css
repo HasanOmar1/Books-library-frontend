@@ -200,16 +200,32 @@
   padding-bottom: 50px;
 }
 
+.BookDetails .read-comment p {
+  letter-spacing: 1.3px;
+}
+
+.BookDetails .read-comment-box {
+  margin-top: 50px;
+  min-height: 0vh;
+  display: flex;
+  gap: 30px;
+  flex-wrap: wrap;
+  width: 90vw;
+  border-radius: 20px;
+}
+
 .BookDetails .read-comments-container .read-comment {
   border: 1px solid rgb(130, 117, 117);
-  padding: 40px 30px;
+  padding: 20px 30px;
   display: flex;
   flex-direction: column;
   width: fit-content;
   height: fit-content;
-  margin-top: 50px;
+  margin-left: 25%;
   border-radius: 20px;
   background-color: #2c3333;
+  position: relative;
+  width: 50%;
 }
 
 .BookDetails .read-comments-container .read-comment h5 {
@@ -217,26 +233,14 @@
   letter-spacing: 1.62px;
 }
 
-.BookDetails .read-comment p {
-  letter-spacing: 1.3px;
-}
-
-.BookDetails .read-comment-box {
-  display: flex;
-  gap: 30px;
-  flex-wrap: wrap;
-  width: 70vw;
-}
-
-.BookDetails .read-comment {
-  position: relative;
-}
-
 .BookDetails .remove-comment {
-  color: rgb(47, 137, 255);
+  color: rgb(255, 255, 255);
+  background-color: rgba(209, 2, 2, 0.819);
+  padding: 3px 10px;
+  border-radius: 10px;
   position: absolute;
-  right: 7%;
-  top: 5%;
+  right: 5%;
+  bottom: 0%;
   cursor: pointer;
 }
 
@@ -245,7 +249,7 @@
 }
 
 .BookDetails .remove-comment:hover {
-  color: red;
+  color: black;
 }
 
 .BookDetails .read-comment .comment {
@@ -302,5 +306,11 @@
 
   .BookDetails .read-comments-container .read-comment {
     width: 300px;
+    margin-left: 40px;
+  }
+
+  .BookDetails .remove-comment {
+    padding: 3px 10px;
+    font-size: 5px;
   }
 }

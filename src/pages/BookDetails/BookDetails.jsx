@@ -241,7 +241,7 @@ export default function BookDetails() {
                         : "hide"
                     }
                   >
-                    X
+                    Delete
                   </p>
                   <h5>
                     <span className="username">
