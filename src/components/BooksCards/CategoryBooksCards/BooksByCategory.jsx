@@ -22,7 +22,7 @@ export default function BooksByCategories({ categoryName, array }) {
         Collection of {categoryName} Books
       </h4>
       <div className="big-container">
-        {array?.length === 0 && <h4>No books found</h4>}
+        {/* {array?.length === 0 && <h4>No books found</h4>} */}
         {array?.map((books, i) => {
           return (
             <div className="container" key={i}>

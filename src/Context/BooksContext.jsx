@@ -43,7 +43,7 @@ export default function BooksProvider({ children }) {
       setBooksByName(response.data);
     } catch (error) {
       console.log(error.response.data.message);
-      setErrorMsg(error.response.data.message);
+      // setErrorMsg(error.response.data.message);
       setBooksByName([]);
     }
   }

@@ -53,7 +53,7 @@ export default function Home() {
             <div className="book-of-the-day-container">
               <h4 className="titles">Book of the day</h4>
               <div className="book-of-the-day">
-                <BookOfTheDay sliceStart={27} sliceEnd={28} />
+                <BookOfTheDay sliceStart={26} sliceEnd={27} />
               </div>
             </div>
           </div>
@@ -66,14 +66,14 @@ export default function Home() {
             <div className="weekly-featured ">
               <p>Marvel Series</p>
               <div className="books">
-                <WeeklyFeaturedBooks sliceStart={31} sliceEnd={37} />
+                <WeeklyFeaturedBooks sliceStart={30} sliceEnd={36} />
               </div>
             </div>
 
             <div className="weekly-featured">
               <p>A Song of Ice and Fire Series </p>
               <div className="books">
-                <WeeklyFeaturedBooks sliceStart={37} sliceEnd={45} />
+                <WeeklyFeaturedBooks sliceStart={36} sliceEnd={44} />
               </div>
             </div>
           </div>
@@ -99,12 +99,6 @@ export default function Home() {
       ) : (
         <>
           <h3>Loading Data...</h3>
-          {/* <BarLoader
-            color="#36d7b7"
-            height={5}
-            width={100}
-            style={{ marginBottom: "100px" }}
-          /> */}
           <div className="loader">
             <HashLoader color="#36d7b7" />
           </div>
