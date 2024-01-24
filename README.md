@@ -18,6 +18,7 @@ I have created a responsive book library using React for the frontend and MongoD
 - You can add a book to your library.
 - You can remove a book from your library.
 - You can comment on a book.
+- You can remove your comment.
 - You can add your own book.
 - You can delete your own book.
 - You can search for a book.
