@@ -5,11 +5,9 @@ import { Link, useNavigate } from "react-router-dom";
 import { FaArrowUp } from "react-icons/fa";
 import Button from "react-bootstrap/Button";
 import ArrowBackIosIcon from "@mui/icons-material/ArrowBackIos";
-import { useBooksData } from "../../../Context/BooksContext";
 
 export default function BooksByCategories({ categoryName, array }) {
   const navigate = useNavigate(-1);
-  const { errorMsg } = useBooksData();
   const [isError, setIsError] = useState("");
 
   useEffect(() => {
@@ -19,8 +17,6 @@ export default function BooksByCategories({ categoryName, array }) {
       }, 1300);
     }
   }, [array]);
-
-  console.log(errorMsg);
 
   return (
     <div className="CategoryBooksCards">
