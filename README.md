@@ -1,4 +1,4 @@
-# Book Library
+# Book Library Frontend
 
 I have created a responsive book library using React for the frontend and MongoDB for the backend.
 
