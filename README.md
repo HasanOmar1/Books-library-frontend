@@ -4,10 +4,9 @@ I have created a responsive book library using React for the frontend and MongoD
 
 ### Links
 
-Frontend: https://books-library.netlify.app/
-Backend: https://books-library-backend.cyclic.app/api/v1/books
-
-Backend github: https://github.com/HasanOmar1/Books-Library-backend
+- Frontend: https://books-library.netlify.app/
+- Backend: https://books-library-backend.cyclic.app/api/v1/books
+- Backend github: https://github.com/HasanOmar1/Books-Library-backend
 
 ---
 
