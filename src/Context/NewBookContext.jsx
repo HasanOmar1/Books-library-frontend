@@ -36,7 +36,7 @@ export default function NewBookProvider({ children }) {
       }
       getFairyBooks();
     } catch (error) {
-      console.log(error);
+      console.log(error.response.data);
     }
   }
 
