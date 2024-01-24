@@ -50,33 +50,66 @@ function OpenBook() {
 
   let bookContent = [];
 
+  // function sliceParas() {
+  //   let start = 0;
+  //   let end = 702;
+
+  //   let paraLength = state?.content
+  //     ? state?.content.join("").length
+  //     : getPara.join("").length;
+
+  //   // Calculate the number of slices needed
+  //   let numSlices = Math.ceil(paraLength / end);
+
+  //   // Iterate over the slices
+  //   for (let i = 0; i < numSlices; i++) {
+  //     // Calculate the end index for each slice
+  //     end = Math.min(start + 702, paraLength);
+
+  //     // Slice the paragraphs and push into bookContent
+  //     bookContent.push(
+  //       state?.content
+  //         ? state?.content.join("").slice(start, end)
+  //         : getPara.join("").slice(start, end)
+  //     );
+
+  //     // Update the start index for the next slice
+  //     start = end;
+  //   }
+  // }
+
   function sliceParas() {
     let start = 0;
     let end = 702;
 
-    let paraLength = state?.content
-      ? state?.content.join("").length
-      : getPara.join("").length;
+    let paraText = state?.content ? state?.content.join("") : getPara.join("");
 
-    // Calculate the number of slices needed
-    let numSlices = Math.ceil(paraLength / end);
+    while (start < paraText.length) {
+      // Find the nearest space or newline character before the end index
+      while (
+        end < paraText.length &&
+        paraText[end] !== " " &&
+        paraText[end] !== "\n"
+      ) {
+        end++;
+      }
 
-    // Iterate over the slices
-    for (let i = 0; i < numSlices; i++) {
-      // Calculate the end index for each slice
-      end = Math.min(start + 702, paraLength);
+      // If the end index is at the end of the text, break the loop
+      if (end === paraText.length) {
+        break;
+      }
 
       // Slice the paragraphs and push into bookContent
-      bookContent.push(
-        state?.content
-          ? state?.content.join("").slice(start, end)
-          : getPara.join("").slice(start, end)
-      );
+      bookContent.push(paraText.slice(start, end));
 
       // Update the start index for the next slice
       start = end;
+
+      // Adjust the end index for the next iteration
+      end = start + 702;
     }
   }
+
   sliceParas();
 
   const [flipPageWidth, setFlipPageWidth] = useState("");
