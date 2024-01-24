@@ -38,8 +38,34 @@ I have used puppeteer package to scrap books pages.
 - The pages of the Fairy Tales are real pages.
 - The pages of the other books are the same.
 
-I couldn't find real pages for the not fairy tales books so i just scraped random chapter
+I couldn't find real pages for the other books so i just scraped random chapter
 
 of a book and added it to the pages just to fill them.
 
-- You can click on the email icon in the footer to email me.
+- You can click on the email icon in the footer to contact me.
+
+---
+
+### Used packages
+
+- Material UI
+- Bootstrap
+- React Page Flip
+- Puppeteer
+
+---
+
+## Preview
+
+![home-page-1](./src/assets/home-1.png)
+![home-page-2](./src/assets/home-2.png)
+![home-page-3](./src/assets/home-3.png)
+![home-page-4](./src/assets/home-4.png)
+![sign-up](./src/assets/Signup.png)
+![search-page](./src/assets/search-page.png)
+![add-book](./src/assets/add-book.png)
+![library](./src/assets/library.png)
+![my-book](./src/assets/my-book.png)
+![about](./src/assets/about.png)
+![book-page](./src/assets/book-page.png)
+![read-book](./src/assets/read-book.png)
