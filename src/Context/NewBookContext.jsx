@@ -5,7 +5,7 @@ import { useNewUsersContext } from "./NewUsersContext";
 
 const NewBookContext = createContext();
 
-const token = locazzlStorage.getItem("token");
+const token = localStorage.getItem("token");
 
 export default function NewBookProvider({ children }) {
   const { getFairyBooks } = useFairyContext();
