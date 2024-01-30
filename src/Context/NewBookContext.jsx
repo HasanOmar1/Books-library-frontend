@@ -24,11 +24,11 @@ export default function NewBookProvider({ children }) {
 
   async function removeMyBook(bookId) {
     try {
-      // this sometimes doesnt work from the first time until i refresh the page because of this :
-      const response = await axios.delete(`/fairy/${bookId}`, {
-        // <<< here it should be {} , then the header , but it creates new bug
-        headers: { Authorization: `Bearer ${token}` },
-      });
+      const config = {
+        headers: { authorization: `Bearer ${localStorage.getItem("token")}` },
+      };
+      const response = await axios.delete(`/fairy/${bookId}`, config);
+
       console.log(response.data);
       if (response.data.fairyBooks) {
         const userJSON = JSON.stringify(response.data);
@@ -38,7 +38,8 @@ export default function NewBookProvider({ children }) {
       }
       getFairyBooks();
     } catch (error) {
-      console.log(error.response.data);
+      console.log(token);
+      console.log(error.response.data.message);
     }
   }
 
